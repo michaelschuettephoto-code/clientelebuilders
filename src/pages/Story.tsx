@@ -6,7 +6,6 @@ import { Footer } from "@/components/layout/Footer";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { ArrowLeft } from "lucide-react";
 import { Helmet } from "react-helmet";
-import { PostImage } from "@/components/ui/post-image";
 
 const Story = () => {
   const { slug } = useParams();
@@ -101,15 +100,6 @@ const Story = () => {
           <ArrowLeft className="h-4 w-4" />
           Back to Newsroom
         </Link>
-
-        <div className="mb-12">
-          <PostImage 
-            src={post.hero_image_url}
-            alt={post.title}
-            variant="hero"
-            className="rounded-lg"
-          />
-        </div>
 
         <header className="mb-12">
           {post.publish_date && (
