@@ -18,6 +18,7 @@ import AdminDashboard from "./pages/admin/Dashboard";
 import AdminPosts from "./pages/admin/Posts";
 import AdminPostEditor from "./pages/admin/PostEditor";
 import AdminReadme from "./pages/admin/Readme";
+import Sitemap from "./pages/Sitemap";
 import RSS from "./pages/RSS";
 import NotFound from "./pages/NotFound";
 
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/admin/posts/new" element={<AdminPostEditor />} />
           <Route path="/admin/posts/:id" element={<AdminPostEditor />} />
           <Route path="/admin/readme" element={<AdminReadme />} />
+          <Route path="/sitemap.xml" element={<Sitemap />} />
           <Route path="/feed.xml" element={<RSS />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
