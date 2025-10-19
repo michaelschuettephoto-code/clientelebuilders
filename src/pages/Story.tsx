@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { ArrowLeft } from "lucide-react";
 import { Helmet } from "react-helmet";
+import { PostImage } from "@/components/ui/post-image";
 
 const Story = () => {
   const { slug } = useParams();
@@ -101,15 +102,14 @@ const Story = () => {
           Back to Newsroom
         </Link>
 
-        {post.hero_image_url && (
-          <div className="aspect-[21/9] overflow-hidden rounded-lg mb-12">
-            <img 
-              src={post.hero_image_url}
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
+        <div className="mb-12">
+          <PostImage 
+            src={post.hero_image_url}
+            alt={post.title}
+            variant="hero"
+            className="rounded-lg"
+          />
+        </div>
 
         <header className="mb-12">
           {post.publish_date && (

@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search } from "lucide-react";
+import { PostImage } from "@/components/ui/post-image";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -111,15 +112,14 @@ const Blog = () => {
             to={`/story/${featuredPost.slug}`}
             className="block mb-16 group"
           >
-            {featuredPost.hero_image_url && (
-              <div className="aspect-[21/9] overflow-hidden rounded-lg mb-6">
-                <img 
-                  src={featuredPost.hero_image_url}
-                  alt={featuredPost.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            )}
+            <div className="mb-6">
+              <PostImage 
+                src={featuredPost.hero_image_url}
+                alt={featuredPost.title}
+                variant="hero"
+                className="rounded-lg"
+              />
+            </div>
             <div className="max-w-4xl">
               <div className="text-sm text-muted-foreground mb-3">
                 Featured Story
@@ -150,15 +150,14 @@ const Blog = () => {
                 to={`/story/${post.slug}`}
                 className="story-card group"
               >
-                {post.cover_image_url && (
-                  <div className="aspect-[16/9] overflow-hidden rounded-lg mb-4">
-                    <img
-                      src={post.cover_image_url}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
+                <div className="mb-4">
+                  <PostImage 
+                    src={post.cover_image_url}
+                    alt={post.title}
+                    variant="card"
+                    className="rounded-lg"
+                  />
+                </div>
                 <div className="story-meta text-sm text-muted-foreground mb-2">
                   {post.publish_date && new Date(post.publish_date).toLocaleDateString("en-US", {
                     month: "long",

@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PostImage } from "@/components/ui/post-image";
 
 const Index = () => {
   const { data: recentPosts } = useQuery({
@@ -75,15 +76,14 @@ const Index = () => {
                   to={`/story/${post.slug}`}
                   className="story-card group"
                 >
-                  {post.cover_image_url && (
-                    <div className="aspect-[16/9] overflow-hidden rounded-lg mb-4">
-                      <img 
-                        src={post.cover_image_url} 
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  )}
+                  <div className="mb-4">
+                    <PostImage 
+                      src={post.cover_image_url}
+                      alt={post.title}
+                      variant="card"
+                      className="rounded-lg"
+                    />
+                  </div>
                   <div className="story-meta text-sm text-muted-foreground mb-2">
                     {post.publish_date && new Date(post.publish_date).toLocaleDateString("en-US", {
                       month: "long",
