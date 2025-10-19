@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import AdminLogin from "./pages/admin/Login";
+import AdminSignup from "./pages/admin/Signup";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminPosts from "./pages/admin/Posts";
 import AdminPostEditor from "./pages/admin/PostEditor";
