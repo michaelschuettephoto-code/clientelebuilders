@@ -6,21 +6,8 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 const toAbsolute = (p) => path.resolve(__dirname, p)
 
 // Static routes only - no Supabase dependency
-const staticRoutes = [
-  '/',
-  '/blog',
-  '/about',
-  '/newsletter',
-  '/contact',
-  '/privacy',
-  '/terms',
-  '/admin/login',
-  '/admin/signup',
-  '/admin',
-  '/admin/posts',
-  '/admin/posts/new',
-  '/admin/readme',
-]
+const staticRoutes = []
+
 
 ;(async () => {
   console.log('Starting pre-rendering...')
