@@ -70,7 +70,7 @@ const Story = () => {
         {ogImage && <meta property="og:image" content={ogImage} />}
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href={`${window.location.origin}/story/${post.slug}`} />
+        <link rel="canonical" href={`https://yourdomain.com/story/${post.slug}`} />
         
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
