@@ -1,13 +1,15 @@
-const fs = require('node:fs');
-const path = require('node:path');
-
-const rootDir = process.cwd();
-const toAbsolute = (p) => path.resolve(rootDir, p);
-
-// Static routes only - no backend dependency
-const staticRoutes = [];
-
 ;(async () => {
+  const fsMod = await import('node:fs');
+  const pathMod = await import('node:path');
+  const fs = (fsMod.default ?? fsMod);
+  const path = (pathMod.default ?? pathMod);
+
+  const rootDir = process.cwd();
+  const toAbsolute = (p) => path.resolve(rootDir, p);
+
+  // Static routes only - no backend dependency
+  const staticRoutes = [];
+
   console.log('Starting pre-rendering...');
 
   // Validate build artifacts exist
@@ -46,7 +48,7 @@ const staticRoutes = [];
       console.log(`✓ ${url}`);
     } catch (error) {
       errorCount++;
-      console.error(`✗ ${url}:`, error.message);
+      console.error(`✗ ${url}:`, (error && error.message) ? error.message : error);
     }
   }
 
@@ -58,4 +60,7 @@ const staticRoutes = [];
   }
 
   console.log(`\n✓ Static routes pre-rendered successfully!`);
-})();
+})().catch((err) => {
+  console.error('Pre-render script failed:', err);
+  process.exit(1);
+});
