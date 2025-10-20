@@ -1,7 +1,6 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
@@ -21,34 +20,30 @@ import AdminReadme from "./pages/admin/Readme";
 import RSS from "./pages/RSS";
 import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
-
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/story/:slug" element={<Story />} />
-        <Route path="/tag/:tag" element={<Tag />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/newsletter" element={<Newsletter />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/admin/posts" element={<AdminPosts />} />
-        <Route path="/admin/posts/new" element={<AdminPostEditor />} />
-        <Route path="/admin/posts/:id" element={<AdminPostEditor />} />
-        <Route path="/admin/readme" element={<AdminReadme />} />
-        <Route path="/feed.xml" element={<RSS />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <TooltipProvider>
+    <Toaster />
+    <Sonner />
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/story/:slug" element={<Story />} />
+      <Route path="/tag/:tag" element={<Tag />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/newsletter" element={<Newsletter />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/admin/posts" element={<AdminPosts />} />
+      <Route path="/admin/posts/new" element={<AdminPostEditor />} />
+      <Route path="/admin/posts/:id" element={<AdminPostEditor />} />
+      <Route path="/admin/readme" element={<AdminReadme />} />
+      <Route path="/feed.xml" element={<RSS />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </TooltipProvider>
 );
 
 export default App;

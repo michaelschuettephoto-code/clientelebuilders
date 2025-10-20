@@ -6,6 +6,17 @@ import { supabase } from './prerender-supabase.js'
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 const toAbsolute = (p) => path.resolve(__dirname, p)
 
+// Validate build artifacts exist
+if (!fs.existsSync(toAbsolute('dist/index.html'))) {
+  console.error('Error: dist/index.html not found. Run build:client first.')
+  process.exit(1)
+}
+
+if (!fs.existsSync(toAbsolute('dist/server/entry-server.js'))) {
+  console.error('Error: dist/server/entry-server.js not found. Run build:server first.')
+  process.exit(1)
+}
+
 const template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8')
 const { render } = await import('./dist/server/entry-server.js')
 
@@ -168,8 +179,12 @@ const staticRoutes = [
   
   console.log(`\nPre-rendering complete!`)
   console.log(`Success: ${successCount}, Errors: ${errorCount}`)
+  console.log(`Total routes: ${allRoutes.length}`)
   
   if (errorCount > 0) {
     console.warn(`\nWarning: ${errorCount} routes failed to render`)
+    process.exit(1)
   }
+  
+  console.log(`\n✓ All routes pre-rendered successfully!`)
 })()
