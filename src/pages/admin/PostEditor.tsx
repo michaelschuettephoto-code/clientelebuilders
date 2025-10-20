@@ -11,6 +11,7 @@ const AdminPostEditor = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState<boolean | null>(null);
   const [post, setPost] = useState({
     title: "",
     slug: "",
@@ -21,11 +22,45 @@ const AdminPostEditor = () => {
   });
 
   useEffect(() => {
-    if (id) {
+    const checkAccess = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session) {
+        navigate("/admin/login");
+        return;
+      }
+      
+      const { data: roles } = await supabase
+        .from('user_roles')
+        .select('role')
+        .eq('user_id', session.user.id);
+      
+      const hasAccess = roles?.some(r => 
+        ['admin', 'editor'].includes(r.role)
+      );
+      
+      if (!hasAccess) {
+        toast({ 
+          title: "Access Denied", 
+          description: "Admin or editor privileges required",
+          variant: "destructive" 
+        });
+        navigate('/');
+        return;
+      }
+      
+      setIsAuthorized(true);
+    };
+    
+    checkAccess();
+  }, [navigate, toast]);
+
+  useEffect(() => {
+    if (id && isAuthorized) {
       supabase.from("posts").select("*").eq("id", id).single()
         .then(({ data }) => data && setPost(data));
     }
-  }, [id]);
+  }, [id, isAuthorized]);
 
   const validateImageUrl = (url: string) => {
     if (!url) return true; // Empty is allowed
@@ -57,6 +92,16 @@ const AdminPostEditor = () => {
     }
     setLoading(false);
   };
+
+  if (isAuthorized === null) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-muted-foreground">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!isAuthorized) return null;
 
   return (
     <div className="min-h-screen bg-background p-6">

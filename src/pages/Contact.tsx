@@ -1,10 +1,30 @@
 import { useState } from "react";
+import { z } from "zod";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+
+const contactSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(1, "Name is required")
+    .max(100, "Name must be less than 100 characters"),
+  email: z.string()
+    .trim()
+    .email("Invalid email address")
+    .max(255, "Email must be less than 255 characters"),
+  subject: z.string()
+    .trim()
+    .min(1, "Subject is required")
+    .max(200, "Subject must be less than 200 characters"),
+  message: z.string()
+    .trim()
+    .min(10, "Message must be at least 10 characters")
+    .max(2000, "Message must be less than 2000 characters")
+});
 
 const Contact = () => {
   const { toast } = useToast();
@@ -15,18 +35,33 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Placeholder - User will integrate with their email service
-    console.log("Contact form submission:", formData);
-    
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
+    try {
+      // Validate input
+      const validated = contactSchema.parse(formData);
+      
+      // Placeholder - User will integrate with their email service
+      // When integrating: use validated data, implement rate limiting,
+      // and never pass raw input to external APIs
+      console.log("Contact form validated:", validated);
+      
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
 
-    setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast({ 
+          title: "Validation Error", 
+          description: error.errors[0].message,
+          variant: "destructive"
+        });
+      }
+    }
   };
 
   return (
