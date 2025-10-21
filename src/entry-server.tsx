@@ -7,7 +7,7 @@ export function render(url: string) {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: Infinity,
+        staleTime: 60 * 1000,
         retry: false,
       },
     },
