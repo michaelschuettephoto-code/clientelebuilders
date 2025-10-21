@@ -1,20 +1,40 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { supabase } from './prerender-supabase.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Import the server render function
 async function importServerModule() {
-  try {
-    const serverModule = await import('./dist/server/entry-server.js');
-    return serverModule.render;
-  } catch (error) {
-    console.error('Failed to import server module:', error);
-    console.log('Skipping prerender - SSR bundle not found');
-    return null;
+  const candidates = [
+    path.resolve(__dirname, 'dist/server/entry-server.mjs'),
+    path.resolve(__dirname, 'dist/server/entry-server.js'),
+  ];
+
+  for (const p of candidates) {
+    try {
+      const mod = await import(pathToFileURL(p).href);
+      const renderFn =
+        typeof mod.render === 'function'
+          ? mod.render
+          : typeof mod.default === 'function'
+          ? mod.default
+          : typeof mod.default?.render === 'function'
+          ? mod.default.render
+          : null;
+
+      if (typeof renderFn === 'function') {
+        console.log(`SSR module loaded from ${p}`);
+        return renderFn;
+      }
+    } catch (e) {
+      console.warn(`Could not import SSR module at ${p}:`, e?.message || e);
+    }
   }
+
+  console.error('Failed to find SSR bundle. Skipping prerender.');
+  return null;
 }
 
 async function prerender() {
@@ -78,7 +98,9 @@ async function prerender() {
       const { html: appHtml } = render(route.path);
       
       // Replace the placeholder with the rendered app HTML
-      let finalHtml = template.replace('<!--app-html-->', appHtml);
+let finalHtml = template.includes('<!--app-html-->')
+  ? template.replace('<!--app-html-->', appHtml)
+  : template.replace(/<div id="root">.*?<\/div>/s, `<div id="root">${appHtml}<\/div>`);
       
       // Optionally update the title tag
       finalHtml = finalHtml.replace(
