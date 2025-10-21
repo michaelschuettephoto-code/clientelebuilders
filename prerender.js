@@ -95,7 +95,7 @@ async function prerender() {
     try {
       console.log(`Rendering ${route.path}...`);
       
-      const { html: appHtml } = render(route.path);
+      const { html: appHtml } = await render(route.path);
       
       // Replace the placeholder with the rendered app HTML
 let finalHtml = template.includes('<!--app-html-->')
