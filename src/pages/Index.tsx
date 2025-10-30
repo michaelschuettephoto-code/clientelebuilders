@@ -1,27 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { NewsletterSignup } from "@/components/NewsletterSignup";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/CTAButton";
+import { ScoreAppButton } from "@/components/ScoreAppButton";
+import { FeatureCard } from "@/components/FeatureCard";
+import { ProcessStep } from "@/components/ProcessStep";
+import { Users, Target, Rocket, Shield, CheckCircle, XCircle } from "lucide-react";
 
 const Index = () => {
-  const { data: recentPosts } = useQuery({
-    queryKey: ["recent-posts"],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("posts")
-        .select("*")
-        .eq("is_published", true)
-        .order("publish_date", { ascending: false })
-        .limit(4);
-      
-      if (error) throw error;
-      return data;
-    },
-  });
+  // TODO: Replace with actual URLs
+  const AUDIT_BOOKING_URL = "https://calendly.com/your-booking-link";
+  const SCOREAPP_URL = "https://your-scoreapp-link.com";
 
   return (
     <div className="min-h-screen">
@@ -29,93 +17,207 @@ const Index = () => {
       
       <main>
         {/* Hero Section */}
-        <section id="hero" className="container max-w-7xl mx-auto px-6 py-24 md:py-32">
+        <section className="container max-w-7xl mx-auto px-6 py-24 md:py-32">
           <div className="max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-semibold mb-6 leading-tight">
-              Elite Systems for Insurance Professionals
+              Stop Recruiting People Who Quit.
+              <br />
+              We Build Teams That Sell & Stay.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Premium thought leadership on CRM, automation, mindset, and creative workflow. 
-              Built for IMOs, agents, and industry leaders who demand more.
+              Recruiting & Lead Generation as a Service for IMOs, MGAs, and Team Leaders.
+              You only pay when your recruits produce. No overhead. No wasted training.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/blog">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6">
-                  Explore Newsroom
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/newsletter">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-border hover:bg-card">
-                  Subscribe to Newsletter
-                </Button>
-              </Link>
+              <CTAButton href={AUDIT_BOOKING_URL}>
+                Book Your Recruiting & Lead Gen Audit
+              </CTAButton>
+              <ScoreAppButton href={SCOREAPP_URL}>
+                Take the Team Builder Score Assessment
+              </ScoreAppButton>
             </div>
           </div>
         </section>
 
-        {/* Recent Stories */}
+        {/* The Problem Section */}
         <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
-          <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold">Latest Stories</h2>
-            <Link 
-              to="/blog" 
-              className="text-primary hover:underline flex items-center gap-2"
-            >
-              View all
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+                If this sounds familiar...
+              </h2>
+              <ul className="space-y-4">
+                {[
+                  "You're recruiting people who never sell",
+                  "Your team churns faster than it grows",
+                  "You spend time training instead of producing",
+                  "You're building headcount, not revenue"
+                ].map((pain, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <XCircle className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
+                    <span className="text-lg text-muted-foreground">{pain}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex flex-col justify-center">
+              <div className="bg-card border border-border rounded-lg p-8">
+                <CheckCircle className="h-12 w-12 text-green-500 mb-4" />
+                <h3 className="text-2xl font-semibold mb-4">
+                  What if your team grew with producers, not passengers?
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Imagine a recruiting system that delivers agents who are qualified, 
+                  culture-aligned, and ready to sell from day one.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* The Solution Section */}
+        <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+              Recruiting & Lead Gen as a Service (RLGaaS)
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              You get a plug-in recruiting department that pays for itself.
+            </p>
           </div>
           
-          {recentPosts && recentPosts.length > 0 ? (
-            <div id="cards" className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {recentPosts.map((post) => (
-                <Link 
-                  key={post.id} 
-                  to={`/story/${post.slug}`}
-                  className="story-card group"
-                >
-                  <div className="story-meta text-sm text-muted-foreground mb-2">
-                    {post.publish_date && new Date(post.publish_date).toLocaleDateString("en-US", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric"
-                    })}
-                    {post.reading_time && ` · ${post.reading_time} min read`}
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                    {post.title}
-                  </h3>
-                  {post.dek && (
-                    <p className="text-muted-foreground leading-relaxed">
-                      {post.dek}
-                    </p>
-                  )}
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12 text-muted-foreground">
-              <p>No stories published yet. Check back soon!</p>
-            </div>
-          )}
+          <div className="grid md:grid-cols-2 gap-6">
+            <FeatureCard
+              icon={Target}
+              title="Qualified recruiting pipeline"
+              description="We drive inbound recruiting leads so you never have to prospect for talent again."
+            />
+            <FeatureCard
+              icon={Users}
+              title="Screened & culture-aligned candidates"
+              description="No more burnout interviews. Every candidate is pre-qualified and matches your culture."
+            />
+            <FeatureCard
+              icon={Rocket}
+              title="Day 1–30 Onboarding Program"
+              description="Agents start faster and stay longer with our proven onboarding system."
+            />
+            <FeatureCard
+              icon={Shield}
+              title="Behavior-based accountability system"
+              description="Removes guesswork from leadership with clear metrics and accountability."
+            />
+          </div>
         </section>
 
-        {/* Newsletter CTA */}
-        <section className="container max-w-3xl mx-auto px-6 py-16">
-          <NewsletterSignup />
-        </section>
-
-        {/* Social Proof / Trust Section */}
+        {/* How It Works Section */}
         <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+              How It Works
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              A simple, proven 3-step process that transforms recruiting
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <ProcessStep
+              number={1}
+              title="Attract"
+              description="ScoreApp funnels + outbound attraction systems bring qualified candidates to you"
+            />
+            <ProcessStep
+              number={2}
+              title="Activate"
+              description="Culture-based onboarding + day-1 readiness ensures agents hit the ground running"
+            />
+            <ProcessStep
+              number={3}
+              title="Accelerate"
+              description="Weekly accountability + retention loops keep producers engaged and growing"
+            />
+          </div>
+        </section>
+
+        {/* Proof / Authority Section */}
+        <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+              Built on Real-World Experience
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              "10+ years building clientele-based service businesses",
+              "High-retention training culture background",
+              "Built & scaled trade schools, barbershops, and sales programs",
+              "Real-world experience developing team-first culture"
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-start gap-3 bg-card border border-border rounded-lg p-6">
+                <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                <span className="text-lg">{item}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* The Pitch / Pricing Section */}
+        <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border bg-card/50">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              Trusted by Leading Insurance Professionals
+              We don't charge for recruiting.
+              <br />
+              We get paid when your agents produce.
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Join thousands of IMOs, agents, and industry leaders who rely on Clientele Builder 
-              for cutting-edge systems, automation strategies, and creative workflows.
+            
+            <div className="bg-background border border-border rounded-lg p-8 my-8 max-w-xl mx-auto">
+              <div className="grid grid-cols-2 gap-6 text-left">
+                <div>
+                  <p className="text-sm text-muted-foreground mb-2">Cost to You</p>
+                  <p className="text-2xl font-semibold">$0 Upfront</p>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground mb-2">Paid How?</p>
+                  <p className="text-lg">% of FYC & Renewals on agents we place</p>
+                </div>
+              </div>
+            </div>
+
+            <CTAButton href={AUDIT_BOOKING_URL} className="text-lg px-12 py-7">
+              Book Your Recruiting & Lead Gen Audit
+            </CTAButton>
+          </div>
+        </section>
+
+        {/* ScoreApp Lead Magnet Section */}
+        <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
+          <div className="text-center max-w-3xl mx-auto bg-primary/5 border border-primary/20 rounded-lg p-12">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+              Find Out What's Holding Your Agency Back
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Take the <strong>Team Builder Score Assessment</strong> and get a customized 
+              recruiting plan based on your growth stage.
             </p>
+            <ScoreAppButton href={SCOREAPP_URL} size="lg" className="text-lg px-12 py-7">
+              Take Assessment
+            </ScoreAppButton>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="container max-w-7xl mx-auto px-6 py-24 border-t border-border">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-semibold mb-8">
+              You don't need more leads.
+              <br />
+              You need <span className="text-primary">producers who stay.</span>
+            </h2>
+            <CTAButton href={AUDIT_BOOKING_URL} className="text-xl px-16 py-8">
+              Book Your Audit Call
+            </CTAButton>
           </div>
         </section>
       </main>
