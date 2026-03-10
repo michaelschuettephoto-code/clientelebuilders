@@ -14,7 +14,7 @@ import Terms from "./pages/Terms";
 const Story = lazy(() => import("./pages/Story"));
 const Tag = lazy(() => import("./pages/Tag"));
 const AdminLogin = lazy(() => import("./pages/admin/Login"));
-const AdminSignup = lazy(() => import("./pages/admin/Signup"));
+
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
 const AdminPosts = lazy(() => import("./pages/admin/Posts"));
 const AdminPostEditor = lazy(() => import("./pages/admin/PostEditor"));
