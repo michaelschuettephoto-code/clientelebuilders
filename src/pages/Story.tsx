@@ -146,7 +146,7 @@ const Story = () => {
             prose-img:rounded-lg prose-img:my-8
             prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic
             prose-ul:my-6 prose-ol:my-6"
-          dangerouslySetInnerHTML={{ __html: post.body_html || "" }}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.body_html || "", { ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'b', 'i', 'u', 'a', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'img', 'figure', 'figcaption', 'div', 'span', 'pre', 'code', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'hr', 'sup', 'sub'], ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'id', 'target', 'rel', 'width', 'height', 'loading'] }) }}
         />
 
         {post.post_tags && post.post_tags.length > 0 && (

@@ -57,12 +57,6 @@ const AdminLogin = () => {
           </Button>
         </form>
 
-        <p className="text-center mt-4 text-sm text-muted-foreground">
-          Don't have an account?{" "}
-          <Link to="/admin/signup" className="text-primary hover:underline">
-            Sign up
-          </Link>
-        </p>
       </div>
     </div>
   );
