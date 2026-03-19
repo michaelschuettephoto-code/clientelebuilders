@@ -14,30 +14,33 @@ export const Header = () => {
               alt="Clientele Builder" 
               className="h-10 w-auto"
             />
+            <span className="hidden sm:inline font-serif text-lg font-bold text-primary tracking-tight">
+              Clientele Builder
+            </span>
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
             <Link 
               to="/blog" 
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               Newsroom
             </Link>
             <Link 
               to="/about" 
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               About
             </Link>
             <Link 
               to="/newsletter" 
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               Newsletter
             </Link>
             <Link 
               to="/contact" 
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               Contact
             </Link>

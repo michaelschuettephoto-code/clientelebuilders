@@ -16,25 +16,32 @@ const Index = () => {
       <Header />
       
       <main>
-        {/* Hero Section */}
-        <section className="container max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-semibold mb-6 leading-tight">
-              Stop Recruiting People Who Quit.
-              <br />
-              We Build Teams That Sell & Stay.
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Recruiting & Lead Generation as a Service for IMOs, MGAs, and Team Leaders.
-              You only pay when your recruits produce. No overhead. No wasted training.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <CTAButton href={AUDIT_BOOKING_URL}>
-                Book Your Recruiting & Lead Gen Audit
-              </CTAButton>
-              <ScoreAppButton href={SCOREAPP_URL}>
-                Take the Team Builder Score Assessment
-              </ScoreAppButton>
+        {/* Hero Section — editorial style */}
+        <section className="bg-primary text-primary-foreground py-20 md:py-28 relative overflow-hidden">
+          <div className="absolute top-[-80px] right-[-60px] w-[400px] h-[400px] rounded-full bg-sky/10 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold via-gold-light to-gold" />
+          <div className="container max-w-7xl mx-auto px-6">
+            <div className="max-w-4xl">
+              <span className="font-mono text-[9px] tracking-[0.32em] text-gold-light uppercase block mb-4">
+                Insurance Distribution Architect
+              </span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.05] text-primary-foreground">
+                Stop Recruiting People Who Quit.
+                <br />
+                <em className="text-sky italic">We Build Teams That Sell & Stay.</em>
+              </h1>
+              <p className="text-lg md:text-xl text-primary-foreground/55 font-light mb-10 leading-relaxed max-w-2xl">
+                Recruiting & Lead Generation as a Service for IMOs, MGAs, and Team Leaders.
+                You only pay when your recruits produce. No overhead. No wasted training.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <CTAButton href={AUDIT_BOOKING_URL}>
+                  Book Your Recruiting & Lead Gen Audit
+                </CTAButton>
+                <ScoreAppButton href={SCOREAPP_URL}>
+                  Take the Team Builder Score Assessment
+                </ScoreAppButton>
+              </div>
             </div>
           </div>
         </section>
@@ -98,7 +105,6 @@ const Index = () => {
                   </p>
                 </div>
 
-                {/* SECTION 01 */}
                 <div className="ia-section-label">01 &nbsp; Industry Transformation</div>
                 <h2>The Industry Is Actively Reducing Its Dependence on Agents</h2>
 
@@ -120,9 +126,7 @@ const Index = () => {
                   sends to potential agents. When consumers can compare and purchase policies online
                   without ever speaking to a person, the career proposition for agents becomes harder to
                   defend. The job exists — and in many segments, it remains essential — but the tailwind
-                  that once made it obviously attractive has shifted into a headwind. The industry is
-                  not promoting the agent career with anything like the conviction it once had, because
-                  the largest firms are no longer fully committed to the model themselves.
+                  that once made it obviously attractive has shifted into a headwind.
                 </p>
 
                 <div className="ia-dark-panel">
@@ -141,7 +145,6 @@ const Index = () => {
                   It is coming from the carrier strategy itself.
                 </p>
 
-                {/* SECTION 02 */}
                 <div className="ia-section-label">02 &nbsp; Market Consolidation</div>
                 <h2>The Economics of the Market Have Shifted Against New Entrants</h2>
 
@@ -156,15 +159,11 @@ const Index = () => {
                   equity, strategic acquisitions, and the relentless pressure to operate at scale — has
                   produced a landscape dominated by large, complex organizations with sophisticated
                   distribution infrastructure, carrier relationships, and data capabilities that
-                  independent operators simply cannot match. Competing against that infrastructure as a
-                  new agent, inside an organization that may not have those capabilities, is a harder
-                  proposition than it used to be.
+                  independent operators simply cannot match.
                 </p>
                 <p>
                   Consolidation has also compressed the income curve at the beginning of an agent's
-                  career, precisely when it matters most for recruiting. Large firms operate efficiently
-                  by design — which often means less individual support, less margin for new agents to
-                  develop slowly, and more pressure to produce quickly. The result is a high attrition
+                  career, precisely when it matters most for recruiting. The result is a high attrition
                   rate in the first 12–18 months that has become so normalized in the industry that most
                   organizations simply build it into their model rather than addressing its cause.
                 </p>
@@ -184,7 +183,6 @@ const Index = () => {
                   problem that no amount of marketing can fully reverse.
                 </p>
 
-                {/* SECTION 03 */}
                 <div className="ia-section-label">03 &nbsp; Workforce Behavior</div>
                 <h2>People Don't Want This Job Anymore — and They Have Good Reasons</h2>
 
@@ -196,11 +194,9 @@ const Index = () => {
                 </p>
                 <p>
                   The behavioral reality is more precise. Research on workforce preferences consistently
-                  shows that younger workers are not simply risk-averse — they are risk-informed. They
-                  have watched parents navigate financial instability, graduated into economic
-                  uncertainty, and developed a clear-eyed understanding of which career risks are worth
-                  taking. Commission-only compensation, in that context, is not an opportunity they are
-                  too timid to pursue. It is a structure they have evaluated and rationally declined.
+                  shows that younger workers are not simply risk-averse — they are risk-informed.
+                  Commission-only compensation is not an opportunity they are too timid to pursue. It is
+                  a structure they have evaluated and rationally declined.
                 </p>
 
                 <ul className="ia-force-list">
@@ -208,60 +204,37 @@ const Index = () => {
                     <span className="ia-force-num">01</span>
                     <div className="ia-force-body">
                       <strong>Income unpredictability</strong>
-                      <span>
-                        Commission-based earnings offer no floor. In an economy where fixed costs —
-                        housing, student loans, healthcare — are high and predictable, an unpredictable
-                        income stream is a genuine financial liability, not just a psychological
-                        discomfort.
-                      </span>
+                      <span>Commission-based earnings offer no floor. An unpredictable income stream is a genuine financial liability, not just a psychological discomfort.</span>
                     </div>
                   </li>
                   <li className="ia-force-item">
                     <span className="ia-force-num">02</span>
                     <div className="ia-force-body">
                       <strong>Trust deficit in financial institutions</strong>
-                      <span>
-                        Post-2008, institutional trust in financial services — including insurance — has
-                        not fully recovered among younger cohorts. Starting a career that requires
-                        selling products from institutions people are skeptical of adds a layer of
-                        friction that is easy to underestimate.
-                      </span>
+                      <span>Post-2008, institutional trust in financial services has not fully recovered among younger cohorts.</span>
                     </div>
                   </li>
                   <li className="ia-force-item">
                     <span className="ia-force-num">03</span>
                     <div className="ia-force-body">
                       <strong>Competition from alternative work models</strong>
-                      <span>
-                        Gig platforms, remote tech roles, and creator economy careers offer income,
-                        flexibility, and identity in ways that a traditional insurance sales career does
-                        not. These are not irrational preferences. They are the market working exactly
-                        as it should.
-                      </span>
+                      <span>Gig platforms, remote tech roles, and creator economy careers offer income, flexibility, and identity in ways that traditional insurance sales does not.</span>
                     </div>
                   </li>
                   <li className="ia-force-item">
                     <span className="ia-force-num">04</span>
                     <div className="ia-force-body">
                       <strong>The perception gap is not closing</strong>
-                      <span>
-                        Insurance sales is perceived as high-pressure, rejection-heavy, and financially
-                        unstable. That perception is rooted in enough reality that it is not easily
-                        reversed with better marketing. It requires a different underlying reality to
-                        change it.
-                      </span>
+                      <span>Insurance sales is perceived as high-pressure, rejection-heavy, and financially unstable. That perception is rooted in enough reality that it requires a different underlying reality to change.</span>
                     </div>
                   </li>
                 </ul>
 
                 <p>
-                  The industry's standard response to this has been to argue harder — better pitch decks
-                  at recruiting events, more compelling income projections, more enthusiasm about upside
-                  potential. None of it is working, because the audience is not unconvinced. They are
-                  correctly informed.
+                  The industry's standard response to this has been to argue harder. None of it is
+                  working, because the audience is not unconvinced. They are correctly informed.
                 </p>
 
-                {/* SECTION 04 */}
                 <div className="ia-section-label">04 &nbsp; Current Conditions</div>
                 <h2>The Talent Shortage Is Already Here — and It Is Compounding</h2>
 
@@ -269,8 +242,6 @@ const Index = () => {
                   These forces are not theoretical. They are producing visible, measurable results in
                   the industry right now. Experienced agents are retiring at rates that new recruiting
                   cannot offset. The average age of insurance agents has been climbing for two decades.
-                  Firms report talent shortages not as a future risk but as a current operational
-                  constraint.
                 </p>
                 <p>
                   What makes this moment particularly sharp is the compounding dynamic. Recruiting
@@ -278,13 +249,6 @@ const Index = () => {
                   new-agent support. Worse support produces higher attrition. Higher attrition produces
                   more recruiting pressure. And more recruiting pressure, when run through the same
                   broken model, produces the same results with higher urgency and higher cost.
-                </p>
-                <p>
-                  The organizations caught in this cycle often interpret the problem as a volume issue —
-                  they need more candidates entering the top of the funnel. But volume recruiting into a
-                  poorly supported environment does not solve an attrition problem. It funds it. Every
-                  agent who washes out in the first 90 days represents recruiting cost, management time,
-                  and market exposure — gone, with nothing to show for it except a number to replace.
                 </p>
 
                 <div className="ia-dark-panel">
@@ -296,7 +260,6 @@ const Index = () => {
                   </div>
                 </div>
 
-                {/* SECTION 05 */}
                 <div className="ia-section-label">05 &nbsp; What Must Change</div>
                 <h2>What Actually Needs to Change — and Where the Opportunity Is</h2>
 
@@ -304,14 +267,6 @@ const Index = () => {
                   The firms that solve this are not going to solve it by recruiting harder. They are
                   going to solve it by building a fundamentally different early-career experience — one
                   that aligns with how modern workers actually evaluate career risk.
-                </p>
-                <p>
-                  The research on agent retention is unambiguous on this point. The single most powerful
-                  predictor of whether a new agent stays is not their income in month one. It is whether
-                  they perceive meaningful support — mentorship, structured training, access to tools,
-                  and genuine investment from their organization — in the critical first months of their
-                  career. Agents who feel supported early stay. Agents who feel dropped into the deep
-                  end leave. And they tell people.
                 </p>
 
                 <div className="ia-opp-grid">
@@ -325,9 +280,7 @@ const Index = () => {
                   </div>
                   <div className="ia-opp-box ia-sky">
                     <div className="ia-opp-label">Shift 02</div>
-                    <div className="ia-opp-head">
-                      From High-Attrition Models to Retention Infrastructure
-                    </div>
+                    <div className="ia-opp-head">From High-Attrition Models to Retention Infrastructure</div>
                     <div className="ia-opp-body">
                       Build the systems — onboarding tracks, mentorship programs, early activity support
                       — that change the first-year experience.
@@ -335,44 +288,25 @@ const Index = () => {
                   </div>
                   <div className="ia-opp-box ia-green">
                     <div className="ia-opp-label">Shift 03</div>
-                    <div className="ia-opp-head">
-                      From Commission-Only to Structured Early Compensation
-                    </div>
+                    <div className="ia-opp-head">From Commission-Only to Structured Early Compensation</div>
                     <div className="ia-opp-body">
-                      The organizations winning at recruiting are finding ways to reduce early-career
-                      income risk — salary draws, lead subsidies, guaranteed minimums in year one.
+                      Reduce early-career income risk — salary draws, lead subsidies, guaranteed minimums in year one.
                     </div>
                   </div>
                   <div className="ia-opp-box ia-slate">
                     <div className="ia-opp-label">Shift 04</div>
-                    <div className="ia-opp-head">
-                      From Assumption of Failure to Expectation of Development
-                    </div>
+                    <div className="ia-opp-head">From Assumption of Failure to Expectation of Development</div>
                     <div className="ia-opp-body">
                       Treat new agents as long-term investments rather than short-term lottery tickets.
-                      The economics of a retained, productive agent compound in ways that a revolving
-                      door never can.
                     </div>
                   </div>
                 </div>
 
-                <p>
-                  None of this is easy. It requires rebuilding compensation structures, investing in
-                  onboarding infrastructure, and accepting lower short-term recruiting volume in
-                  exchange for higher long-term output. Most organizations are not structured to make
-                  that trade. The ones that are will find themselves in a remarkably uncrowded space —
-                  because they will be the only organizations actually solving the problem instead of
-                  perpetuating it.
-                </p>
-
-                {/* CLOSING */}
                 <div className="ia-closing-strip">
                   <p>
                     <strong>The opportunity is real.</strong> The insurance career, at its core, still
                     offers something genuinely compelling: autonomy, meaningful work, and income that
                     compounds over time with a book of business. That proposition has not disappeared.
-                    It has simply been buried under decades of a distribution model that burned through
-                    people faster than it developed them.
                   </p>
                   <p>
                     The firms that figure out how to bring that proposition back to the surface — with
@@ -395,21 +329,15 @@ const Index = () => {
                     </div>
                     <div className="ia-stat-row">
                       <span className="ia-stat-label">New agents still active at 12 months</span>
-                      <span className="ia-stat-value ia-alarm">
-                        ~20%<span className="ia-trend ia-dn">↓</span>
-                      </span>
+                      <span className="ia-stat-value ia-alarm">~20%<span className="ia-trend ia-dn">↓</span></span>
                     </div>
                     <div className="ia-stat-row">
                       <span className="ia-stat-label">Producing agents as % of licensed roster</span>
-                      <span className="ia-stat-value ia-alarm">
-                        ~22%<span className="ia-trend ia-dn">↓</span>
-                      </span>
+                      <span className="ia-stat-value ia-alarm">~22%<span className="ia-trend ia-dn">↓</span></span>
                     </div>
                     <div className="ia-stat-row">
                       <span className="ia-stat-label">Industry workforce growth (5yr)</span>
-                      <span className="ia-stat-value">
-                        Flat<span className="ia-trend ia-dn">↓</span>
-                      </span>
+                      <span className="ia-stat-value">Flat<span className="ia-trend ia-dn">↓</span></span>
                     </div>
                     <div className="ia-stat-row">
                       <span className="ia-stat-label">PE-backed IMO consolidation activity</span>
@@ -426,8 +354,7 @@ const Index = () => {
                   <div className="ia-callout-label">Research Finding</div>
                   <p>
                     "Agent retention is strongly tied to perceived early-career support — mentorship,
-                    peer networks, supervisor engagement, and access to tools. Agents who feel supported
-                    in months 1–6 are significantly more likely to remain at 12 months."
+                    peer networks, supervisor engagement, and access to tools."
                   </p>
                 </div>
 
@@ -436,24 +363,15 @@ const Index = () => {
                   <div className="ia-sidebar-card-body">
                     <div className="ia-sidebar-force">
                       <strong>Industry Transformation</strong>
-                      <span>
-                        Carriers shifting toward digital, direct, and automated distribution — reducing
-                        structural demand for human agents.
-                      </span>
+                      <span>Carriers shifting toward digital, direct, and automated distribution.</span>
                     </div>
                     <div className="ia-sidebar-force">
                       <strong>Market Consolidation</strong>
-                      <span>
-                        PE-backed rollups raising complexity and competition, compressing early-agent
-                        economics, and normalizing high attrition.
-                      </span>
+                      <span>PE-backed rollups compressing early-agent economics and normalizing high attrition.</span>
                     </div>
                     <div className="ia-sidebar-force">
                       <strong>Workforce Expectations</strong>
-                      <span>
-                        Modern workers rationally declining commission-only roles in favor of income
-                        predictability and alternatives that didn't exist a decade ago.
-                      </span>
+                      <span>Modern workers rationally declining commission-only roles.</span>
                     </div>
                   </div>
                 </div>
@@ -474,20 +392,18 @@ const Index = () => {
             </div>
           </div>
 
-          {/* ARTICLE FOOTER */}
           <div className="ia-report-footer">
             <span className="ia-footer-brand">Insurance Distribution Architect</span>
             <span>Thought Leadership · March 2026</span>
             <span>insurancedistributionarchitect.com</span>
           </div>
         </div>
-        {/* ═══ END FEATURED ARTICLE ═══ */}
 
         {/* The Problem Section */}
         <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 If this sounds familiar...
               </h2>
               <ul className="space-y-4">
@@ -505,9 +421,9 @@ const Index = () => {
               </ul>
             </div>
             <div className="flex flex-col justify-center">
-              <div className="bg-card border border-border rounded-lg p-8">
-                <CheckCircle className="h-12 w-12 text-green-500 mb-4" />
-                <h3 className="text-2xl font-semibold mb-4">
+              <div className="bg-card border border-border rounded p-8">
+                <CheckCircle className="h-12 w-12 text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-4">
                   What if your team grew with producers, not passengers?
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -522,7 +438,7 @@ const Index = () => {
         {/* The Solution Section */}
         <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Recruiting & Lead Gen as a Service (RLGaaS)
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -531,67 +447,31 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <FeatureCard
-              icon={Target}
-              title="Qualified recruiting pipeline"
-              description="We drive inbound recruiting leads so you never have to prospect for talent again."
-            />
-            <FeatureCard
-              icon={Users}
-              title="Screened & culture-aligned candidates"
-              description="No more burnout interviews. Every candidate is pre-qualified and matches your culture."
-            />
-            <FeatureCard
-              icon={Rocket}
-              title="Day 1–30 Onboarding Program"
-              description="Agents start faster and stay longer with our proven onboarding system."
-            />
-            <FeatureCard
-              icon={Shield}
-              title="Behavior-based accountability system"
-              description="Removes guesswork from leadership with clear metrics and accountability."
-            />
+            <FeatureCard icon={Target} title="Qualified recruiting pipeline" description="We drive inbound recruiting leads so you never have to prospect for talent again." />
+            <FeatureCard icon={Users} title="Screened & culture-aligned candidates" description="No more burnout interviews. Every candidate is pre-qualified and matches your culture." />
+            <FeatureCard icon={Rocket} title="Day 1–30 Onboarding Program" description="Agents start faster and stay longer with our proven onboarding system." />
+            <FeatureCard icon={Shield} title="Behavior-based accountability system" description="Removes guesswork from leadership with clear metrics and accountability." />
           </div>
         </section>
 
         {/* How It Works Section */}
         <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-              How It Works
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              A simple, proven 3-step process that transforms recruiting
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+            <p className="text-xl text-muted-foreground">A simple, proven 3-step process that transforms recruiting</p>
           </div>
-          
           <div className="grid md:grid-cols-3 gap-8">
-            <ProcessStep
-              number={1}
-              title="Attract"
-              description="ScoreApp funnels + outbound attraction systems bring qualified candidates to you"
-            />
-            <ProcessStep
-              number={2}
-              title="Activate"
-              description="Culture-based onboarding + day-1 readiness ensures agents hit the ground running"
-            />
-            <ProcessStep
-              number={3}
-              title="Accelerate"
-              description="Weekly accountability + retention loops keep producers engaged and growing"
-            />
+            <ProcessStep number={1} title="Attract" description="ScoreApp funnels + outbound attraction systems bring qualified candidates to you" />
+            <ProcessStep number={2} title="Activate" description="Culture-based onboarding + day-1 readiness ensures agents hit the ground running" />
+            <ProcessStep number={3} title="Accelerate" description="Weekly accountability + retention loops keep producers engaged and growing" />
           </div>
         </section>
 
-        {/* Proof / Authority Section */}
+        {/* Proof Section */}
         <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              Built on Real-World Experience
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Built on Real-World Experience</h2>
           </div>
-          
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
               "10+ years building clientele-based service businesses",
@@ -599,46 +479,44 @@ const Index = () => {
               "Built & scaled trade schools, barbershops, and sales programs",
               "Real-world experience developing team-first culture"
             ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3 bg-card border border-border rounded-lg p-6">
-                <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div key={idx} className="flex items-start gap-3 bg-card border border-border rounded p-6">
+                <CheckCircle className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <span className="text-lg">{item}</span>
               </div>
             ))}
           </div>
         </section>
 
-        {/* The Pitch / Pricing Section */}
-        <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border bg-card/50">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+        {/* Pricing Section */}
+        <section className="bg-primary text-primary-foreground py-16">
+          <div className="container max-w-3xl mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary-foreground">
               We don't charge for recruiting.
               <br />
               We get paid when your agents produce.
             </h2>
-            
-            <div className="bg-background border border-border rounded-lg p-8 my-8 max-w-xl mx-auto">
+            <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded p-8 my-8 max-w-xl mx-auto">
               <div className="grid grid-cols-2 gap-6 text-left">
                 <div>
-                  <p className="text-sm text-muted-foreground mb-2">Cost to You</p>
-                  <p className="text-2xl font-semibold">$0 Upfront</p>
+                  <p className="text-sm text-primary-foreground/50 mb-2">Cost to You</p>
+                  <p className="text-2xl font-bold text-primary-foreground">$0 Upfront</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-2">Paid How?</p>
-                  <p className="text-lg">% of FYC & Renewals on agents we place</p>
+                  <p className="text-sm text-primary-foreground/50 mb-2">Paid How?</p>
+                  <p className="text-lg text-primary-foreground">% of FYC & Renewals on agents we place</p>
                 </div>
               </div>
             </div>
-
             <CTAButton href={AUDIT_BOOKING_URL} className="text-lg px-12 py-7">
               Book Your Recruiting & Lead Gen Audit
             </CTAButton>
           </div>
         </section>
 
-        {/* ScoreApp Lead Magnet Section */}
-        <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
-          <div className="text-center max-w-3xl mx-auto bg-primary/5 border border-primary/20 rounded-lg p-12">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+        {/* ScoreApp Section */}
+        <section className="container max-w-7xl mx-auto px-6 py-16">
+          <div className="text-center max-w-3xl mx-auto bg-fog border border-border rounded p-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Find Out What's Holding Your Agency Back
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
@@ -651,13 +529,13 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Final CTA Section */}
+        {/* Final CTA */}
         <section className="container max-w-7xl mx-auto px-6 py-24 border-t border-border">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-semibold mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
               You don't need more leads.
               <br />
-              You need <span className="text-primary">producers who stay.</span>
+              You need <span className="text-accent">producers who stay.</span>
             </h2>
             <CTAButton href={AUDIT_BOOKING_URL} className="text-xl px-16 py-8">
               Book Your Audit Call
