@@ -11,7 +11,7 @@ interface ScoreAppButtonProps {
 export const ScoreAppButton = ({ 
   size = "lg", 
   children, 
-  href = "#scoreapp",
+  href = "https://start.clientelebuilders.com",
   className = ""
 }: ScoreAppButtonProps) => {
   return (
