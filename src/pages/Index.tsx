@@ -51,25 +51,23 @@ const Index = () => {
           {/* MASTHEAD */}
           <div className="ia-masthead">
             <div className="ia-masthead-inner">
-              <div className="ia-pub-tag">Insurance Distribution Architect</div>
-              <div className="ia-article-label">Thought Leadership</div>
+              <div className="ia-pub-tag">Clientele Builders</div>
+              <div className="ia-article-label">Growth Intelligence</div>
               <h1>
-                Why Recruiting Insurance Agents Is So Difficult <em>Right Now</em>
+                Why Most Insurance Teams Struggle to Grow — And What Actually{" "}
+                <em>Fixes It</em>
               </h1>
               <p className="ia-masthead-deck">
-                The industry keeps treating this as a pipeline problem. It isn't. It's a structural
-                mismatch between how insurance distribution was built and how people are willing to
-                work today.
+                It's not a lead problem. It's not a marketing problem. It's a
+                system problem. And most teams won't figure that out until they've
+                already paid for it.
               </p>
               <div className="ia-masthead-meta">
                 <div className="ia-meta-item">
-                  Published <span>March 2026</span>
+                  Topic <span>Growth · Systems · Recruiting</span>
                 </div>
                 <div className="ia-meta-item">
-                  Topic <span>Distribution · Recruiting · Workforce</span>
-                </div>
-                <div className="ia-meta-item">
-                  Read time <span>7 min</span>
+                  Read time <span>5 min</span>
                 </div>
               </div>
             </div>
@@ -80,322 +78,371 @@ const Index = () => {
             <div className="ia-two-col">
               {/* MAIN BODY */}
               <div className="ia-body">
-                <p className="ia-drop-cap">
-                  Every year, insurance organizations across the country post the same complaint: they
-                  can't find enough agents. Every year, the industry responds with the same playbook —
-                  more recruiting events, bigger sign-on incentives, louder promises about income
-                  potential. And every year, the problem gets worse. Not marginally worse. Structurally
-                  worse.
+                <p className="ia-lead ia-drop-cap">
+                  Here's the honest truth most people in this industry won't say
+                  out loud: the teams that are struggling aren't struggling because
+                  they're lazy. They're not short on ambition. They're not missing
+                  passion. They're running hard — and getting nowhere — because
+                  they're running on a broken foundation.
                 </p>
 
-                <p className="ia-lead">
-                  This isn't a sourcing problem. It isn't a branding problem. It isn't even primarily a
-                  compensation problem. Recruiting insurance agents has become genuinely difficult
-                  because three separate forces — industry transformation, market consolidation, and a
-                  generational shift in how people think about work — are converging at exactly the same
-                  moment. Each force alone would create friction. Together, they are reshaping whether
-                  the traditional agent model is viable at all.
+                <p>
+                  Some months hit. Some months stall. And nobody can clearly
+                  explain why. So they chase more leads. Hire a marketing agency.
+                  Post more content. And the cycle repeats — more activity, same
+                  results, more frustration.
+                </p>
+
+                <p>
+                  That's not a motivation problem. That's a structure problem. And
+                  structure problems don't respond to effort. They respond to
+                  systems.
                 </p>
 
                 <div className="ia-pull-quote">
                   <p>
-                    "The organizations still running a volume recruiting model are not competing for
-                    talent. They are competing against a structural reality that their model was not
-                    built to survive."
+                    "You don't have a lead problem. You have a system that wasn't
+                    built to handle the leads you already have."
                   </p>
                 </div>
 
-                <div className="ia-section-label">01 &nbsp; Industry Transformation</div>
-                <h2>The Industry Is Actively Reducing Its Dependence on Agents</h2>
+                {/* ── 01 ── */}
+                <div className="ia-section-label">01 &nbsp; The Real Bottleneck</div>
+                <h2>It's Not the Leads. It's the Pipeline Behind Them.</h2>
 
                 <p>
-                  The most important context for understanding the recruiting crisis is one that most
-                  recruiting conversations never mention: the insurance industry is not waiting for
-                  agents to come back. It is engineering them out.
-                </p>
-                <p>
-                  Direct-to-consumer platforms, digital comparison tools, and AI-powered underwriting
-                  are not fringe experiments. They are mainstream investments by major carriers who have
-                  spent the last decade watching what happened to travel agents, stockbrokers, and
-                  mortgage officers when digital intermediation arrived. The lesson they drew was not
-                  subtle: distribution that runs through human beings is expensive, inconsistent, and
-                  increasingly avoidable.
-                </p>
-                <p>
-                  This matters for recruiting because it shapes the fundamental signal the industry
-                  sends to potential agents. When consumers can compare and purchase policies online
-                  without ever speaking to a person, the career proposition for agents becomes harder to
-                  defend. The job exists — and in many segments, it remains essential — but the tailwind
-                  that once made it obviously attractive has shifted into a headwind.
+                  Most agency owners believe growth lives in the marketing budget.
+                  More leads, more growth. It's a logical assumption. It's also
+                  wrong.
                 </p>
 
-                <div className="ia-dark-panel">
-                  <div className="ia-dark-panel-label">Core Insight</div>
-                  <div className="ia-dark-panel-text">
-                    The industry is not failing to recruit agents. It is succeeding at shifting toward a
-                    distribution model that needs fewer of them — and the recruiting crisis is partly
-                    the <em>intended consequence</em>.
-                  </div>
-                </div>
-
                 <p>
-                  For independent agencies and IMOs, this creates a specific problem. They are trying to
-                  recruit into a career that the industry's largest players are simultaneously
-                  undermining. The competition for agent talent is not just coming from other agencies.
-                  It is coming from the carrier strategy itself.
+                  The real constraint is simpler and more uncomfortable: how fast
+                  can you bring in quality agents and make them productive? Because
+                  no amount of leads fixes a team that isn't built to convert them.
+                  And no amount of marketing fixes an onboarding system that loses
+                  agents before they ever reach their potential.
                 </p>
 
-                <div className="ia-section-label">02 &nbsp; Market Consolidation</div>
-                <h2>The Economics of the Market Have Shifted Against New Entrants</h2>
-
-                <p>
-                  Thirty years ago, a motivated person could enter insurance sales with relatively low
-                  barriers, build a client base, and reasonably expect to grow a sustainable income. The
-                  economics were imperfect, but the math worked often enough that it attracted people
-                  willing to accept early-career risk in exchange for long-term upside.
-                </p>
-                <p>
-                  That math has changed. The consolidation of the insurance market — driven by private
-                  equity, strategic acquisitions, and the relentless pressure to operate at scale — has
-                  produced a landscape dominated by large, complex organizations with sophisticated
-                  distribution infrastructure, carrier relationships, and data capabilities that
-                  independent operators simply cannot match.
-                </p>
-                <p>
-                  Consolidation has also compressed the income curve at the beginning of an agent's
-                  career, precisely when it matters most for recruiting. The result is a high attrition
-                  rate in the first 12–18 months that has become so normalized in the industry that most
-                  organizations simply build it into their model rather than addressing its cause.
-                </p>
-
-                <div className="ia-pull-quote">
-                  <p>
-                    "High early-career attrition is not an unfortunate side effect of insurance sales.
-                    It is the business model. And that model has become one of the most powerful
-                    recruiting deterrents in any industry."
-                  </p>
-                </div>
-
-                <p>
-                  Word travels. When the people who tried the career tell the people who are considering
-                  it what actually happened to them — the chargebacks, the lack of support, the income
-                  volatility — the recruiting funnel doesn't just shrink. It develops a reputation
-                  problem that no amount of marketing can fully reverse.
-                </p>
-
-                <div className="ia-section-label">03 &nbsp; Workforce Behavior</div>
-                <h2>People Don't Want This Job Anymore — and They Have Good Reasons</h2>
-
-                <p>
-                  There is a tendency inside the insurance industry to explain declining agent interest
-                  as a generational attitude problem. Younger workers, the argument goes, lack the risk
-                  tolerance and work ethic that the career demands. This explanation is both
-                  self-flattering and wrong.
-                </p>
-                <p>
-                  The behavioral reality is more precise. Research on workforce preferences consistently
-                  shows that younger workers are not simply risk-averse — they are risk-informed.
-                  Commission-only compensation is not an opportunity they are too timid to pursue. It is
-                  a structure they have evaluated and rationally declined.
-                </p>
+                <p>Two things are almost always broken before anything else:</p>
 
                 <ul className="ia-force-list">
                   <li className="ia-force-item">
                     <span className="ia-force-num">01</span>
                     <div className="ia-force-body">
-                      <strong>Income unpredictability</strong>
-                      <span>Commission-based earnings offer no floor. An unpredictable income stream is a genuine financial liability, not just a psychological discomfort.</span>
+                      <strong>Recruiting has no system behind it</strong>
+                      <span>
+                        No clear pipeline. No predictable candidate flow. Hiring
+                        based on urgency, not quality — which means you're always
+                        one bad month away from starting over. You're not building a
+                        team. You're plugging holes.
+                      </span>
                     </div>
                   </li>
                   <li className="ia-force-item">
                     <span className="ia-force-num">02</span>
                     <div className="ia-force-body">
-                      <strong>Trust deficit in financial institutions</strong>
-                      <span>Post-2008, institutional trust in financial services has not fully recovered among younger cohorts.</span>
-                    </div>
-                  </li>
-                  <li className="ia-force-item">
-                    <span className="ia-force-num">03</span>
-                    <div className="ia-force-body">
-                      <strong>Competition from alternative work models</strong>
-                      <span>Gig platforms, remote tech roles, and creator economy careers offer income, flexibility, and identity in ways that traditional insurance sales does not.</span>
-                    </div>
-                  </li>
-                  <li className="ia-force-item">
-                    <span className="ia-force-num">04</span>
-                    <div className="ia-force-body">
-                      <strong>The perception gap is not closing</strong>
-                      <span>Insurance sales is perceived as high-pressure, rejection-heavy, and financially unstable. That perception is rooted in enough reality that it requires a different underlying reality to change.</span>
+                      <strong>Ramp time is bleeding you out slowly</strong>
+                      <span>
+                        Even when recruiting works, agents take too long to
+                        produce. No clear structure. No defined daily actions. No
+                        measurable milestones. So they drift — and either leave or
+                        underperform. And the cost of that drift compounds quietly
+                        until it becomes a crisis.
+                      </span>
                     </div>
                   </li>
                 </ul>
 
-                <p>
-                  The industry's standard response to this has been to argue harder. None of it is
-                  working, because the audience is not unconvinced. They are correctly informed.
-                </p>
-
-                <div className="ia-section-label">04 &nbsp; Current Conditions</div>
-                <h2>The Talent Shortage Is Already Here — and It Is Compounding</h2>
-
-                <p>
-                  These forces are not theoretical. They are producing visible, measurable results in
-                  the industry right now. Experienced agents are retiring at rates that new recruiting
-                  cannot offset. The average age of insurance agents has been climbing for two decades.
-                </p>
-                <p>
-                  What makes this moment particularly sharp is the compounding dynamic. Recruiting
-                  difficulty leads to understaffed agencies. Understaffed agencies deliver worse
-                  new-agent support. Worse support produces higher attrition. Higher attrition produces
-                  more recruiting pressure. And more recruiting pressure, when run through the same
-                  broken model, produces the same results with higher urgency and higher cost.
-                </p>
-
-                <div className="ia-dark-panel">
-                  <div className="ia-dark-panel-label">The Structural Mismatch</div>
-                  <div className="ia-dark-panel-text">
-                    The traditional model was built on the assumption that most recruits will fail — and
-                    priced accordingly. That assumption is now the primary reason most recruits{" "}
-                    <em>do</em> fail.
-                  </div>
+                <div className="ia-pull-quote">
+                  <p>
+                    "Most teams don't realize they have a system problem. They just
+                    feel stuck. That feeling has a source — and it's almost never
+                    the thing they're focused on fixing."
+                  </p>
                 </div>
 
-                <div className="ia-section-label">05 &nbsp; What Must Change</div>
-                <h2>What Actually Needs to Change — and Where the Opportunity Is</h2>
+                {/* ── 02 ── */}
+                <div className="ia-section-label">02 &nbsp; The Hidden Cost</div>
+                <h2>What Poor Systems Actually Cost You</h2>
 
                 <p>
-                  The firms that solve this are not going to solve it by recruiting harder. They are
-                  going to solve it by building a fundamentally different early-career experience — one
-                  that aligns with how modern workers actually evaluate career risk.
+                  When recruiting and training aren't structured, the damage isn't
+                  loud. It's quiet. It shows up as turnover that feels normal.
+                  Production that never quite reaches its potential. Leadership
+                  stretched so thin they're managing problems instead of building
+                  momentum.
                 </p>
+
+                <p>
+                  The math is simple and brutal. Every agent who washes out in the
+                  first 90 days represents recruiting cost, management time, and
+                  market exposure — gone. Every week an agent spends figuring out
+                  what to do instead of doing it is revenue that never existed.
+                  Every month leadership spends firefighting is a month the
+                  business didn't move forward.
+                </p>
+
+                <p>
+                  Most teams absorb this quietly and call it growing pains. It
+                  isn't. It's leakage. And leakage doesn't stop on its own.
+                </p>
+
+                <div className="ia-pull-quote">
+                  <p>
+                    "Untracked hustle burns more money than it earns. Motion
+                    without management isn't growth — it's expensive chaos with
+                    good intentions."
+                  </p>
+                </div>
+
+                {/* ── 03 ── */}
+                <div className="ia-section-label">03 &nbsp; The Shift</div>
+                <h2>From Guesswork to Intelligence</h2>
+
+                <p>
+                  The teams that scale don't rely on effort alone. They rely on
+                  intelligence. They've stopped asking "what should we try next?"
+                  and started asking "what does the data tell us?"
+                </p>
+
+                <p>
+                  They know where their best recruits come from. They know how long
+                  it takes agents to become productive. They know which activities
+                  actually drive revenue — and which ones just create the feeling
+                  of progress. They know where the bottlenecks are before the
+                  bottlenecks become emergencies.
+                </p>
+
+                <p>
+                  That's not a special talent. That's a system. And systems can be
+                  built.
+                </p>
+
+                {/* ── 04 ── */}
+                <div className="ia-section-label">04 &nbsp; What They Do Differently</div>
+                <h2>Four Things Scalable Teams Do That Others Don't</h2>
 
                 <div className="ia-opp-grid">
                   <div className="ia-opp-box ia-gold">
                     <div className="ia-opp-label">Shift 01</div>
-                    <div className="ia-opp-head">From Volume Recruiting to Qualified Recruiting</div>
+                    <div className="ia-opp-head">
+                      They Track the Recruiting Pipeline
+                    </div>
                     <div className="ia-opp-body">
-                      Stop optimizing for the number of candidates entering the funnel. Start optimizing
-                      for the quality of candidates who reach month six.
+                      They know where candidates come from, which sources convert,
+                      and where quality breaks down. Recruiting isn't a gut feeling
+                      — it's a funnel with measurable stages.
                     </div>
                   </div>
                   <div className="ia-opp-box ia-sky">
                     <div className="ia-opp-label">Shift 02</div>
-                    <div className="ia-opp-head">From High-Attrition Models to Retention Infrastructure</div>
+                    <div className="ia-opp-head">
+                      They Shorten Ramp Time Deliberately
+                    </div>
                     <div className="ia-opp-body">
-                      Build the systems — onboarding tracks, mentorship programs, early activity support
-                      — that change the first-year experience.
+                      Clear onboarding. Defined daily actions. Measurable
+                      milestones for week one, month one, month three.
                     </div>
                   </div>
                   <div className="ia-opp-box ia-green">
                     <div className="ia-opp-label">Shift 03</div>
-                    <div className="ia-opp-head">From Commission-Only to Structured Early Compensation</div>
+                    <div className="ia-opp-head">
+                      They Build Processes That Repeat
+                    </div>
                     <div className="ia-opp-body">
-                      Reduce early-career income risk — salary draws, lead subsidies, guaranteed minimums in year one.
+                      They document what works. They standardize it. They scale it.
+                      The business runs on repeatable infrastructure.
                     </div>
                   </div>
                   <div className="ia-opp-box ia-slate">
                     <div className="ia-opp-label">Shift 04</div>
-                    <div className="ia-opp-head">From Assumption of Failure to Expectation of Development</div>
+                    <div className="ia-opp-head">They Optimize Distribution</div>
                     <div className="ia-opp-body">
-                      Treat new agents as long-term investments rather than short-term lottery tickets.
+                      They don't rely on one channel. Events, content, outreach,
+                      partnerships — built in layers, so no single source going dry
+                      creates a crisis.
                     </div>
                   </div>
                 </div>
 
+                <hr className="ia-rule" />
+
+                {/* ── 05 ── */}
+                <div className="ia-section-label">05 &nbsp; Where Most Go Wrong</div>
+                <h2>The Cycle That Keeps Teams Stuck</h2>
+
+                <p>
+                  Here's the pattern that plays out in agencies across this
+                  industry, over and over:
+                </p>
+
+                <p>
+                  Growth stalls → chase more leads → leads don't convert → blame
+                  marketing → try a new strategy → growth stalls again.
+                </p>
+
+                <p>
+                  Every step in that cycle skips the actual problem. The foundation
+                  isn't solid. The container leaks. And pouring more water into a
+                  leaking container doesn't fill it — it just costs more.
+                </p>
+
+                <p>
+                  The real solution isn't more activity. It's better architecture.
+                  Build the system first. Then feed it. That's the order that
+                  works.
+                </p>
+
+                <div className="ia-dark-panel">
+                  <div className="ia-dark-panel-label">
+                    The Truth About Growth
+                  </div>
+                  <div className="ia-dark-panel-text">
+                    Growth is not random. It's <em>engineered</em>. The teams that
+                    win are not the busiest — they're the most structured. They
+                    treat money like a metric, not a miracle. And it stays loyal to
+                    them because of it.
+                  </div>
+                </div>
+
+                {/* ── 06 ── */}
+                <div className="ia-section-label">
+                  06 &nbsp; What This Means for You
+                </div>
+                <h2>If Your Team Is Feeling Stuck Right Now</h2>
+
+                <p>
+                  The issue is not effort. You're already working. The issue is
+                  that the work doesn't have a structure underneath it that makes
+                  it compound.
+                </p>
+
+                <p>
+                  Once the system is clear — once recruiting has a pipeline,
+                  onboarding has a track, and production has defined milestones —
+                  everything changes. Not because the effort increases. Because the
+                  effort finally lands somewhere.
+                </p>
+
                 <div className="ia-closing-strip">
                   <p>
-                    <strong>The opportunity is real.</strong> The insurance career, at its core, still
-                    offers something genuinely compelling: autonomy, meaningful work, and income that
-                    compounds over time with a book of business. That proposition has not disappeared.
+                    The teams that figure this out don't just grow faster. They
+                    grow differently — with less chaos, less turnover, and less
+                    dependence on a single great month to cover for all the bad
+                    ones.
                   </p>
                   <p>
-                    The firms that figure out how to bring that proposition back to the surface — with
-                    the infrastructure to actually deliver on it — will not just solve their recruiting
-                    problem. They will build the kind of distribution organizations that attract agents,
-                    retain them, and eventually become the ones everyone else is trying to recruit from.
+                    They understand their numbers. They build systems around them.
+                    And they scale with intention instead of hoping this month is
+                    better than last month.
                   </p>
-                  <p>That is the actual opportunity. Not a better pitch deck. A better system.</p>
+                  <p>
+                    <strong>That's the move.</strong> Not more hustle. Better
+                    infrastructure. Get organized, and growth stays loyal. Stay
+                    sloppy, and it moves on.
+                  </p>
+                  <p>— Money knows. And now, so do you.</p>
                 </div>
               </div>
 
               {/* SIDEBAR */}
               <aside className="ia-sidebar">
-                <div className="ia-sidebar-card">
-                  <div className="ia-sidebar-card-head">Industry Data Points</div>
-                  <div className="ia-sidebar-card-body">
-                    <div className="ia-stat-row">
-                      <span className="ia-stat-label">Avg age of insurance agent (US)</span>
-                      <span className="ia-stat-value">59yrs</span>
-                    </div>
-                    <div className="ia-stat-row">
-                      <span className="ia-stat-label">New agents still active at 12 months</span>
-                      <span className="ia-stat-value ia-alarm">~20%<span className="ia-trend ia-dn">↓</span></span>
-                    </div>
-                    <div className="ia-stat-row">
-                      <span className="ia-stat-label">Producing agents as % of licensed roster</span>
-                      <span className="ia-stat-value ia-alarm">~22%<span className="ia-trend ia-dn">↓</span></span>
-                    </div>
-                    <div className="ia-stat-row">
-                      <span className="ia-stat-label">Industry workforce growth (5yr)</span>
-                      <span className="ia-stat-value">Flat<span className="ia-trend ia-dn">↓</span></span>
-                    </div>
-                    <div className="ia-stat-row">
-                      <span className="ia-stat-label">PE-backed IMO consolidation activity</span>
-                      <span className="ia-stat-value">Active</span>
-                    </div>
-                    <div className="ia-stat-row">
-                      <span className="ia-stat-label">Direct-to-consumer channel growth</span>
-                      <span className="ia-stat-value">Rising</span>
-                    </div>
-                  </div>
-                </div>
-
                 <div className="ia-callout">
-                  <div className="ia-callout-label">Research Finding</div>
+                  <div className="ia-callout-label">The Consigliere Says</div>
                   <p>
-                    "Agent retention is strongly tied to perceived early-career support — mentorship,
-                    peer networks, supervisor engagement, and access to tools."
+                    "Stop chasing new before you clean what's old. Stop
+                    celebrating sales before you measure retention. Get organized,
+                    and I'll stay loyal. Stay sloppy, and I'll move on."
                   </p>
                 </div>
 
                 <div className="ia-sidebar-card">
-                  <div className="ia-sidebar-card-head">The 3 Forces Converging</div>
+                  <div className="ia-sidebar-card-head">
+                    Signs Your System Is Broken
+                  </div>
                   <div className="ia-sidebar-card-body">
-                    <div className="ia-sidebar-force">
-                      <strong>Industry Transformation</strong>
-                      <span>Carriers shifting toward digital, direct, and automated distribution.</span>
-                    </div>
-                    <div className="ia-sidebar-force">
-                      <strong>Market Consolidation</strong>
-                      <span>PE-backed rollups compressing early-agent economics and normalizing high attrition.</span>
-                    </div>
-                    <div className="ia-sidebar-force">
-                      <strong>Workforce Expectations</strong>
-                      <span>Modern workers rationally declining commission-only roles.</span>
-                    </div>
+                    <ul className="ia-checklist">
+                      <li>
+                        Growth feels random — strong months followed by stalls you
+                        can't explain
+                      </li>
+                      <li>
+                        New agents take longer than 60 days to write their first
+                        policy
+                      </li>
+                      <li>
+                        You can't name where your last 5 recruits came from
+                      </li>
+                      <li>
+                        Leadership is solving the same problems every month
+                      </li>
+                      <li>
+                        You're buying more leads but conversion isn't improving
+                      </li>
+                      <li>Turnover feels normal instead of fixable</li>
+                    </ul>
                   </div>
                 </div>
 
                 <div className="ia-sidebar-card">
-                  <div className="ia-sidebar-card-head">What Retained Agents Have in Common</div>
+                  <div className="ia-sidebar-card-head">What We Analyze</div>
                   <div className="ia-sidebar-card-body">
-                    <ul className="ia-checklist">
-                      <li>Structured onboarding in first 30 days</li>
-                      <li>Assigned mentor or manager with active involvement</li>
-                      <li>Access to centralized lead flow (not fully self-sourced)</li>
-                      <li>Clear, transparent compensation structure</li>
-                      <li>Activity coaching in first 90 days — not just product training</li>
-                    </ul>
+                    <div className="ia-sidebar-force">
+                      <strong>Recruiting pipeline</strong>
+                      <span>where quality breaks down</span>
+                    </div>
+                    <div className="ia-sidebar-force">
+                      <strong>Agent ramp time</strong>
+                      <span>where production lags</span>
+                    </div>
+                    <div className="ia-sidebar-force">
+                      <strong>Distribution strategy</strong>
+                      <span>where growth is leaking</span>
+                    </div>
+                    <div className="ia-sidebar-force">
+                      <strong>Onboarding structure</strong>
+                      <span>where agents get lost</span>
+                    </div>
+                    <div className="ia-sidebar-force">
+                      <strong>Performance data</strong>
+                      <span>what the numbers actually say</span>
+                    </div>
                   </div>
+                </div>
+
+                <div style={{ background: "hsl(var(--gold))", padding: "20px 16px", textAlign: "center" }}>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "15px", fontWeight: 700, color: "hsl(var(--navy))", marginBottom: "10px", lineHeight: 1.3 }}>
+                    Ready to find where your growth is breaking down?
+                  </p>
+                  <a
+                    href={SCOREAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "block",
+                      background: "hsl(var(--navy))",
+                      color: "hsl(var(--cream))",
+                      fontFamily: "'DM Mono', monospace",
+                      fontSize: "10px",
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase",
+                      textDecoration: "none",
+                      padding: "12px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Schedule a Strategy Call →
+                  </a>
                 </div>
               </aside>
             </div>
           </div>
 
           <div className="ia-report-footer">
-            <span className="ia-footer-brand">Insurance Distribution Architect</span>
-            <span>Thought Leadership · March 2026</span>
-            <span>insurancedistributionarchitect.com</span>
+            <span className="ia-footer-brand">Clientele Builders</span>
+            <span>Growth Intelligence · 2026</span>
+            <span>clientelebuilders.com</span>
           </div>
         </div>
 
