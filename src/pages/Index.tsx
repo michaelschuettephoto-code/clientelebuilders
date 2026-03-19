@@ -4,7 +4,8 @@ import { CTAButton } from "@/components/CTAButton";
 import { ScoreAppButton } from "@/components/ScoreAppButton";
 import { FeatureCard } from "@/components/FeatureCard";
 import { ProcessStep } from "@/components/ProcessStep";
-import { Users, Target, Rocket, Shield, CheckCircle, XCircle } from "lucide-react";
+import { Users, Target, Rocket, Shield, CheckCircle, XCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   // TODO: Replace with actual URLs
