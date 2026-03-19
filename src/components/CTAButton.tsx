@@ -13,7 +13,7 @@ export const CTAButton = ({
   size = "lg", 
   variant = "default",
   children, 
-  href = "#booking",
+  href = "https://start.clientelebuilders.com",
   className = ""
 }: CTAButtonProps) => {
   return (
