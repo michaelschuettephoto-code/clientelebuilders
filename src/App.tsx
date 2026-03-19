@@ -20,6 +20,7 @@ const AdminPosts = lazy(() => import("./pages/admin/Posts"));
 const AdminPostEditor = lazy(() => import("./pages/admin/PostEditor"));
 const AdminReadme = lazy(() => import("./pages/admin/Readme"));
 const RSS = lazy(() => import("./pages/RSS"));
+const InsightArticle = lazy(() => import("./pages/InsightArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
