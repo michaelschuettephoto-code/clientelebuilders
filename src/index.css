@@ -8,44 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Apple Newsroom Dark Theme */
-    --background: 0 0% 4.3%; /* #0B0B0B */
-    --foreground: 0 0% 93%; /* #EDEDED */
+    /* Insurance Distribution Architect — Editorial Newsroom Theme */
+    --background: 43 33% 97%;       /* #FAF8F4 cream */
+    --foreground: 210 35% 17%;      /* #1C2B3A dark text */
 
-    --card: 0 0% 11%; /* #1C1C1C */
-    --card-foreground: 0 0% 93%;
+    --card: 0 0% 100%;              /* #FFFFFF */
+    --card-foreground: 210 35% 17%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 93%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 35% 17%;
 
-    --primary: 199 89% 48%; /* Electric blue #0EA5E9 */
+    --primary: 207 65% 15%;         /* #0D1B2A navy */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 11%;
-    --secondary-foreground: 0 0% 93%;
+    --secondary: 210 20% 96%;       /* light fog */
+    --secondary-foreground: 210 35% 17%;
 
-    --muted: 0 0% 11%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 210 30% 95%;           /* #EAF1F8 fog */
+    --muted-foreground: 210 15% 42%; /* #5A6A7A */
 
-    --accent: 199 89% 48%;
+    --accent: 37 66% 47%;           /* #C8972A gold */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 60% 40%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 11%; /* #1C1C1C subtle dividers */
-    --input: 0 0% 11%;
-    --ring: 199 89% 48%;
+    --border: 210 30% 88%;          /* #D4E0EC rule */
+    --input: 210 30% 88%;
+    --ring: 207 65% 15%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     /* Transitions */
     --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.06);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.06);
+
+    /* Extended palette for direct use */
+    --navy: 207 65% 15%;
+    --ink: 213 35% 15%;
+    --slate: 210 32% 26%;
+    --steel: 215 37% 46%;
+    --sky: 207 38% 59%;
+    --fog: 210 50% 94%;
+    --gold: 37 66% 47%;
+    --gold-light: 42 77% 72%;
+    --cream: 43 33% 97%;
   }
 }
 
@@ -63,13 +74,13 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+    font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-    font-weight: 600;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
     letter-spacing: -0.02em;
+    color: hsl(var(--navy));
   }
 }
-
