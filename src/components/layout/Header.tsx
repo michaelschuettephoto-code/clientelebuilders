@@ -8,15 +8,12 @@ export const Header = () => {
     <header className="border-b border-border sticky top-0 z-50 bg-background/95 backdrop-blur">
       <div className="container max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center">
             <img 
               src={logo} 
               alt="Clientele Builder" 
               className="h-10 w-auto"
             />
-            <span className="hidden sm:inline font-serif text-lg font-bold text-primary tracking-tight">
-              Clientele Builder
-            </span>
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
