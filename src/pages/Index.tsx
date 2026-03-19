@@ -4,7 +4,8 @@ import { CTAButton } from "@/components/CTAButton";
 import { ScoreAppButton } from "@/components/ScoreAppButton";
 import { FeatureCard } from "@/components/FeatureCard";
 import { ProcessStep } from "@/components/ProcessStep";
-import { Users, Target, Rocket, Shield, CheckCircle, XCircle } from "lucide-react";
+import { Users, Target, Rocket, Shield, CheckCircle, XCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   // TODO: Replace with actual URLs
@@ -37,6 +38,29 @@ const Index = () => {
               </ScoreAppButton>
             </div>
           </div>
+        </section>
+
+        {/* Featured Article Section */}
+        <section className="container max-w-7xl mx-auto px-6 py-16 border-t border-border">
+          <Link 
+            to="/insights/recruiting-difficulty"
+            className="block bg-card border border-border rounded-lg p-8 md:p-12 hover:border-primary/40 transition-all group"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-xs font-mono tracking-widest text-primary uppercase">Featured Insight</span>
+              <span className="text-xs text-muted-foreground">· 7 min read</span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-3 group-hover:text-primary transition-colors">
+              Why Recruiting Insurance Agents Is So Difficult Right Now
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mb-6">
+              The industry keeps treating this as a pipeline problem. It isn't. It's a structural 
+              mismatch between how insurance distribution was built and how people are willing to work today.
+            </p>
+            <span className="inline-flex items-center gap-2 text-primary text-sm font-medium group-hover:gap-3 transition-all">
+              Read Article <ArrowRight className="h-4 w-4" />
+            </span>
+          </Link>
         </section>
 
         {/* The Problem Section */}

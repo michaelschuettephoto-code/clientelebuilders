@@ -20,6 +20,7 @@ const AdminPosts = lazy(() => import("./pages/admin/Posts"));
 const AdminPostEditor = lazy(() => import("./pages/admin/PostEditor"));
 const AdminReadme = lazy(() => import("./pages/admin/Readme"));
 const RSS = lazy(() => import("./pages/RSS"));
+const InsightArticle = lazy(() => import("./pages/InsightArticle"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
@@ -37,6 +38,7 @@ const App = () => (
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/insights/recruiting-difficulty" element={<InsightArticle />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         
         <Route path="/admin" element={<AdminDashboard />} />
