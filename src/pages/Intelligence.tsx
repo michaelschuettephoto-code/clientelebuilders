@@ -159,7 +159,8 @@ const Intelligence = () => {
                       src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
                       alt={featuredPost.title}
                       className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                      loading="lazy"
+                      fetchPriority="high"
+                      decoding="async"
                       onError={(e) => { (e.target as HTMLImageElement).src = "/placeholders/hero-placeholder.jpg"; }}
                     />
                   </div>
@@ -203,7 +204,8 @@ const Intelligence = () => {
                 src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
                 alt={featuredPost.title}
                 className="w-full h-56 object-cover mb-5"
-                loading="lazy"
+                fetchPriority="high"
+                decoding="async"
                 onError={(e) => { (e.target as HTMLImageElement).src = "/placeholders/hero-placeholder.jpg"; }}
               />
               <h2 className="font-serif text-2xl font-bold text-white leading-tight group-hover:text-gold-light transition-colors">
