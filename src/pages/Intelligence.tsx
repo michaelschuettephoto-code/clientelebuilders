@@ -40,9 +40,9 @@ const FRAMEWORKS = [
 ];
 
 const LOCAL_IMAGE_MAP: Record<string, string> = {
-  "/src/assets/sample-automation.jpg": sampleAutomationImage,
-  "/src/assets/sample-crm-systems.jpg": sampleCrmSystemsImage,
-  "/src/assets/sample-mindset.jpg": sampleMindsetImage,
+  "/src/assets/sample-automation.jpg": "/infographics/card-automation.jpg",
+  "/src/assets/sample-crm-systems.jpg": "/infographics/card-crm-systems.jpg",
+  "/src/assets/sample-mindset.jpg": "/infographics/card-mindset.jpg",
 };
 
 const resolveImageSrc = (src: string | null | undefined, fallback: string) => {
