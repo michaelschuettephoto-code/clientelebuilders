@@ -160,6 +160,7 @@ const Intelligence = () => {
                       alt={featuredPost.title}
                       className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
                       loading="lazy"
+                      onError={(e) => { (e.target as HTMLImageElement).src = "/placeholders/hero-placeholder.jpg"; }}
                     />
                   </div>
                   <div className="mt-5">
