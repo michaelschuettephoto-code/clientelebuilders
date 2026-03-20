@@ -95,11 +95,11 @@ const Story = () => {
       
       <article className="container max-w-4xl mx-auto px-6 py-12">
         <Link 
-          to="/blog" 
+          to="/intelligence" 
           className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Newsroom
+          Back to Intelligence
         </Link>
 
         <header className="mb-12">
