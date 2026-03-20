@@ -127,9 +127,7 @@ const Intelligence = () => {
           ref={heroReveal.ref}
           className="container max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28"
         >
-          <div className="grid md:grid-cols-[1fr_0.85fr] gap-16 lg:gap-24 items-start">
-            {/* Left — copy */}
-            <div className={revealClasses(heroReveal.visible)}>
+          <div className={`max-w-2xl ${revealClasses(heroReveal.visible)}`}>
               <div className="w-10 h-[2px] bg-accent mb-8" />
               <h1
                 className="font-serif text-[clamp(2.25rem,5vw,3.75rem)] font-black text-white leading-[1.05] tracking-tight mb-6"
@@ -159,8 +157,6 @@ const Intelligence = () => {
                   Infrastructure Report
                 </Link>
               </div>
-            </div>
-
           </div>
         </div>
       </section>
