@@ -503,6 +503,17 @@ const ArticleCard = ({ post, index }: { post: any; index: number }) => {
           {post.dek}
         </p>
       )}
+      {INFOGRAPHIC_PDF_MAP[post.slug] && (
+        <a
+          href={INFOGRAPHIC_PDF_MAP[post.slug]}
+          download
+          onClick={(e) => e.stopPropagation()}
+          className="inline-flex items-center gap-1.5 text-accent text-[10px] font-medium tracking-[0.06em] uppercase mt-3 hover:text-gold-light transition-colors"
+        >
+          <Download className="h-3 w-3" />
+          Download Infographic
+        </a>
+      )}
     </Link>
   );
 };
