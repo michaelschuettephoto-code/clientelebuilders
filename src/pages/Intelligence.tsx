@@ -247,7 +247,7 @@ const Intelligence = () => {
             </p>
           </div>
         ) : (
-          <div className={revealClasses(gridReveal.visible)}>
+          <div>
             <div className="grid md:grid-cols-3 gap-x-8 gap-y-14">
               {filteredPosts.slice(0, 6).map((post, i) => (
                 <ArticleCard key={post.id} post={post} index={i} />
