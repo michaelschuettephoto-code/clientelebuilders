@@ -159,7 +159,8 @@ const Intelligence = () => {
                       src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
                       alt={featuredPost.title}
                       className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                      loading="lazy"
+                      fetchPriority="high"
+                      decoding="async"
                       onError={(e) => { (e.target as HTMLImageElement).src = "/placeholders/hero-placeholder.jpg"; }}
                     />
                   </div>
