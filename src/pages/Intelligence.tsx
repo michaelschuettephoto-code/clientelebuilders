@@ -155,18 +155,12 @@ const Intelligence = () => {
               >
                 <Link to={`/story/${featuredPost.slug}`} className="group block">
                   <div className="border border-white/[0.08] overflow-hidden">
-                    {featuredPost.hero_image_url || featuredPost.cover_image_url ? (
-                      <img
-                        src={featuredPost.hero_image_url || featuredPost.cover_image_url || ""}
-                        alt={featuredPost.title}
-                        className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-52 bg-ink flex items-center justify-center">
-                        <BookOpen className="h-10 w-10 text-white/10" />
-                      </div>
-                    )}
+                    <img
+                      src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
+                      alt={featuredPost.title}
+                      className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="mt-5">
                     <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase">
