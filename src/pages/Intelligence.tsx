@@ -218,7 +218,10 @@ const Intelligence = () => {
             </span>
             <Link to={`/story/${featuredPost.slug}`} className="group block mt-4">
               <img
-                src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
+                src={resolveImageSrc(
+                  featuredPost.hero_image_url || featuredPost.cover_image_url,
+                  "/placeholders/hero-placeholder.jpg"
+                )}
                 alt={featuredPost.title}
                 className="w-full h-56 object-cover mb-5"
                 fetchPriority="high"
