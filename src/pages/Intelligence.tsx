@@ -484,20 +484,14 @@ const ArticleCard = ({ post, index }: { post: any; index: number }) => {
       className="group block"
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      {(post.hero_image_url || post.cover_image_url) ? (
-        <div className="overflow-hidden mb-5 border border-white/[0.06]">
-          <img
-            src={post.hero_image_url || post.cover_image_url}
-            alt={post.title}
-            className="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform duration-700"
-            loading="lazy"
-          />
-        </div>
-      ) : (
-        <div className="bg-ink border border-white/[0.06] h-44 mb-5 flex items-center justify-center">
-          <BookOpen className="h-8 w-8 text-white/10" />
-        </div>
-      )}
+      <div className="overflow-hidden mb-5 border border-white/[0.06]">
+        <img
+          src={post.hero_image_url || post.cover_image_url || "/placeholders/card-placeholder.jpg"}
+          alt={post.title}
+          className="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform duration-700"
+          loading="lazy"
+        />
+      </div>
       {firstTag && (
         <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
           {firstTag.name}
