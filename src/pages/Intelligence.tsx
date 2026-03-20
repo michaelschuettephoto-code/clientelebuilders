@@ -198,14 +198,12 @@ const Intelligence = () => {
               Featured Analysis
             </span>
             <Link to={`/story/${featuredPost.slug}`} className="group block mt-4">
-              {(featuredPost.hero_image_url || featuredPost.cover_image_url) && (
-                <img
-                  src={featuredPost.hero_image_url || featuredPost.cover_image_url || ""}
-                  alt={featuredPost.title}
-                  className="w-full h-56 object-cover mb-5"
-                  loading="lazy"
-                />
-              )}
+              <img
+                src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
+                alt={featuredPost.title}
+                className="w-full h-56 object-cover mb-5"
+                loading="lazy"
+              />
               <h2 className="font-serif text-2xl font-bold text-white leading-tight group-hover:text-gold-light transition-colors">
                 {featuredPost.title}
               </h2>
