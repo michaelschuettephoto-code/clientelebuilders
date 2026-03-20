@@ -6,9 +6,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Helmet } from "react-helmet";
 import { ArrowRight, Download, BookOpen, ClipboardCheck } from "lucide-react";
-import sampleAutomationImage from "@/assets/sample-automation.jpg";
-import sampleCrmSystemsImage from "@/assets/sample-crm-systems.jpg";
-import sampleMindsetImage from "@/assets/sample-mindset.jpg";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com";
 
@@ -40,9 +37,15 @@ const FRAMEWORKS = [
 ];
 
 const LOCAL_IMAGE_MAP: Record<string, string> = {
-  "/src/assets/sample-automation.jpg": sampleAutomationImage,
-  "/src/assets/sample-crm-systems.jpg": sampleCrmSystemsImage,
-  "/src/assets/sample-mindset.jpg": sampleMindsetImage,
+  "/src/assets/sample-automation.jpg": "/infographics/card-automation.jpg",
+  "/src/assets/sample-crm-systems.jpg": "/infographics/card-crm-systems.jpg",
+  "/src/assets/sample-mindset.jpg": "/infographics/card-mindset.jpg",
+};
+
+const INFOGRAPHIC_PDF_MAP: Record<string, string> = {
+  "modernizing-insurance-crm-systems-approach": "/downloads/infographic-crm-systems.pdf",
+  "automation-playbook-insurance-agencies": "/downloads/infographic-automation-playbook.pdf",
+  "million-dollar-mindset-agency-owners": "/downloads/infographic-mindset-models.pdf",
 };
 
 const resolveImageSrc = (src: string | null | undefined, fallback: string) => {
@@ -499,6 +502,17 @@ const ArticleCard = ({ post, index }: { post: any; index: number }) => {
         <p className="text-white/35 text-sm mt-2 leading-relaxed line-clamp-2">
           {post.dek}
         </p>
+      )}
+      {INFOGRAPHIC_PDF_MAP[post.slug] && (
+        <a
+          href={INFOGRAPHIC_PDF_MAP[post.slug]}
+          download
+          onClick={(e) => e.stopPropagation()}
+          className="inline-flex items-center gap-1.5 text-accent text-[10px] font-medium tracking-[0.06em] uppercase mt-3 hover:text-gold-light transition-colors"
+        >
+          <Download className="h-3 w-3" />
+          Download Infographic
+        </a>
       )}
     </Link>
   );
