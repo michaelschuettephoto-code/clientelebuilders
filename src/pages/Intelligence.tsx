@@ -90,8 +90,8 @@ const Intelligence = () => {
     },
   });
 
-  const featuredPost = posts.find((p) => p.is_featured) || posts[0];
-  const gridPosts = posts.filter((p) => p.id !== featuredPost?.id);
+  const latestThree = posts.slice(0, 3);
+  const gridPosts = posts.slice(3);
   const filteredPosts =
     activeCategory === "all"
       ? gridPosts
