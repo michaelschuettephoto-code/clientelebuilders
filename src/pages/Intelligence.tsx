@@ -204,6 +204,7 @@ const Intelligence = () => {
                 alt={featuredPost.title}
                 className="w-full h-56 object-cover mb-5"
                 loading="lazy"
+                onError={(e) => { (e.target as HTMLImageElement).src = "/placeholders/hero-placeholder.jpg"; }}
               />
               <h2 className="font-serif text-2xl font-bold text-white leading-tight group-hover:text-gold-light transition-colors">
                 {featuredPost.title}
