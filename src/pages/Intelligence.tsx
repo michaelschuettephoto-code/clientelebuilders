@@ -469,27 +469,15 @@ const CARD_PLACEHOLDERS = [
   "/placeholders/card-6.jpg",
 ];
 
-/* ── Article Card ── */
+/* ── Article Card (text-only for instant load) ── */
 const ArticleCard = ({ post, index }: { post: any; index: number }) => {
   const firstTag = post.post_tags?.[0]?.tags;
   return (
     <Link
       to={`/story/${post.slug}`}
-      className="group block"
+      className="group block border border-white/[0.06] p-6 hover:border-accent/20 transition-colors"
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      <div className="overflow-hidden mb-5 border border-white/[0.06]">
-        <img
-          src={resolveImageSrc(
-            post.hero_image_url || post.cover_image_url,
-            CARD_PLACEHOLDERS[index % CARD_PLACEHOLDERS.length]
-          )}
-          alt={post.title}
-          className="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform duration-700"
-          loading="lazy"
-          onError={(e) => { (e.target as HTMLImageElement).src = CARD_PLACEHOLDERS[index % CARD_PLACEHOLDERS.length]; }}
-        />
-      </div>
       {firstTag && (
         <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
           {firstTag.name}
