@@ -155,18 +155,12 @@ const Intelligence = () => {
               >
                 <Link to={`/story/${featuredPost.slug}`} className="group block">
                   <div className="border border-white/[0.08] overflow-hidden">
-                    {featuredPost.hero_image_url || featuredPost.cover_image_url ? (
-                      <img
-                        src={featuredPost.hero_image_url || featuredPost.cover_image_url || ""}
-                        alt={featuredPost.title}
-                        className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-52 bg-ink flex items-center justify-center">
-                        <BookOpen className="h-10 w-10 text-white/10" />
-                      </div>
-                    )}
+                    <img
+                      src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
+                      alt={featuredPost.title}
+                      className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="mt-5">
                     <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase">
@@ -204,14 +198,12 @@ const Intelligence = () => {
               Featured Analysis
             </span>
             <Link to={`/story/${featuredPost.slug}`} className="group block mt-4">
-              {(featuredPost.hero_image_url || featuredPost.cover_image_url) && (
-                <img
-                  src={featuredPost.hero_image_url || featuredPost.cover_image_url || ""}
-                  alt={featuredPost.title}
-                  className="w-full h-56 object-cover mb-5"
-                  loading="lazy"
-                />
-              )}
+              <img
+                src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
+                alt={featuredPost.title}
+                className="w-full h-56 object-cover mb-5"
+                loading="lazy"
+              />
               <h2 className="font-serif text-2xl font-bold text-white leading-tight group-hover:text-gold-light transition-colors">
                 {featuredPost.title}
               </h2>
@@ -492,20 +484,14 @@ const ArticleCard = ({ post, index }: { post: any; index: number }) => {
       className="group block"
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      {(post.hero_image_url || post.cover_image_url) ? (
-        <div className="overflow-hidden mb-5 border border-white/[0.06]">
-          <img
-            src={post.hero_image_url || post.cover_image_url}
-            alt={post.title}
-            className="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform duration-700"
-            loading="lazy"
-          />
-        </div>
-      ) : (
-        <div className="bg-ink border border-white/[0.06] h-44 mb-5 flex items-center justify-center">
-          <BookOpen className="h-8 w-8 text-white/10" />
-        </div>
-      )}
+      <div className="overflow-hidden mb-5 border border-white/[0.06]">
+        <img
+          src={post.hero_image_url || post.cover_image_url || "/placeholders/card-placeholder.jpg"}
+          alt={post.title}
+          className="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform duration-700"
+          loading="lazy"
+        />
+      </div>
       {firstTag && (
         <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
           {firstTag.name}
