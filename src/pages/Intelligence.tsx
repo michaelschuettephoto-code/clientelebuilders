@@ -493,7 +493,7 @@ const ArticleCard = ({ post, index }: { post: any; index: number }) => {
     >
       <div className="overflow-hidden mb-5 border border-white/[0.06]">
         <img
-          src={post.hero_image_url || post.cover_image_url || "/placeholders/card-placeholder.jpg"}
+          src={post.hero_image_url || post.cover_image_url || CARD_PLACEHOLDERS[index % CARD_PLACEHOLDERS.length]}
           alt={post.title}
           className="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform duration-700"
           loading="lazy"
