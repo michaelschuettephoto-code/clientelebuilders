@@ -94,7 +94,7 @@ const Intelligence = () => {
   });
 
   const latestThree = posts.slice(0, 3);
-  const gridPosts = posts.slice(3);
+  const gridPosts = posts;
   const filteredPosts =
     activeCategory === "all"
       ? gridPosts
