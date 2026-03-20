@@ -6,9 +6,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Helmet } from "react-helmet";
 import { ArrowRight, Download, BookOpen, ClipboardCheck } from "lucide-react";
-import sampleAutomationImage from "@/assets/sample-automation.jpg";
-import sampleCrmSystemsImage from "@/assets/sample-crm-systems.jpg";
-import sampleMindsetImage from "@/assets/sample-mindset.jpg";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com";
 
