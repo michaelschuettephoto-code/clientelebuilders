@@ -1,57 +1,67 @@
 import { Link } from "react-router-dom";
-import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import logo from "@/assets/logo.jpg";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const NAV_LINKS = [
+  { to: "/intelligence", label: "Intelligence" },
+  { to: "/scorecard", label: "Scorecard" },
+  { to: "/reports", label: "Reports" },
+  { to: "/frameworks", label: "Frameworks" },
+  { to: "/consulting", label: "Consulting" },
+  { to: "/about", label: "About" },
+];
 
 export const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <header className="border-b border-border sticky top-0 z-50 bg-background/95 backdrop-blur">
       <div className="container max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <span className="font-serif text-lg font-bold text-primary tracking-tight">
-              Clientele Builder
+              Clientele Builders
             </span>
           </Link>
-          
-          <nav className="hidden md:flex items-center gap-8">
-            <Link 
-              to="/blog" 
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              Newsroom
-            </Link>
-            <Link 
-              to="/about" 
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              About
-            </Link>
-            <Link 
-              to="/newsletter" 
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              Newsletter
-            </Link>
-            <Link 
-              to="/contact" 
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              Contact
-            </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-7">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          <div className="flex items-center gap-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Search..."
-                className="pl-10 w-48 bg-card border-border"
-              />
-            </div>
-          </div>
+          {/* Mobile toggle */}
+          <button
+            className="md:hidden p-2 text-muted-foreground hover:text-primary transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle navigation"
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
+
+        {/* Mobile nav */}
+        {mobileOpen && (
+          <nav className="md:hidden pt-4 pb-2 border-t border-border mt-4 flex flex-col gap-3">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        )}
       </div>
     </header>
   );
