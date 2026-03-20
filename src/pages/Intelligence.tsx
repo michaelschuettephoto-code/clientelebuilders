@@ -499,6 +499,7 @@ const ArticleCard = ({ post, index }: { post: any; index: number }) => {
           alt={post.title}
           className="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform duration-700"
           loading="lazy"
+          onError={(e) => { (e.target as HTMLImageElement).src = CARD_PLACEHOLDERS[index % CARD_PLACEHOLDERS.length]; }}
         />
       </div>
       {firstTag && (
