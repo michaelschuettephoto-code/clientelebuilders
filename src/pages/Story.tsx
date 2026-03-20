@@ -48,8 +48,8 @@ const Story = () => {
         <div className="container max-w-4xl mx-auto px-6 py-24 text-center">
           <h1 className="text-4xl font-semibold mb-4">Story Not Found</h1>
           <p className="text-muted-foreground mb-8">The story you're looking for doesn't exist.</p>
-          <Link to="/blog" className="text-primary hover:underline">
-            ← Back to Newsroom
+          <Link to="/intelligence" className="text-primary hover:underline">
+            ← Back to Intelligence
           </Link>
         </div>
         <Footer />
