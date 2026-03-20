@@ -90,8 +90,8 @@ const Intelligence = () => {
     },
   });
 
-  const featuredPost = posts.find((p) => p.is_featured) || posts[0];
-  const gridPosts = posts.filter((p) => p.id !== featuredPost?.id);
+  const latestThree = posts.slice(0, 3);
+  const gridPosts = posts.slice(3);
   const filteredPosts =
     activeCategory === "all"
       ? gridPosts
@@ -101,7 +101,7 @@ const Intelligence = () => {
 
   /* reveal refs */
   const heroReveal = useReveal();
-  const featuredMobileReveal = useReveal();
+  const latestReveal = useReveal();
   const gridReveal = useReveal();
   const ctaReveal = useReveal();
   const reportReveal = useReveal();
@@ -127,9 +127,7 @@ const Intelligence = () => {
           ref={heroReveal.ref}
           className="container max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28"
         >
-          <div className="grid md:grid-cols-[1fr_0.85fr] gap-16 lg:gap-24 items-start">
-            {/* Left — copy */}
-            <div className={revealClasses(heroReveal.visible)}>
+          <div className={`max-w-2xl ${revealClasses(heroReveal.visible)}`}>
               <div className="w-10 h-[2px] bg-accent mb-8" />
               <h1
                 className="font-serif text-[clamp(2.25rem,5vw,3.75rem)] font-black text-white leading-[1.05] tracking-tight mb-6"
@@ -159,87 +157,65 @@ const Intelligence = () => {
                   Infrastructure Report
                 </Link>
               </div>
-            </div>
-
-            {/* Right — featured preview */}
-            {featuredPost && (
-              <div
-                className={`hidden md:block ${revealClasses(heroReveal.visible)}`}
-                style={{ transitionDelay: "120ms" }}
-              >
-                <Link to={`/story/${featuredPost.slug}`} className="group block">
-                  <div className="border border-white/[0.08] overflow-hidden">
-                    <img
-                      src={resolveImageSrc(
-                        featuredPost.hero_image_url || featuredPost.cover_image_url,
-                        "/placeholders/hero-placeholder.jpg"
-                      )}
-                      alt={featuredPost.title}
-                      className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                      fetchPriority="high"
-                      decoding="async"
-                      onError={(e) => { (e.target as HTMLImageElement).src = "/placeholders/hero-placeholder.jpg"; }}
-                    />
-                  </div>
-                  <div className="mt-5">
-                    <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase">
-                      Featured Analysis
-                    </span>
-                    <h3 className="font-serif text-xl font-bold text-white mt-2 leading-snug group-hover:text-gold-light transition-colors">
-                      {featuredPost.title}
-                    </h3>
-                    {featuredPost.dek && (
-                      <p className="text-white/40 text-sm mt-2 leading-relaxed line-clamp-2">
-                        {featuredPost.dek}
-                      </p>
-                    )}
-                    <span className="inline-flex items-center gap-1.5 text-accent text-xs font-medium mt-4 group-hover:gap-2.5 transition-all">
-                      Read Analysis <ArrowRight className="h-3.5 w-3.5" />
-                    </span>
-                  </div>
-                </Link>
-              </div>
-            )}
           </div>
         </div>
       </section>
 
-      {/* ═══ 2. FEATURED (mobile) ═══ */}
-      {featuredPost && (
+      {/* ═══ 2. LATEST ARTICLES (horizontal scroll) ═══ */}
+      {latestThree.length > 0 && (
         <section
-          ref={featuredMobileReveal.ref}
-          className="md:hidden border-b border-white/[0.06]"
+          ref={latestReveal.ref}
+          className="border-b border-white/[0.06]"
         >
           <div
-            className={`container max-w-7xl mx-auto px-6 py-14 ${revealClasses(featuredMobileReveal.visible)}`}
+            className={`container max-w-7xl mx-auto px-6 py-16 ${revealClasses(latestReveal.visible)}`}
           >
-            <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase">
-              Featured Analysis
+            <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase block mb-8">
+              Latest Intelligence
             </span>
-            <Link to={`/story/${featuredPost.slug}`} className="group block mt-4">
-              <img
-                src={resolveImageSrc(
-                  featuredPost.hero_image_url || featuredPost.cover_image_url,
-                  "/placeholders/hero-placeholder.jpg"
-                )}
-                alt={featuredPost.title}
-                className="w-full h-56 object-cover mb-5"
-                fetchPriority="high"
-                decoding="async"
-                onError={(e) => { (e.target as HTMLImageElement).src = "/placeholders/hero-placeholder.jpg"; }}
-              />
-              <h2 className="font-serif text-2xl font-bold text-white leading-tight group-hover:text-gold-light transition-colors">
-                {featuredPost.title}
-              </h2>
-              {featuredPost.dek && (
-                <p className="text-white/40 mt-2 leading-relaxed">
-                  {featuredPost.dek}
-                </p>
-              )}
-              <span className="inline-flex items-center gap-1.5 text-accent text-sm font-medium mt-4">
-                Read Analysis <ArrowRight className="h-3.5 w-3.5" />
-              </span>
-            </Link>
+            <div className="flex gap-6 overflow-x-auto pb-4 -mx-2 px-2 scrollbar-hide snap-x snap-mandatory">
+              {latestThree.map((post, i) => (
+                <Link
+                  key={post.id}
+                  to={`/story/${post.slug}`}
+                  className="group flex-shrink-0 w-[85vw] sm:w-[340px] md:w-[calc(33.333%-1rem)] snap-start"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  <div className="overflow-hidden border border-white/[0.06]">
+                    <img
+                      src={resolveImageSrc(
+                        post.hero_image_url || post.cover_image_url,
+                        CARD_PLACEHOLDERS[i % CARD_PLACEHOLDERS.length]
+                      )}
+                      alt={post.title}
+                      className="w-full h-48 object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                      loading={i === 0 ? undefined : "lazy"}
+                      fetchPriority={i === 0 ? "high" : undefined}
+                      decoding="async"
+                      onError={(e) => { (e.target as HTMLImageElement).src = CARD_PLACEHOLDERS[i % CARD_PLACEHOLDERS.length]; }}
+                    />
+                  </div>
+                  <div className="mt-4">
+                    {post.post_tags?.[0]?.tags && (
+                      <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
+                        {post.post_tags[0].tags.name}
+                      </span>
+                    )}
+                    <h3 className="font-serif text-lg font-bold text-white mt-2 leading-snug group-hover:text-gold-light transition-colors">
+                      {post.title}
+                    </h3>
+                    {post.dek && (
+                      <p className="text-white/35 text-sm mt-2 leading-relaxed line-clamp-2">
+                        {post.dek}
+                      </p>
+                    )}
+                    <span className="inline-flex items-center gap-1.5 text-accent text-xs font-medium mt-3 group-hover:gap-2.5 transition-all">
+                      Read Analysis <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       )}
