@@ -101,7 +101,7 @@ const Intelligence = () => {
 
   /* reveal refs */
   const heroReveal = useReveal();
-  const featuredMobileReveal = useReveal();
+  const latestReveal = useReveal();
   const gridReveal = useReveal();
   const ctaReveal = useReveal();
   const reportReveal = useReveal();
