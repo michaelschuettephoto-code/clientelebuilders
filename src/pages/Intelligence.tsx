@@ -227,7 +227,7 @@ const Intelligence = () => {
       </div>
 
       {/* ═══ 4. ARTICLE GRID ═══ */}
-      <section ref={gridReveal.ref} className="container max-w-7xl mx-auto px-6 py-20">
+      <section className="container max-w-7xl mx-auto px-6 py-20">
         {isLoading ? (
           <div className="grid md:grid-cols-3 gap-x-8 gap-y-14">
             {[1, 2, 3, 4, 5, 6].map((i) => (
