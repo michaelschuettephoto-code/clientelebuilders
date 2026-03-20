@@ -167,11 +167,10 @@ const Intelligence = () => {
       {/* ═══ 2. LATEST INTELLIGENCE (text-only, instant load) ═══ */}
       {latestThree.length > 0 && (
         <section
-          ref={latestReveal.ref}
           className="border-b border-white/[0.06]"
         >
           <div
-            className={`container max-w-7xl mx-auto px-6 py-16 ${revealClasses(latestReveal.visible)}`}
+            className="container max-w-7xl mx-auto px-6 py-16"
           >
             <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase block mb-10">
               Latest Intelligence
