@@ -160,6 +160,7 @@ const Intelligence = () => {
                       alt={featuredPost.title}
                       className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
                       loading="lazy"
+                      onError={(e) => { (e.target as HTMLImageElement).src = "/placeholders/hero-placeholder.jpg"; }}
                     />
                   </div>
                   <div className="mt-5">
@@ -203,6 +204,7 @@ const Intelligence = () => {
                 alt={featuredPost.title}
                 className="w-full h-56 object-cover mb-5"
                 loading="lazy"
+                onError={(e) => { (e.target as HTMLImageElement).src = "/placeholders/hero-placeholder.jpg"; }}
               />
               <h2 className="font-serif text-2xl font-bold text-white leading-tight group-hover:text-gold-light transition-colors">
                 {featuredPost.title}
@@ -497,6 +499,7 @@ const ArticleCard = ({ post, index }: { post: any; index: number }) => {
           alt={post.title}
           className="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform duration-700"
           loading="lazy"
+          onError={(e) => { (e.target as HTMLImageElement).src = CARD_PLACEHOLDERS[index % CARD_PLACEHOLDERS.length]; }}
         />
       </div>
       {firstTag && (
