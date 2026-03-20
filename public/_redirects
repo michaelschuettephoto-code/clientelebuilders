@@ -1,3 +1,6 @@
+# Static files served directly
+/robots.txt   /robots.txt   200
+
 # Sitemap is served by edge function
 /sitemap.xml https://legwhbvpveisgklqcrbq.supabase.co/functions/v1/sitemap 200
 
