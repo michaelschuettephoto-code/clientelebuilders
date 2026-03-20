@@ -473,7 +473,14 @@ const InlineCTA = forwardRef<HTMLDivElement, { visible: boolean }>(
     </div>
   )
 );
-InlineCTA.displayName = "InlineCTA";
+const CARD_PLACEHOLDERS = [
+  "/placeholders/card-1.jpg",
+  "/placeholders/card-2.jpg",
+  "/placeholders/card-3.jpg",
+  "/placeholders/card-4.jpg",
+  "/placeholders/card-5.jpg",
+  "/placeholders/card-6.jpg",
+];
 
 /* ── Article Card ── */
 const ArticleCard = ({ post, index }: { post: any; index: number }) => {
