@@ -6,6 +6,9 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Helmet } from "react-helmet";
 import { ArrowRight, Download, BookOpen, ClipboardCheck } from "lucide-react";
+import sampleAutomationImage from "@/assets/sample-automation.jpg";
+import sampleCrmSystemsImage from "@/assets/sample-crm-systems.jpg";
+import sampleMindsetImage from "@/assets/sample-mindset.jpg";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com";
 
@@ -35,6 +38,17 @@ const FRAMEWORKS = [
       "Day 1 through Day 90 — structured milestones that turn recruits into producers.",
   },
 ];
+
+const LOCAL_IMAGE_MAP: Record<string, string> = {
+  "/src/assets/sample-automation.jpg": sampleAutomationImage,
+  "/src/assets/sample-crm-systems.jpg": sampleCrmSystemsImage,
+  "/src/assets/sample-mindset.jpg": sampleMindsetImage,
+};
+
+const resolveImageSrc = (src: string | null | undefined, fallback: string) => {
+  if (!src) return fallback;
+  return LOCAL_IMAGE_MAP[src] || src;
+};
 
 /* ── Scroll-reveal hook ── */
 function useReveal() {
@@ -156,7 +170,10 @@ const Intelligence = () => {
                 <Link to={`/story/${featuredPost.slug}`} className="group block">
                   <div className="border border-white/[0.08] overflow-hidden">
                     <img
-                      src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
+                      src={resolveImageSrc(
+                        featuredPost.hero_image_url || featuredPost.cover_image_url,
+                        "/placeholders/hero-placeholder.jpg"
+                      )}
                       alt={featuredPost.title}
                       className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
                       fetchPriority="high"
@@ -201,7 +218,10 @@ const Intelligence = () => {
             </span>
             <Link to={`/story/${featuredPost.slug}`} className="group block mt-4">
               <img
-                src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
+                src={resolveImageSrc(
+                  featuredPost.hero_image_url || featuredPost.cover_image_url,
+                  "/placeholders/hero-placeholder.jpg"
+                )}
                 alt={featuredPost.title}
                 className="w-full h-56 object-cover mb-5"
                 fetchPriority="high"
@@ -497,7 +517,10 @@ const ArticleCard = ({ post, index }: { post: any; index: number }) => {
     >
       <div className="overflow-hidden mb-5 border border-white/[0.06]">
         <img
-          src={post.hero_image_url || post.cover_image_url || CARD_PLACEHOLDERS[index % CARD_PLACEHOLDERS.length]}
+          src={resolveImageSrc(
+            post.hero_image_url || post.cover_image_url,
+            CARD_PLACEHOLDERS[index % CARD_PLACEHOLDERS.length]
+          )}
           alt={post.title}
           className="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform duration-700"
           loading="lazy"
