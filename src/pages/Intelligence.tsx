@@ -170,7 +170,10 @@ const Intelligence = () => {
                 <Link to={`/story/${featuredPost.slug}`} className="group block">
                   <div className="border border-white/[0.08] overflow-hidden">
                     <img
-                      src={featuredPost.hero_image_url || featuredPost.cover_image_url || "/placeholders/hero-placeholder.jpg"}
+                      src={resolveImageSrc(
+                        featuredPost.hero_image_url || featuredPost.cover_image_url,
+                        "/placeholders/hero-placeholder.jpg"
+                      )}
                       alt={featuredPost.title}
                       className="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform duration-700"
                       fetchPriority="high"
