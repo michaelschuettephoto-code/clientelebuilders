@@ -161,7 +161,7 @@ const Intelligence = () => {
         </div>
       </section>
 
-      {/* ═══ 2. LATEST ARTICLES (horizontal scroll) ═══ */}
+      {/* ═══ 2. LATEST INTELLIGENCE (text-only, instant load) ═══ */}
       {latestThree.length > 0 && (
         <section
           ref={latestReveal.ref}
@@ -170,49 +170,33 @@ const Intelligence = () => {
           <div
             className={`container max-w-7xl mx-auto px-6 py-16 ${revealClasses(latestReveal.visible)}`}
           >
-            <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase block mb-8">
+            <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase block mb-10">
               Latest Intelligence
             </span>
-            <div className="flex gap-6 overflow-x-auto pb-4 -mx-2 px-2 scrollbar-hide snap-x snap-mandatory">
+            <div className="divide-y divide-white/[0.06]">
               {latestThree.map((post, i) => (
                 <Link
                   key={post.id}
                   to={`/story/${post.slug}`}
-                  className="group flex-shrink-0 w-[85vw] sm:w-[340px] md:w-[calc(33.333%-1rem)] snap-start"
+                  className="group flex items-start justify-between gap-6 py-6 first:pt-0 last:pb-0"
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <div className="overflow-hidden border border-white/[0.06]">
-                    <img
-                      src={resolveImageSrc(
-                        post.hero_image_url || post.cover_image_url,
-                        CARD_PLACEHOLDERS[i % CARD_PLACEHOLDERS.length]
-                      )}
-                      alt={post.title}
-                      className="w-full h-48 object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                      loading={i === 0 ? undefined : "lazy"}
-                      fetchPriority={i === 0 ? "high" : undefined}
-                      decoding="async"
-                      onError={(e) => { (e.target as HTMLImageElement).src = CARD_PLACEHOLDERS[i % CARD_PLACEHOLDERS.length]; }}
-                    />
-                  </div>
-                  <div className="mt-4">
+                  <div className="flex-1 min-w-0">
                     {post.post_tags?.[0]?.tags && (
                       <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
                         {post.post_tags[0].tags.name}
                       </span>
                     )}
-                    <h3 className="font-serif text-lg font-bold text-white mt-2 leading-snug group-hover:text-gold-light transition-colors">
+                    <h3 className="font-serif text-lg md:text-xl font-bold text-white mt-1.5 leading-snug group-hover:text-gold-light transition-colors">
                       {post.title}
                     </h3>
                     {post.dek && (
-                      <p className="text-white/35 text-sm mt-2 leading-relaxed line-clamp-2">
+                      <p className="text-white/35 text-sm mt-2 leading-relaxed line-clamp-2 hidden sm:block">
                         {post.dek}
                       </p>
                     )}
-                    <span className="inline-flex items-center gap-1.5 text-accent text-xs font-medium mt-3 group-hover:gap-2.5 transition-all">
-                      Read Analysis <ArrowRight className="h-3.5 w-3.5" />
-                    </span>
                   </div>
+                  <ArrowRight className="h-4 w-4 text-white/20 group-hover:text-accent mt-3 flex-shrink-0 group-hover:translate-x-1 transition-all" />
                 </Link>
               ))}
             </div>
