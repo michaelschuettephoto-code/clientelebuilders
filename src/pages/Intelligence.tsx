@@ -42,6 +42,12 @@ const LOCAL_IMAGE_MAP: Record<string, string> = {
   "/src/assets/sample-mindset.jpg": "/infographics/card-mindset.jpg",
 };
 
+const INFOGRAPHIC_PDF_MAP: Record<string, string> = {
+  "modernizing-insurance-crm-systems-approach": "/downloads/infographic-crm-systems.pdf",
+  "automation-playbook-insurance-agencies": "/downloads/infographic-automation-playbook.pdf",
+  "million-dollar-mindset-agency-owners": "/downloads/infographic-mindset-models.pdf",
+};
+
 const resolveImageSrc = (src: string | null | undefined, fallback: string) => {
   if (!src) return fallback;
   return LOCAL_IMAGE_MAP[src] || src;
