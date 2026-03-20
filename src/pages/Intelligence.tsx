@@ -39,6 +39,17 @@ const FRAMEWORKS = [
   },
 ];
 
+const LOCAL_IMAGE_MAP: Record<string, string> = {
+  "/src/assets/sample-automation.jpg": sampleAutomationImage,
+  "/src/assets/sample-crm-systems.jpg": sampleCrmSystemsImage,
+  "/src/assets/sample-mindset.jpg": sampleMindsetImage,
+};
+
+const resolveImageSrc = (src: string | null | undefined, fallback: string) => {
+  if (!src) return fallback;
+  return LOCAL_IMAGE_MAP[src] || src;
+};
+
 /* ── Scroll-reveal hook ── */
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
