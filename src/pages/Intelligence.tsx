@@ -94,7 +94,7 @@ const Intelligence = () => {
   });
 
   const latestThree = posts.slice(0, 3);
-  const gridPosts = posts.slice(3);
+  const gridPosts = posts;
   const filteredPosts =
     activeCategory === "all"
       ? gridPosts
@@ -127,10 +127,9 @@ const Intelligence = () => {
         {/* Subtle radial glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(var(--gold)/0.06),transparent)]" />
         <div
-          ref={heroReveal.ref}
           className="container max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28"
         >
-          <div className={`max-w-2xl ${revealClasses(heroReveal.visible)}`}>
+          <div className="max-w-2xl">
               <div className="w-10 h-[2px] bg-accent mb-8" />
               <h1
                 className="font-serif text-[clamp(2.25rem,5vw,3.75rem)] font-black text-white leading-[1.05] tracking-tight mb-6"
@@ -167,11 +166,10 @@ const Intelligence = () => {
       {/* ═══ 2. LATEST INTELLIGENCE (text-only, instant load) ═══ */}
       {latestThree.length > 0 && (
         <section
-          ref={latestReveal.ref}
           className="border-b border-white/[0.06]"
         >
           <div
-            className={`container max-w-7xl mx-auto px-6 py-16 ${revealClasses(latestReveal.visible)}`}
+            className="container max-w-7xl mx-auto px-6 py-16"
           >
             <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase block mb-10">
               Latest Intelligence
@@ -229,7 +227,7 @@ const Intelligence = () => {
       </div>
 
       {/* ═══ 4. ARTICLE GRID ═══ */}
-      <section ref={gridReveal.ref} className="container max-w-7xl mx-auto px-6 py-20">
+      <section className="container max-w-7xl mx-auto px-6 py-20">
         {isLoading ? (
           <div className="grid md:grid-cols-3 gap-x-8 gap-y-14">
             {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -249,7 +247,7 @@ const Intelligence = () => {
             </p>
           </div>
         ) : (
-          <div className={revealClasses(gridReveal.visible)}>
+          <div>
             <div className="grid md:grid-cols-3 gap-x-8 gap-y-14">
               {filteredPosts.slice(0, 6).map((post, i) => (
                 <ArticleCard key={post.id} post={post} index={i} />
