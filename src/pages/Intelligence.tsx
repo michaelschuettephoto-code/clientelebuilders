@@ -78,7 +78,7 @@ const Intelligence = () => {
 
       {/* ═══ 1. HERO ═══ */}
       <section className="relative overflow-hidden border-b border-white/[0.06]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(var(--gold)/0.06),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(var(--gold)/0.06),transparent)] pointer-events-none" />
         <div className="container max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left — Text */}
