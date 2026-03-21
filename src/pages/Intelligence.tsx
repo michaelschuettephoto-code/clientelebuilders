@@ -78,9 +78,9 @@ const Intelligence = () => {
 
       {/* ═══ 1. HERO ═══ */}
       <section className="relative overflow-hidden border-b border-white/[0.06]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(var(--gold)/0.06),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(var(--gold)/0.06),transparent)] pointer-events-none" />
         <div className="container max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
             {/* Left — Text */}
             <div>
               <div className="w-10 h-[2px] bg-accent mb-8" />
@@ -117,7 +117,7 @@ const Intelligence = () => {
             {/* Right — Report Preview Mockup (CSS-only) */}
             <div className="hidden md:flex items-center justify-center">
               <div className="relative">
-                <div className="absolute -inset-6 bg-accent/[0.03] blur-3xl rounded-full" />
+                <div className="absolute -inset-6 bg-accent/[0.03] blur-3xl rounded-full pointer-events-none" />
                 <div className="relative w-56 h-80 bg-ink border border-white/[0.08] flex flex-col items-center justify-center p-8 shadow-2xl">
                   <div className="w-8 h-[1px] bg-accent mb-6" />
                   <span className="font-mono text-[7px] tracking-[0.3em] text-accent uppercase mb-5 text-center">
