@@ -8,8 +8,8 @@ import { Users, Target, Rocket, Shield, CheckCircle, XCircle } from "lucide-reac
 import "./insight-article.css";
 
 const Index = () => {
-  const AUDIT_BOOKING_URL = "https://start.clientelebuilders.com";
-  const SCOREAPP_URL = "https://start.clientelebuilders.com";
+  const AUDIT_BOOKING_URL = "https://start.clientelebuilders.com/growth-diagnostic";
+  const SCOREAPP_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
   return (
     <div className="min-h-screen">
