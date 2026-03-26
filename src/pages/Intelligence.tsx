@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet";
 import { ArrowRight, Download, ClipboardCheck } from "lucide-react";
 import { forwardRef } from "react";
 
-const SCORECARD_URL = "https://start.clientelebuilders.com";
+const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
 const CATEGORIES = [
   { id: "all", label: "All Intelligence" },
