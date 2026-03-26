@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ClipboardCheck } from "lucide-react";
 
-const SCORECARD_URL = "https://start.clientelebuilders.com";
+const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
 const Consulting = () => {
   return (

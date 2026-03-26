@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Helmet } from "react-helmet";
 import { Download } from "lucide-react";
 
-const SCORECARD_URL = "https://start.clientelebuilders.com";
+const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
 const Reports = () => {
   return (

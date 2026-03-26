@@ -13,7 +13,7 @@ export const CTAButton = ({
   size = "lg", 
   variant = "default",
   children, 
-  href = "https://start.clientelebuilders.com",
+  href = "https://start.clientelebuilders.com/growth-diagnostic",
   className = ""
 }: CTAButtonProps) => {
   return (
