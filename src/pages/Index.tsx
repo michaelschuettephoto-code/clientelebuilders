@@ -4,45 +4,64 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  Users,
-  TrendingDown,
-  AlertTriangle,
-  BarChart3,
+  ChevronRight,
   UserPlus,
   BookOpen,
-  Megaphone,
-  Target,
+  Zap,
   Shield,
-  DollarSign,
   Crown,
   Cpu,
-  ChevronRight,
+  BarChart3,
+  Globe,
+  TrendingUp,
+  Settings,
+  Search,
+  Layers,
+  Rocket,
+  MessageSquare,
+  CheckCircle2,
 } from "lucide-react";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
 const IDOS_SYSTEMS = [
-  { icon: UserPlus, label: "Recruiting", desc: "Predictable agent sourcing with pipeline-stage tracking" },
-  { icon: BookOpen, label: "Onboarding", desc: "Structured Day 1–90 ramp that reduces early attrition" },
-  { icon: Megaphone, label: "Marketing", desc: "Brand and content systems that attract qualified producers" },
-  { icon: Target, label: "Sales", desc: "Conversion frameworks from lead to placed business" },
-  { icon: Shield, label: "Persistency", desc: "Retention systems that protect revenue and lower lapse rates" },
-  { icon: DollarSign, label: "Compensation", desc: "Structures that align incentives with production goals" },
-  { icon: Crown, label: "Leadership", desc: "Accountability frameworks and performance management" },
-  { icon: Cpu, label: "Tech & Data", desc: "CRM, automation, and analytics infrastructure" },
+  { icon: UserPlus, label: "Recruiting Pipeline", desc: "Predictable agent sourcing with pipeline-stage tracking" },
+  { icon: BookOpen, label: "Onboarding System", desc: "Structured ramp that reduces early attrition" },
+  { icon: Zap, label: "Activation Engine", desc: "Systems that turn contracted agents into producing agents" },
+  { icon: Shield, label: "Retention & Persistency", desc: "Retention systems that protect revenue and lower lapse rates" },
+  { icon: Crown, label: "Leadership Development", desc: "Accountability frameworks and performance duplication" },
+  { icon: Cpu, label: "Data & Infrastructure", desc: "CRM, automation, and analytics infrastructure" },
 ];
 
-const BENCHMARKS = [
-  { value: "85%+", label: "Persistency Rate", sub: "Top-decile IMOs" },
-  { value: "20%+", label: "Producer Activation", sub: "First-year agents producing" },
-  { value: "3–5×", label: "Agent Productivity", sub: "vs. industry average" },
-  { value: "<18%", label: "First-Year Turnover", sub: "Top-performing organizations" },
+const INTELLIGENCE_PILLARS = [
+  { icon: BarChart3, label: "Industry Intelligence", desc: "IBISWorld, Statista, and proprietary market reports" },
+  { icon: Globe, label: "Consumer Behavior", desc: "Mintel, survey data, and behavioral trend analysis" },
+  { icon: TrendingUp, label: "Market Activity", desc: "News, deal flow, and distribution shift monitoring" },
+  { icon: Settings, label: "Operational Strategy", desc: "Consulting frameworks, benchmarks, and best practices" },
 ];
 
-const PROOF_POINTS = [
-  { stat: "Distribution Systems", desc: "Engineered for IMOs and agency builders" },
-  { stat: "Recruiting Infrastructure", desc: "Built for predictable agent pipeline flow" },
-  { stat: "Intelligence & Research", desc: "Data-driven insights for distribution leaders" },
+const ENGAGEMENT_MODELS = [
+  { icon: Search, label: "Diagnostic & Strategy", desc: "Identify constraints and map out a growth plan" },
+  { icon: Layers, label: "System Buildout", desc: "Design and implement your distribution infrastructure" },
+  { icon: Rocket, label: "Growth Infrastructure", desc: "End-to-end system optimization across recruiting, onboarding, and production" },
+  { icon: MessageSquare, label: "Advisory", desc: "Ongoing strategic support and performance optimization" },
+];
+
+const SCORECARD_AREAS = [
+  "Recruiting Pipeline",
+  "Onboarding Process",
+  "Agent Activation",
+  "Retention & Persistency",
+  "Leadership & Duplication",
+  "Infrastructure & Data",
+];
+
+const INSIGHT_TOPICS = [
+  "Recruiting trends in insurance",
+  "Agent activation benchmarks",
+  "Persistency and retention patterns",
+  "Market shifts impacting distribution",
+  "Competitive positioning strategies",
 ];
 
 const Index = () => {
@@ -57,7 +76,7 @@ const Index = () => {
       </Helmet>
       <Header />
 
-      {/* ── HERO ── */}
+      {/* ── 1. HERO ── */}
       <section className="bg-primary relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--navy)/0.6),transparent_70%)] pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-accent via-[hsl(var(--gold-light))] to-accent" />
@@ -67,11 +86,13 @@ const Index = () => {
             Insurance Distribution Architects
           </span>
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] tracking-tight max-w-4xl mb-7">
-            We Build, Optimize, and Scale Insurance Distribution Systems
+            Most insurance organizations don't have a recruiting problem…{" "}
+            <span className="text-accent">they have a broken distribution system.</span>
           </h1>
           <p className="text-primary-foreground/55 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-12">
-            Data-driven consulting for IMOs, agencies, and distribution leaders
-            who refuse to operate on guesswork.
+            Clientele Builders is the intelligence and growth infrastructure behind modern insurance distribution.
+            We diagnose, benchmark, and optimize your recruiting, onboarding, activation, and retention systems
+            using real market data — not guesswork.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -81,51 +102,60 @@ const Index = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
             >
-              Take the Distribution Assessment
+              Take the IMO Growth Scorecard
               <ArrowRight className="h-4 w-4" />
             </a>
             <Link
               to="/intelligence"
               className="inline-flex items-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
             >
-              View Latest Intelligence
+              View Latest Intelligence Report
               <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── THE PROBLEM ── */}
+      {/* ── 2. THE PROBLEM ── */}
       <section className="bg-[hsl(var(--ink))] text-primary-foreground">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
-            The Distribution Problem
+            The Real Issue
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-12 text-primary-foreground">
-            Most insurance organizations are bleeding agents, production, and profit — and can't see why.
+          <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-8 text-primary-foreground">
+            Why Most IMOs Hit a Ceiling
           </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Users, title: "Agent Turnover", body: "70%+ first-year attrition drains recruiting investment and destabilizes production." },
-              { icon: TrendingDown, title: "Low Production", body: "The majority of contracted agents never reach sustainable production levels." },
-              { icon: AlertTriangle, title: "Broken Systems", body: "Fragmented onboarding, no pipeline tracking, and ad-hoc training programs." },
-              { icon: BarChart3, title: "No Data Visibility", body: "Decisions made on gut feel instead of KPI benchmarks and system diagnostics." },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="border border-primary-foreground/10 p-6 hover:border-accent/30 transition-colors"
-              >
-                <item.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="font-serif text-lg font-bold mb-2 text-primary-foreground">{item.title}</h3>
-                <p className="text-primary-foreground/50 text-sm leading-relaxed">{item.body}</p>
-              </div>
-            ))}
+          <div className="max-w-3xl mb-10">
+            <p className="text-primary-foreground/60 text-lg leading-relaxed mb-6">
+              Growth doesn't stall because of effort.
+              It stalls because of hidden constraints inside your system.
+            </p>
+            <ul className="space-y-3 mb-8">
+              {[
+                "Agents are recruited… but never activate",
+                "New hires stall in onboarding",
+                "Production is inconsistent and unpredictable",
+                "Leadership doesn't duplicate",
+                "There's no visibility into what's actually working",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-primary-foreground/50">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                  <span className="text-base leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-primary-foreground/40 text-sm leading-relaxed">
+              Most organizations try to fix this with more leads or more recruiting.
+            </p>
+            <p className="text-accent font-serif text-xl font-bold mt-4">
+              But the real issue is structural.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── YOUR EDGE — IDOS 8-System Model ── */}
+      {/* ── 3. YOUR EDGE ── */}
       <section className="bg-background">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <div className="max-w-2xl mb-14">
@@ -133,16 +163,112 @@ const Index = () => {
               Our Edge
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5">
-              Most firms sell leads.{" "}
-              <span className="text-accent">We engineer distribution systems.</span>
+              Built on Intelligence,{" "}
+              <span className="text-accent">Not Guesswork</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              The IDOS framework maps 8 interdependent systems that determine whether an insurance organization
-              scales — or stalls. We diagnose, design, and build each one.
+              Clientele Builders operates at the intersection of industry intelligence, consumer behavior,
+              market activity, and operational strategy. We don't just build marketing.
+              We build distribution systems backed by data.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {INTELLIGENCE_PILLARS.map((pillar) => (
+              <div
+                key={pillar.label}
+                className="group border border-border p-6 hover:border-accent/40 transition-colors relative"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <pillar.icon className="h-5 w-5 text-accent mb-3" />
+                <h3 className="font-serif text-base font-bold mb-1">{pillar.label}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed">{pillar.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. THE SCORECARD ── */}
+      <section className="bg-primary text-primary-foreground relative">
+        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+          <div className="grid md:grid-cols-2 gap-14 items-start">
+            <div>
+              <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
+                Your Starting Point
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5 text-primary-foreground">
+                IMO Growth Scorecard
+              </h2>
+              <p className="text-primary-foreground/55 leading-relaxed mb-8">
+                In 3–5 minutes, identify exactly what's slowing your growth.
+                This diagnostic evaluates your distribution system across six core areas.
+              </p>
+              <a
+                href={SCORECARD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
+              >
+                Take the Scorecard Now
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div>
+              <div className="mb-8">
+                <h3 className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase mb-4">
+                  Areas Evaluated
+                </h3>
+                <ul className="space-y-2.5">
+                  {SCORECARD_AREAS.map((area) => (
+                    <li key={area} className="flex items-center gap-3 text-primary-foreground/60 text-sm">
+                      <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />
+                      {area}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase mb-4">
+                  You'll Receive
+                </h3>
+                <ul className="space-y-2.5">
+                  {[
+                    "A 0–100 growth score",
+                    "Category breakdowns",
+                    "Your two biggest bottlenecks",
+                    "Clear next steps",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-primary-foreground/60 text-sm">
+                      <ArrowRight className="h-3.5 w-3.5 text-accent shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. THE DISTRIBUTION SYSTEM ── */}
+      <section className="bg-background">
+        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+          <div className="max-w-2xl mb-14">
+            <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
+              The Framework
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5">
+              The Distribution System We Build
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              We don't sell services. We design and optimize the system that drives production.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {IDOS_SYSTEMS.map((sys, i) => (
               <div
                 key={sys.label}
@@ -158,92 +284,153 @@ const Index = () => {
               </div>
             ))}
           </div>
+
+          <p className="text-accent font-serif text-xl font-bold">
+            When these systems align, growth becomes predictable.
+          </p>
         </div>
       </section>
 
-      {/* ── INTELLIGENCE (CoStar-style) ── */}
-      <section className="bg-primary text-primary-foreground relative">
+      {/* ── 6. INTELLIGENCE / REPORTS ── */}
+      <section className="bg-[hsl(var(--ink))] text-primary-foreground">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
             Distribution Intelligence
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-5">
-            The benchmarks that separate top-decile organizations from everyone else.
+          <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-5 text-primary-foreground">
+            Insurance Distribution Intelligence
           </h2>
-          <p className="text-primary-foreground/50 max-w-2xl mb-14 leading-relaxed">
-            Our research tracks KPIs across recruiting, production, persistency, and operations.
-            These are the numbers that matter.
+          <p className="text-primary-foreground/50 max-w-2xl mb-10 leading-relaxed">
+            We publish ongoing insights on the forces shaping insurance distribution.
+            This is where strategy meets data.
           </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-            {BENCHMARKS.map((b) => (
-              <div key={b.label} className="border border-primary-foreground/10 p-6">
-                <span className="font-serif text-4xl md:text-5xl font-black text-accent block mb-2">
-                  {b.value}
-                </span>
-                <span className="font-mono text-[9px] tracking-[0.15em] text-primary-foreground/70 uppercase block mb-1">
-                  {b.label}
-                </span>
-                <span className="text-primary-foreground/40 text-xs">{b.sub}</span>
-              </div>
+          <ul className="space-y-3 max-w-2xl mb-14">
+            {INSIGHT_TOPICS.map((topic) => (
+              <li key={topic} className="flex items-start gap-3 text-primary-foreground/60">
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                <span className="text-base leading-relaxed">{topic}</span>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="/reports"
+              to="/intelligence"
               className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-7 py-4 font-medium hover:opacity-90 transition-opacity"
             >
-              View Reports
+              View Intelligence Reports
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/newsletter"
               className="inline-flex items-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-7 py-4 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
             >
-              Join Research Panel
+              Join the Newsletter
               <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── SOCIAL PROOF ── */}
-      <section className="bg-[hsl(var(--fog))] border-y border-border">
-        <div className="container max-w-5xl mx-auto px-6 py-16 md:py-20">
-          <div className="grid md:grid-cols-3 gap-8">
-            {PROOF_POINTS.map((p) => (
-              <div key={p.stat} className="text-center">
-                <h3 className="font-serif text-xl font-bold mb-2">{p.stat}</h3>
-                <p className="text-muted-foreground text-sm">{p.desc}</p>
+      {/* ── 7. ENGAGEMENT MODELS ── */}
+      <section className="bg-background">
+        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+          <div className="max-w-2xl mb-14">
+            <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
+              How We Work
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5">
+              Engagement Models
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              We partner with organizations at different stages of growth.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {ENGAGEMENT_MODELS.map((model) => (
+              <div
+                key={model.label}
+                className="group border border-border p-6 hover:border-accent/40 transition-colors relative"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <model.icon className="h-5 w-5 text-accent mb-3" />
+                <h3 className="font-serif text-base font-bold mb-1">{model.label}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed">{model.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FINAL CTA ── */}
+      {/* ── 8. POSITIONING ── */}
+      <section className="bg-[hsl(var(--fog))] border-y border-border">
+        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
+              What We Are
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
+              Clientele Builders is not a marketing agency.
+            </h2>
+            <p className="font-serif text-2xl md:text-3xl font-bold text-accent mb-10">
+              We are Insurance Distribution Architects.
+            </p>
+
+            <div className="grid sm:grid-cols-3 gap-8 mb-10">
+              {[
+                "Drive agent production",
+                "Increase retention",
+                "Create scalable growth",
+              ].map((outcome) => (
+                <div key={outcome} className="text-center">
+                  <CheckCircle2 className="h-6 w-6 text-accent mx-auto mb-3" />
+                  <p className="font-serif text-base font-bold">{outcome}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-xl mx-auto">
+              Our model combines <span className="text-foreground font-medium">intelligence</span>,{" "}
+              <span className="text-foreground font-medium">infrastructure</span>, and{" "}
+              <span className="text-foreground font-medium">execution strategy</span>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. FINAL CTA ── */}
       <section className="bg-primary">
         <div className="container max-w-3xl mx-auto px-6 py-20 md:py-28 text-center">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
             Start Here
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-black text-primary-foreground leading-tight mb-5">
-            Take the Distribution Scorecard
+            Find Out What's Slowing Your Growth
           </h2>
           <p className="text-primary-foreground/50 max-w-lg mx-auto mb-10 leading-relaxed">
-            Diagnose where your systems are breaking. Get a custom breakdown
-            of your recruiting, onboarding, and production infrastructure in 3 minutes.
+            Most organizations are closer than they think.
+            They're just missing visibility.
           </p>
-          <a
-            href={SCORECARD_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-10 py-5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
-          >
-            Get Your System Breakdown
-            <ArrowRight className="h-4 w-4" />
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={SCORECARD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-10 py-5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
+            >
+              Take the IMO Growth Scorecard
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-10 py-5 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
+            >
+              Book a Strategy Call
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
