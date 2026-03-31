@@ -32,7 +32,7 @@ const App = () => (
     <Sonner />
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route path="/" element={<Intelligence />} />
+        <Route path="/" element={<Index />} />
         <Route path="/intelligence" element={<Intelligence />} />
         <Route path="/blog" element={<Intelligence />} />
         <Route path="/story/:slug" element={<Story />} />
