@@ -20,17 +20,25 @@ import {
   Rocket,
   MessageSquare,
   CheckCircle2,
+  Megaphone,
+  DollarSign,
+  Target,
+  Building2,
+  Wrench,
+  Users,
 } from "lucide-react";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
 const IDOS_SYSTEMS = [
-  { icon: UserPlus, label: "Recruiting Pipeline", desc: "Predictable agent sourcing with pipeline-stage tracking" },
-  { icon: BookOpen, label: "Onboarding System", desc: "Structured ramp that reduces early attrition" },
-  { icon: Zap, label: "Activation Engine", desc: "Systems that turn contracted agents into producing agents" },
-  { icon: Shield, label: "Retention & Persistency", desc: "Retention systems that protect revenue and lower lapse rates" },
-  { icon: Crown, label: "Leadership Development", desc: "Accountability frameworks and performance duplication" },
-  { icon: Cpu, label: "Data & Infrastructure", desc: "CRM, automation, and analytics infrastructure" },
+  { icon: UserPlus, label: "Recruiting", desc: "Predictable agent sourcing with pipeline-stage tracking" },
+  { icon: BookOpen, label: "Onboarding", desc: "Structured ramp that reduces early attrition" },
+  { icon: Megaphone, label: "Marketing", desc: "Agent and consumer-facing campaigns that drive awareness and flow" },
+  { icon: Target, label: "Sales", desc: "Sales enablement systems that convert opportunities into production" },
+  { icon: Shield, label: "Persistency", desc: "Retention systems that protect revenue and lower lapse rates" },
+  { icon: DollarSign, label: "Compensation", desc: "Comp structures that align incentives with organizational growth" },
+  { icon: Crown, label: "Leadership", desc: "Accountability frameworks and performance duplication" },
+  { icon: Cpu, label: "Tech / Data", desc: "CRM, automation, and analytics infrastructure" },
 ];
 
 const INTELLIGENCE_PILLARS = [
@@ -268,7 +276,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
             {IDOS_SYSTEMS.map((sys, i) => (
               <div
                 key={sys.label}
@@ -291,7 +299,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 6. INTELLIGENCE / REPORTS ── */}
+      {/* ── 6. INTELLIGENCE / REPORTS (CoStar-style) ── */}
       <section className="bg-[hsl(var(--ink))] text-primary-foreground">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
@@ -300,11 +308,37 @@ const Index = () => {
           <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-5 text-primary-foreground">
             Insurance Distribution Intelligence
           </h2>
-          <p className="text-primary-foreground/50 max-w-2xl mb-10 leading-relaxed">
+          <p className="text-primary-foreground/50 max-w-2xl mb-12 leading-relaxed">
             We publish ongoing insights on the forces shaping insurance distribution.
             This is where strategy meets data.
           </p>
 
+          {/* KPI Benchmark Cards */}
+          <div className="grid sm:grid-cols-3 gap-5 mb-14">
+            {[
+              { stat: "85%+", label: "Persistency", sub: "Top 10% IMO benchmark" },
+              { stat: "20%+", label: "Producer Activation", sub: "First-year conversion rate" },
+              { stat: "3–5×", label: "Agent Productivity", sub: "vs. industry average" },
+            ].map((kpi) => (
+              <div
+                key={kpi.label}
+                className="border border-primary-foreground/10 p-8 text-center relative group hover:border-accent/40 transition-colors"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent" />
+                <span className="font-serif text-4xl md:text-5xl font-black text-accent block mb-2">
+                  {kpi.stat}
+                </span>
+                <span className="font-serif text-base font-bold text-primary-foreground block mb-1">
+                  {kpi.label}
+                </span>
+                <span className="font-mono text-[9px] tracking-[0.12em] text-primary-foreground/40 uppercase">
+                  {kpi.sub}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Insight Topics */}
           <ul className="space-y-3 max-w-2xl mb-14">
             {INSIGHT_TOPICS.map((topic) => (
               <li key={topic} className="flex items-start gap-3 text-primary-foreground/60">
@@ -396,6 +430,26 @@ const Index = () => {
               <span className="text-foreground font-medium">infrastructure</span>, and{" "}
               <span className="text-foreground font-medium">execution strategy</span>.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SOCIAL PROOF ── */}
+      <section className="bg-primary">
+        <div className="container max-w-5xl mx-auto px-6 py-16 md:py-20">
+          <div className="grid sm:grid-cols-3 gap-8 text-center">
+            {[
+              { icon: Building2, text: "Advised growing IMOs on distribution strategy" },
+              { icon: Wrench, text: "Built recruiting and onboarding systems from the ground up" },
+              { icon: Users, text: "Specializing in distribution infrastructure for insurance organizations" },
+            ].map((proof) => (
+              <div key={proof.text} className="flex flex-col items-center gap-3">
+                <proof.icon className="h-6 w-6 text-accent" />
+                <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-xs">
+                  {proof.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
