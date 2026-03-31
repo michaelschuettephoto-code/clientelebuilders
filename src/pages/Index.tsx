@@ -101,7 +101,7 @@ const Index = () => {
           <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
             The Distribution Problem
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-12">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-12 text-primary-foreground">
             Most insurance organizations are bleeding agents, production, and profit — and can't see why.
           </h2>
 
