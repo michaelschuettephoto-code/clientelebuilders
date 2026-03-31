@@ -1,74 +1,39 @@
 
 
-## The Institutional Rebuild
+## Homepage Copy Update — ChatGPT Framework
 
-This plan transforms the site from "agency website" to "intelligence platform + deal-flow machine" — modeled after Goldman Sachs / McKinsey / CoStar.
+Replacing the current 6-section homepage with the updated 9-section copy, preserving the existing design system (navy/gold/cream, editorial typography, institutional tone). Layout, spacing, and visual patterns stay the same — only the content changes.
 
 ### What Changes
 
-**Current state:** The homepage (`/`) routes directly to the Intelligence Hub (blog). The old `Index.tsx` is an unused "RLGaaS" landing page. About and Consulting pages are generic. There's no institutional authority positioning.
+**File:** `src/pages/Index.tsx` (full rewrite)
 
-**Target state:** A 5-layer system with a proper authority homepage, upgraded services page, repositioned About, and the Intelligence Hub as its own destination.
+### Section-by-Section Mapping
 
----
+1. **Hero** — New headline: "Most insurance organizations don't have a recruiting problem… they have a broken distribution system." Longer subheadline explaining intelligence + infrastructure positioning. CTAs: "Take the IMO Growth Scorecard" + "View Latest Intelligence Report"
 
-### Layer 1: New Homepage (rewrite `Index.tsx`, route `/` to it)
+2. **The Problem** — Title: "Why Most IMOs Hit a Ceiling". Body paragraph + bullet list (agents never activate, onboarding stalls, production unpredictable, leadership doesn't duplicate, no visibility). Closing line: "But the real issue is structural."
 
-Six sections, institutional tone, no fluff:
+3. **Your Edge** — Title: "Built on Intelligence, Not Guesswork". Four pillars: Industry Intelligence, Consumer Behavior, Market Activity, Operational Strategy. Closing: "We don't just build marketing. We build distribution systems backed by data."
 
-1. **Hero** — "We Build, Optimize, and Scale Insurance Distribution Systems" / Sub: "Data-driven consulting for IMOs, agencies, and distribution leaders." / Primary CTA: Take the Distribution Assessment / Secondary: View Latest Intelligence Report
-2. **The Problem** — Emotional hook: agent turnover, low production, broken systems, no data visibility. Dark panel with gold accents. Speaks directly to IMO pain.
-3. **Your Edge (IDOS 8-System Model)** — "Most firms sell leads. We engineer distribution systems." Visual breakdown of all 8 systems: Recruiting, Onboarding, Marketing, Sales, Persistency, Compensation, Leadership, Tech/Data.
-4. **Intelligence Section (CoStar-style)** — Sample KPI benchmarks displayed as data cards: "85%+ persistency", "20%+ producer activation", "3-5x agent productivity". CTAs: Download Sample Report / Join Research Panel.
-5. **Social Proof** — Authority-building language: "Advised growing IMOs", "Built recruiting systems", "Specializing in distribution infrastructure". Institutional positioning cards.
-6. **Final CTA** — "Take the Distribution Scorecard → Get Your System Breakdown"
+4. **The Scorecard** — Title: "IMO Growth Scorecard". Describes the diagnostic (6 areas evaluated), what you receive (score, breakdowns, bottlenecks, next steps). CTA: "Take the Scorecard Now"
 
-### Layer 2: Update Routing (`App.tsx`)
+5. **The Distribution System (IDOS simplified)** — Title: "The Distribution System We Build". 6 components (Recruiting Pipeline, Onboarding System, Activation Engine, Retention & Persistency, Leadership Development, Data & Infrastructure). Closing: "When these systems align, growth becomes predictable."
 
-- `/` → new `Index.tsx` (homepage)
-- `/intelligence` → `Intelligence.tsx` (hub stays as-is)
-- Remove `/blog` redirect to Intelligence (or keep as alias)
+6. **Intelligence / Reports** — Title: "Insurance Distribution Intelligence". Bullet list of insight topics. CTAs: "View Intelligence Reports" + "Join the Newsletter"
 
-### Layer 3: Upgrade Consulting → Services with Engagement Models (`Consulting.tsx`)
+7. **Services / Engagement Models** — Title: "Engagement Models". Four tiers: Diagnostic & Strategy, System Buildout, Growth Infrastructure, Advisory.
 
-Replace the basic 4-card layout with 4 named engagement tiers:
-1. **Diagnostic & Strategy** — KPI audit, scorecard breakdown, system roadmap
-2. **System Buildout** — Recruiting systems, CRM + pipelines, training infrastructure
-3. **Growth Infrastructure** — Lead generation, content systems, recruiting funnels
-4. **Long-Term Advisory** — Monthly consulting, performance tracking, optimization
+8. **Positioning / What We Are** — Title: "What We Are". "Clientele Builders is not a marketing agency. We are Insurance Distribution Architects." Three outcomes + three model pillars.
 
-CTA: "Apply for Advisory" (not "Book Consultation")
+9. **Final CTA** — Headline: "Find Out What's Slowing Your Growth". CTAs: "Take the IMO Growth Scorecard" + "Book a Strategy Call"
 
-### Layer 4: Rewrite About Page (`About.tsx`)
+### Design Approach
 
-Repositioned as institutional identity page:
-1. **Philosophy** — "Distribution is the real asset in insurance."
-2. **Mission** — "Build the most efficient insurance distribution systems in the industry."
-3. **Position** — "We operate at the intersection of Data, Marketing, and Operations."
-4. **Identity** — "Insurance Distribution Architects"
-
-Dark editorial design matching the rest of the site. No generic "what we cover" lists.
-
-### Layer 5: Update Header Navigation (`Header.tsx`)
-
-New nav order to reflect the 5-layer architecture:
-- Intelligence | Services | Reports | Frameworks | Scorecard | About
-
-("Services" replaces "Consulting" label, same route)
-
-### Layer 6: Polish Newsletter Page (`Newsletter.tsx`)
-
-Reposition as "Morning Brew meets Insurance Distribution":
-- Update copy to match intelligence positioning
-- Remove generic "10,000+" claims
-- Align design with dark editorial theme used on other pages
-
----
-
-### Technical Details
-
-- **Files modified:** `Index.tsx` (full rewrite), `App.tsx` (routing), `Consulting.tsx` (upgrade), `About.tsx` (rewrite), `Header.tsx` (nav labels), `Newsletter.tsx` (copy/design refresh)
-- **No new dependencies.** All built with existing Tailwind classes and design tokens.
-- **Design system unchanged.** Uses existing navy/gold/cream palette, serif/sans/mono font stack.
-- **All scorecard CTAs** point to `https://start.clientelebuilders.com/growth-diagnostic`
+- Alternating light/dark sections using existing `bg-primary`, `bg-[hsl(var(--ink))]`, `bg-background`, `bg-[hsl(var(--fog))]` pattern
+- Same font-mono labels, font-serif headings, gold accents
+- Bullet lists styled with accent-colored check/dot markers
+- IDOS grid reduced from 8 → 6 cards per the new copy
+- Engagement Models section uses the same card pattern as the Consulting page
+- No new dependencies or components needed
 
