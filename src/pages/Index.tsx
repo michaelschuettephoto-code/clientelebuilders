@@ -20,6 +20,12 @@ import {
   Rocket,
   MessageSquare,
   CheckCircle2,
+  Megaphone,
+  DollarSign,
+  Target,
+  Building2,
+  Wrench,
+  Users,
 } from "lucide-react";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
