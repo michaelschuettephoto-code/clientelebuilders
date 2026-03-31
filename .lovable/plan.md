@@ -1,39 +1,79 @@
 
 
-## Homepage Copy Update — ChatGPT Framework
+## Cross-Reference: Blueprint vs. Current Site
 
-Replacing the current 6-section homepage with the updated 9-section copy, preserving the existing design system (navy/gold/cream, editorial typography, institutional tone). Layout, spacing, and visual patterns stay the same — only the content changes.
+Here's a layer-by-layer audit of the original 5-layer blueprint against what's actually built.
 
-### What Changes
+---
 
-**File:** `src/pages/Index.tsx` (full rewrite)
+### Layer 1: HOMEPAGE — Authority + Entry Point
 
-### Section-by-Section Mapping
+| Blueprint Section | Status | Notes |
+|---|---|---|
+| Hero (headline + 2 CTAs) | **Done** | Currently uses the ChatGPT v2 copy ("broken distribution system"). Blueprint originally said "We Build, Optimize, and Scale..." — but you said copy comes from ChatGPT, so this is fine. |
+| The Problem (emotional hook) | **Done** | 5 bullet pain points, structural closing line. Matches blueprint intent. |
+| Your Edge / IDOS Framework | **Partial** | Blueprint calls for **8 systems** (Recruiting, Onboarding, Marketing, Sales, Persistency, Compensation, Leadership, Tech/Data). Currently showing **4 intelligence pillars** in Section 3 and **6 systems** in Section 5. Missing: Marketing, Sales, Compensation as standalone items. The 8-system IDOS isn't displayed as a single unified block. |
+| Intelligence / CoStar-style data | **Partial** | Blueprint calls for **sample charts, KPI dashboards, benchmarks** ("85%+ persistency", "20%+ producer activation", "3-5x agent productivity"). Current Section 6 is just a bullet list of topics. **No data cards, no benchmark numbers, no visual data elements.** This is the biggest gap. |
+| Social Proof | **Missing** | Blueprint calls for authority positioning cards ("Advised growing IMOs", "Built recruiting systems", etc.). Not present on the homepage. |
+| Final CTA | **Done** | Scorecard + Book a Strategy Call. Matches. |
 
-1. **Hero** — New headline: "Most insurance organizations don't have a recruiting problem… they have a broken distribution system." Longer subheadline explaining intelligence + infrastructure positioning. CTAs: "Take the IMO Growth Scorecard" + "View Latest Intelligence Report"
+### Layer 2: SCORECARD FUNNEL
 
-2. **The Problem** — Title: "Why Most IMOs Hit a Ceiling". Body paragraph + bullet list (agents never activate, onboarding stalls, production unpredictable, leadership doesn't duplicate, no visibility). Closing line: "But the real issue is structural."
+| Blueprint Item | Status | Notes |
+|---|---|---|
+| External scorecard at start.clientelebuilders.com | **Done** | All CTAs point to `https://start.clientelebuilders.com/growth-diagnostic`. |
+| Scorecard details on homepage | **Done** | Section 4 covers the 6 areas, what you receive, CTA. |
 
-3. **Your Edge** — Title: "Built on Intelligence, Not Guesswork". Four pillars: Industry Intelligence, Consumer Behavior, Market Activity, Operational Strategy. Closing: "We don't just build marketing. We build distribution systems backed by data."
+### Layer 3: INTELLIGENCE HUB
 
-4. **The Scorecard** — Title: "IMO Growth Scorecard". Describes the diagnostic (6 areas evaluated), what you receive (score, breakdowns, bottlenecks, next steps). CTA: "Take the Scorecard Now"
+| Blueprint Item | Status | Notes |
+|---|---|---|
+| `/intelligence` as dedicated destination | **Done** | Full editorial hub with featured post, category filters, article grid. |
+| Industry Reports section | **Done** | Reports section exists within Intelligence page. |
+| Insights (elevated blog) | **Done** | Articles pulled from Supabase, editorial tone. |
+| Newsletter ("Morning Brew meets Insurance") | **Done** | "The Weekly Brief" at `/newsletter`. Positioned correctly. |
 
-5. **The Distribution System (IDOS simplified)** — Title: "The Distribution System We Build". 6 components (Recruiting Pipeline, Onboarding System, Activation Engine, Retention & Persistency, Leadership Development, Data & Infrastructure). Closing: "When these systems align, growth becomes predictable."
+### Layer 4: SERVICES PAGE
 
-6. **Intelligence / Reports** — Title: "Insurance Distribution Intelligence". Bullet list of insight topics. CTAs: "View Intelligence Reports" + "Join the Newsletter"
+| Blueprint Item | Status | Notes |
+|---|---|---|
+| 4 Engagement Models (not packages) | **Done** | Diagnostic & Strategy, System Buildout, Growth Infrastructure, Long-Term Advisory. |
+| CTA: "Apply for Advisory" | **Missing** | Current CTA is "Start with a Diagnostic" linking to the scorecard. Blueprint specifically says "Apply for Advisory" everywhere. |
 
-7. **Services / Engagement Models** — Title: "Engagement Models". Four tiers: Diagnostic & Strategy, System Buildout, Growth Infrastructure, Advisory.
+### Layer 5: ABOUT PAGE
 
-8. **Positioning / What We Are** — Title: "What We Are". "Clientele Builders is not a marketing agency. We are Insurance Distribution Architects." Three outcomes + three model pillars.
+| Blueprint Item | Status | Notes |
+|---|---|---|
+| Philosophy | **Done** | "Distribution is the real asset in insurance." |
+| Mission | **Done** | "Build the most efficient insurance distribution systems." |
+| Position (Data + Marketing + Operations intersection) | **Done** | Present. |
+| Identity ("Insurance Distribution Architects") | **Done** | Hero headline. |
 
-9. **Final CTA** — Headline: "Find Out What's Slowing Your Growth". CTAs: "Take the IMO Growth Scorecard" + "Book a Strategy Call"
+### Navigation
 
-### Design Approach
+| Blueprint Item | Status | Notes |
+|---|---|---|
+| Home, Intelligence, Services, About, Apply/Book Call | **Done** | Current nav: Intelligence, Services, Reports, Frameworks, Scorecard, About. Slightly expanded but covers all blueprint items. |
 
-- Alternating light/dark sections using existing `bg-primary`, `bg-[hsl(var(--ink))]`, `bg-background`, `bg-[hsl(var(--fog))]` pattern
-- Same font-mono labels, font-serif headings, gold accents
-- Bullet lists styled with accent-colored check/dot markers
-- IDOS grid reduced from 8 → 6 cards per the new copy
-- Engagement Models section uses the same card pattern as the Consulting page
-- No new dependencies or components needed
+### Design Style
+
+| Blueprint Item | Status | Notes |
+|---|---|---|
+| Institutional / Clean / Minimal / Expensive | **Done** | Navy/gold/cream, editorial typography, monospaced labels. |
+| Black / white / gold accents | **Done** | Consistent throughout. |
+| Charts / graphs / data visuals | **Missing** | No visual data elements anywhere on the site. |
+
+---
+
+### Summary: 3 Gaps to Close
+
+1. **Homepage Section 4 — CoStar-style benchmark data cards.** The blueprint specifically calls for visual KPI benchmarks (85%+ persistency, 20%+ producer activation, 3-5x agent productivity) displayed as data cards or mini-charts. Currently just a topic bullet list.
+
+2. **Homepage — Social Proof section.** Missing entirely. Blueprint calls for authority-building positioning cards ("Advised growing IMOs", "Built recruiting systems", "Specializing in distribution infrastructure").
+
+3. **Homepage Section 3 — Full 8-system IDOS.** Blueprint lists 8 systems (Recruiting, Onboarding, Marketing, Sales, Persistency, Compensation, Leadership, Tech/Data). Current site splits this into 4 intelligence pillars + 6 distribution components, missing Marketing, Sales, and Compensation as distinct items.
+
+**Minor:** Services page CTA says "Start with a Diagnostic" instead of "Apply for Advisory."
+
+Everything else — routing, navigation, design system, Intelligence Hub, About, Newsletter, Scorecard funnel — matches the blueprint.
 
