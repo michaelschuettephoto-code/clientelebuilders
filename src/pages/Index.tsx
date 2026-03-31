@@ -31,12 +31,14 @@ import {
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
 const IDOS_SYSTEMS = [
-  { icon: UserPlus, label: "Recruiting Pipeline", desc: "Predictable agent sourcing with pipeline-stage tracking" },
-  { icon: BookOpen, label: "Onboarding System", desc: "Structured ramp that reduces early attrition" },
-  { icon: Zap, label: "Activation Engine", desc: "Systems that turn contracted agents into producing agents" },
-  { icon: Shield, label: "Retention & Persistency", desc: "Retention systems that protect revenue and lower lapse rates" },
-  { icon: Crown, label: "Leadership Development", desc: "Accountability frameworks and performance duplication" },
-  { icon: Cpu, label: "Data & Infrastructure", desc: "CRM, automation, and analytics infrastructure" },
+  { icon: UserPlus, label: "Recruiting", desc: "Predictable agent sourcing with pipeline-stage tracking" },
+  { icon: BookOpen, label: "Onboarding", desc: "Structured ramp that reduces early attrition" },
+  { icon: Megaphone, label: "Marketing", desc: "Agent and consumer-facing campaigns that drive awareness and flow" },
+  { icon: Target, label: "Sales", desc: "Sales enablement systems that convert opportunities into production" },
+  { icon: Shield, label: "Persistency", desc: "Retention systems that protect revenue and lower lapse rates" },
+  { icon: DollarSign, label: "Compensation", desc: "Comp structures that align incentives with organizational growth" },
+  { icon: Crown, label: "Leadership", desc: "Accountability frameworks and performance duplication" },
+  { icon: Cpu, label: "Tech / Data", desc: "CRM, automation, and analytics infrastructure" },
 ];
 
 const INTELLIGENCE_PILLARS = [
