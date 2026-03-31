@@ -4,10 +4,10 @@ import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { to: "/intelligence", label: "Intelligence" },
-  { to: "/scorecard", label: "Scorecard" },
+  { to: "/consulting", label: "Services" },
   { to: "/reports", label: "Reports" },
   { to: "/frameworks", label: "Frameworks" },
-  { to: "/consulting", label: "Consulting" },
+  { to: "/scorecard", label: "Scorecard" },
   { to: "/about", label: "About" },
 ];
 
