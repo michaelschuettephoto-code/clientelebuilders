@@ -434,6 +434,26 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── SOCIAL PROOF ── */}
+      <section className="bg-primary">
+        <div className="container max-w-5xl mx-auto px-6 py-16 md:py-20">
+          <div className="grid sm:grid-cols-3 gap-8 text-center">
+            {[
+              { icon: Building2, text: "Advised growing IMOs on distribution strategy" },
+              { icon: Wrench, text: "Built recruiting and onboarding systems from the ground up" },
+              { icon: Users, text: "Specializing in distribution infrastructure for insurance organizations" },
+            ].map((proof) => (
+              <div key={proof.text} className="flex flex-col items-center gap-3">
+                <proof.icon className="h-6 w-6 text-accent" />
+                <p className="text-primary-foreground/60 text-sm leading-relaxed max-w-xs">
+                  {proof.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 9. FINAL CTA ── */}
       <section className="bg-primary">
         <div className="container max-w-3xl mx-auto px-6 py-20 md:py-28 text-center">
