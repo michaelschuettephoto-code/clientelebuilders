@@ -299,7 +299,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 6. INTELLIGENCE / REPORTS ── */}
+      {/* ── 6. INTELLIGENCE / REPORTS (CoStar-style) ── */}
       <section className="bg-[hsl(var(--ink))] text-primary-foreground">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
@@ -308,11 +308,37 @@ const Index = () => {
           <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-5 text-primary-foreground">
             Insurance Distribution Intelligence
           </h2>
-          <p className="text-primary-foreground/50 max-w-2xl mb-10 leading-relaxed">
+          <p className="text-primary-foreground/50 max-w-2xl mb-12 leading-relaxed">
             We publish ongoing insights on the forces shaping insurance distribution.
             This is where strategy meets data.
           </p>
 
+          {/* KPI Benchmark Cards */}
+          <div className="grid sm:grid-cols-3 gap-5 mb-14">
+            {[
+              { stat: "85%+", label: "Persistency", sub: "Top 10% IMO benchmark" },
+              { stat: "20%+", label: "Producer Activation", sub: "First-year conversion rate" },
+              { stat: "3–5×", label: "Agent Productivity", sub: "vs. industry average" },
+            ].map((kpi) => (
+              <div
+                key={kpi.label}
+                className="border border-primary-foreground/10 p-8 text-center relative group hover:border-accent/40 transition-colors"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent" />
+                <span className="font-serif text-4xl md:text-5xl font-black text-accent block mb-2">
+                  {kpi.stat}
+                </span>
+                <span className="font-serif text-base font-bold text-primary-foreground block mb-1">
+                  {kpi.label}
+                </span>
+                <span className="font-mono text-[9px] tracking-[0.12em] text-primary-foreground/40 uppercase">
+                  {kpi.sub}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Insight Topics */}
           <ul className="space-y-3 max-w-2xl mb-14">
             {INSIGHT_TOPICS.map((topic) => (
               <li key={topic} className="flex items-start gap-3 text-primary-foreground/60">
