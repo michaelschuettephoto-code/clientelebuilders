@@ -117,7 +117,7 @@ const Index = () => {
                 className="border border-primary-foreground/10 p-6 hover:border-accent/30 transition-colors"
               >
                 <item.icon className="h-6 w-6 text-accent mb-4" />
-                <h3 className="font-serif text-lg font-bold mb-2">{item.title}</h3>
+                <h3 className="font-serif text-lg font-bold mb-2 text-primary-foreground">{item.title}</h3>
                 <p className="text-primary-foreground/50 text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
