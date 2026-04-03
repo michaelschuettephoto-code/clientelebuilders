@@ -349,9 +349,21 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Insight Topics */}
+          {/* Content Pillars */}
+          <div className="grid sm:grid-cols-3 gap-3 mb-10">
+            {CONTENT_PILLARS.map((pillar) => (
+              <div key={pillar} className="border border-primary-foreground/10 px-5 py-3 text-center">
+                <span className="text-primary-foreground/60 text-sm font-medium">{pillar}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Authority Topics */}
+          <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-4">
+            Upcoming Analysis
+          </span>
           <ul className="space-y-3 max-w-2xl mb-14">
-            {INSIGHT_TOPICS.map((topic) => (
+            {AUTHORITY_TOPICS.map((topic) => (
               <li key={topic} className="flex items-start gap-3 text-primary-foreground/60">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                 <span className="text-base leading-relaxed">{topic}</span>
