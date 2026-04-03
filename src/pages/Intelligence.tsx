@@ -10,13 +10,35 @@ import { forwardRef } from "react";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
+/* ── Content Pillars (from Shawn's framework) ── */
 const CATEGORIES = [
   { id: "all", label: "All Intelligence" },
-  { id: "distribution-systems", label: "Distribution Systems" },
-  { id: "industry-intelligence", label: "Industry Intelligence" },
-  { id: "bottlenecks", label: "Bottlenecks" },
-  { id: "kpis-metrics", label: "KPIs & Metrics" },
-  { id: "case-studies", label: "Case Studies" },
+  { id: "recruiting-systems", label: "Recruiting Systems" },
+  { id: "onboarding-systems", label: "Onboarding Systems" },
+  { id: "agent-production", label: "Agent Production" },
+  { id: "retention-persistency", label: "Retention & Persistency" },
+  { id: "leadership-duplication", label: "Leadership & Duplication" },
+  { id: "infrastructure-data", label: "Infrastructure & Data" },
+];
+
+/* ── Flagship Reports ── */
+const REPORT_TYPES = [
+  {
+    title: "Agent Production Report",
+    desc: "Conversion rates, ramp timelines, and the benchmarks that separate activating agents from churning ones.",
+  },
+  {
+    title: "Persistency Report",
+    desc: "Retention analytics, lapse patterns, and what top-10% organizations do differently to protect revenue.",
+  },
+  {
+    title: "Compensation Benchmark Report",
+    desc: "Comp structures across IMOs — how incentives shape agent behavior, production, and organizational growth.",
+  },
+  {
+    title: "Tech Stack Report",
+    desc: "CRM adoption, automation maturity, and the data infrastructure behind scalable distribution.",
+  },
 ];
 
 const FRAMEWORKS = [
@@ -32,6 +54,16 @@ const FRAMEWORKS = [
     title: "Onboarding Framework",
     description: "Day 1 through Day 90 — structured milestones that turn recruits into producers.",
   },
+];
+
+/* ── Infographic Types (from Shawn's visual intelligence system) ── */
+const INFOGRAPHIC_TYPES = [
+  { label: "System Maps", desc: "Full distribution system with stages, KPIs, and failure points" },
+  { label: "Funnel Breakdowns", desc: "Lead → Contact → Appointment → Sale → Retention conversion flow" },
+  { label: "KPI Dashboards", desc: "5–10 key metrics with green / yellow / red performance indicators" },
+  { label: "Benchmark Comparisons", desc: "Top 10% vs Average vs Bottom 50% side-by-side" },
+  { label: "Process Timelines", desc: "Agent onboarding milestones from Day 0 to Day 90" },
+  { label: "Market Maps", desc: "Carrier → IMO → Agent → Tech ecosystem visualization" },
 ];
 
 const INFOGRAPHIC_PDF_MAP: Record<string, string> = {
@@ -81,7 +113,6 @@ const Intelligence = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,hsl(var(--gold)/0.06),transparent)] pointer-events-none" />
         <div className="container max-w-7xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
           <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
-            {/* Left — Text */}
             <div>
               <div className="w-10 h-[2px] bg-accent mb-8" />
               <h1
@@ -91,8 +122,8 @@ const Intelligence = () => {
                 Insurance Distribution Intelligence
               </h1>
               <p className="text-white/50 text-lg font-light leading-relaxed mb-12 max-w-lg">
-                Strategic insights on recruiting, onboarding, and scaling
-                insurance organizations.
+                Research reports, insight articles, and market briefings for the leaders building
+                scalable insurance distribution.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -109,27 +140,35 @@ const Intelligence = () => {
                   className="inline-flex items-center justify-center gap-2.5 border border-white/15 text-white/70 font-sans text-[11px] font-medium tracking-[0.08em] uppercase px-7 py-4 hover:border-white/30 hover:text-white transition-colors active:scale-[0.97]"
                 >
                   <Download className="h-4 w-4" />
-                  Infrastructure Report
+                  View Reports
                 </Link>
               </div>
             </div>
 
-            {/* Right — Report Preview Mockup (CSS-only) */}
+            {/* Right — Content System Flow */}
             <div className="hidden md:flex items-center justify-center">
               <div className="relative">
                 <div className="absolute -inset-6 bg-accent/[0.03] blur-3xl rounded-full pointer-events-none" />
-                <div className="relative w-56 h-80 bg-ink border border-white/[0.08] flex flex-col items-center justify-center p-8 shadow-2xl">
-                  <div className="w-8 h-[1px] bg-accent mb-6" />
-                  <span className="font-mono text-[7px] tracking-[0.3em] text-accent uppercase mb-5 text-center">
-                    Clientele Builders
+                <div className="relative border border-white/[0.08] p-8 space-y-4">
+                  <span className="font-mono text-[7px] tracking-[0.3em] text-accent uppercase block mb-6">
+                    Content System
                   </span>
-                  <h4 className="font-serif text-sm font-bold text-white leading-tight text-center mb-4">
-                    Distribution Infrastructure Report
-                  </h4>
-                  <div className="w-10 h-[1px] bg-white/10 mb-4" />
-                  <span className="font-mono text-[7px] text-white/25 uppercase tracking-[0.2em]">
-                    2026 Edition
-                  </span>
+                  {[
+                    { label: "Intelligence Reports", sub: "Deep authority" },
+                    { label: "Insight Articles", sub: "Traffic + education" },
+                    { label: "Visual Intelligence", sub: "Shareability + clarity" },
+                    { label: "Scorecard", sub: "Diagnosis" },
+                    { label: "Strategy Call", sub: "Conversion" },
+                  ].map((step, i) => (
+                    <div key={step.label} className="flex items-center gap-3">
+                      <span className="font-mono text-[8px] text-accent w-4">{String(i + 1).padStart(2, "0")}</span>
+                      <div className="flex-1 border-t border-white/[0.06]" />
+                      <div className="text-right">
+                        <span className="text-white text-xs font-medium block">{step.label}</span>
+                        <span className="text-white/30 text-[9px]">{step.sub}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -174,7 +213,7 @@ const Intelligence = () => {
         </section>
       )}
 
-      {/* ═══ 3. CATEGORY FILTERS ═══ */}
+      {/* ═══ 3. CATEGORY FILTERS (Content Pillars) ═══ */}
       <div className="sticky top-[73px] z-40 border-b border-white/[0.06] bg-primary/95 backdrop-blur-md">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="flex gap-1 overflow-x-auto py-4 -mx-6 px-6 scrollbar-hide">
@@ -222,7 +261,6 @@ const Intelligence = () => {
               ))}
             </div>
 
-            {/* ═══ 5. INLINE CTA ═══ */}
             {filteredPosts.length > 4 && <InlineCTA />}
 
             {filteredPosts.length > 6 && (
@@ -236,54 +274,80 @@ const Intelligence = () => {
         )}
       </section>
 
-      {/* ═══ 6. REPORT ═══ */}
+      {/* ═══ 5. FLAGSHIP REPORTS ═══ */}
       <section className="border-t border-white/[0.06]">
         <div className="container max-w-7xl mx-auto px-6 py-24">
-          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div>
-              <div className="w-10 h-[2px] bg-accent mb-6" />
-              <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase block mb-3">
-                Latest Report
-              </span>
-              <h2
-                className="font-serif text-3xl md:text-4xl font-bold text-white leading-tight mb-6"
-                style={{ textWrap: "balance" } as React.CSSProperties}
+          <div className="w-10 h-[2px] bg-accent mb-6" />
+          <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase block mb-3">
+            Research Library
+          </span>
+          <h2
+            className="font-serif text-3xl md:text-4xl font-bold text-white leading-tight mb-6"
+            style={{ textWrap: "balance" } as React.CSSProperties}
+          >
+            Flagship Intelligence Reports
+          </h2>
+          <p className="text-white/45 leading-relaxed mb-14 max-w-xl">
+            Comprehensive, data-first analysis on the systems that drive — or stall — insurance distribution.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {REPORT_TYPES.map((report, i) => (
+              <div
+                key={i}
+                className="group border border-white/[0.06] p-8 hover:border-accent/30 transition-colors relative overflow-hidden"
               >
-                The Distribution Infrastructure Report
-              </h2>
-              <p className="text-white/45 leading-relaxed mb-10 max-w-md">
-                A comprehensive analysis of what separates scalable insurance
-                organizations from the ones that stall. Recruiting pipelines,
-                onboarding systems, and production metrics — examined.
-              </p>
-              <a
-                href={SCORECARD_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-accent text-primary font-sans text-[11px] font-semibold tracking-[0.08em] uppercase px-7 py-4 hover:bg-gold-light transition-colors active:scale-[0.97]"
-              >
-                <Download className="h-4 w-4" />
-                Download Report
-              </a>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-accent/[0.04] blur-2xl rounded-full" />
-                <div className="relative w-52 h-72 bg-ink border border-white/[0.08] flex flex-col items-center justify-center p-8 shadow-2xl">
-                  <div className="w-8 h-[1px] bg-accent mb-6" />
-                  <span className="font-mono text-[7px] tracking-[0.3em] text-accent uppercase mb-5 text-center">
-                    Clientele Builders
-                  </span>
-                  <h4 className="font-serif text-sm font-bold text-white leading-tight text-center mb-4">
-                    Distribution Infrastructure Report
-                  </h4>
-                  <div className="w-10 h-[1px] bg-white/10 mb-4" />
-                  <span className="font-mono text-[7px] text-white/25 uppercase tracking-[0.2em]">
-                    2026 Edition
-                  </span>
-                </div>
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <span className="font-mono text-[9px] tracking-[0.18em] text-white/25 uppercase">
+                  Report {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-serif text-lg font-bold text-white mt-4 mb-3 leading-tight">
+                  {report.title}
+                </h3>
+                <p className="text-white/40 text-sm leading-relaxed">{report.desc}</p>
               </div>
-            </div>
+            ))}
+          </div>
+          <div className="mt-10">
+            <Link
+              to="/reports"
+              className="inline-flex items-center gap-2 font-sans text-[11px] font-medium tracking-[0.08em] uppercase text-accent hover:text-gold-light transition-colors group"
+            >
+              View All Reports{" "}
+              <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 6. VISUAL INTELLIGENCE (Infographic Types) ═══ */}
+      <section className="border-t border-white/[0.06]">
+        <div className="container max-w-7xl mx-auto px-6 py-24">
+          <div className="w-10 h-[2px] bg-accent mb-6" />
+          <span className="font-mono text-[9px] tracking-[0.22em] text-accent uppercase block mb-3">
+            Visual Intelligence
+          </span>
+          <h2
+            className="font-serif text-3xl md:text-4xl font-bold text-white leading-tight mb-6"
+            style={{ textWrap: "balance" } as React.CSSProperties}
+          >
+            Infographic & Data Visualization System
+          </h2>
+          <p className="text-white/45 leading-relaxed mb-14 max-w-xl">
+            Every report generates proprietary visuals — system maps, funnel breakdowns, and benchmark comparisons built for institutional clarity.
+          </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {INFOGRAPHIC_TYPES.map((type, i) => (
+              <div
+                key={i}
+                className="border border-white/[0.06] p-6 hover:border-accent/20 transition-colors"
+              >
+                <span className="font-mono text-[8px] tracking-[0.18em] text-accent uppercase block mb-3">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-serif text-base font-bold text-white mb-2">{type.label}</h3>
+                <p className="text-white/35 text-xs leading-relaxed">{type.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -388,11 +452,11 @@ const InlineCTA = forwardRef<HTMLDivElement>((_, ref) => (
         className="font-serif text-2xl md:text-3xl font-bold text-white leading-tight mb-4"
         style={{ textWrap: "balance" } as React.CSSProperties}
       >
-        Diagnose Your Distribution System
+        See how your system compares
       </h3>
-      <p className="text-white/45 leading-relaxed mb-10">
-        See where your recruiting, onboarding, and production systems are
-        breaking — and what to fix first.
+      <p className="text-white/40 leading-relaxed mb-8 max-w-md">
+        Take the scorecard to benchmark your recruiting, onboarding, and
+        retention systems against top-performing IMOs.
       </p>
       <a
         href={SCORECARD_URL}
@@ -401,45 +465,49 @@ const InlineCTA = forwardRef<HTMLDivElement>((_, ref) => (
         className="inline-flex items-center gap-2.5 bg-accent text-primary font-sans text-[11px] font-semibold tracking-[0.08em] uppercase px-7 py-4 hover:bg-gold-light transition-colors active:scale-[0.97]"
       >
         <ClipboardCheck className="h-4 w-4" />
-        Take the Scorecard
+        Take Scorecard
       </a>
     </div>
   </div>
 ));
+InlineCTA.displayName = "InlineCTA";
 
 /* ── Article Card ── */
 const ArticleCard = ({ post }: { post: any }) => {
-  const firstTag = post.post_tags?.[0]?.tags;
+  const tag = post.post_tags?.[0]?.tags;
+  const pdfUrl = INFOGRAPHIC_PDF_MAP[post.slug];
+
   return (
-    <Link
-      to={`/story/${post.slug}`}
-      className="group block border border-white/[0.06] p-6 hover:border-accent/20 transition-colors"
-    >
-      {firstTag && (
-        <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
-          {firstTag.name}
-        </span>
-      )}
-      <h3 className="font-serif text-lg font-bold text-white mt-2 leading-snug group-hover:text-gold-light transition-colors">
-        {post.title}
-      </h3>
-      {post.dek && (
-        <p className="text-white/35 text-sm mt-2 leading-relaxed line-clamp-2">
-          {post.dek}
-        </p>
-      )}
-      {INFOGRAPHIC_PDF_MAP[post.slug] && (
+    <article className="group">
+      <Link to={`/story/${post.slug}`} className="block">
+        {tag && (
+          <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
+            {tag.name}
+          </span>
+        )}
+        <h3
+          className="font-serif text-xl font-bold text-white leading-snug mt-2 mb-3 group-hover:text-gold-light transition-colors"
+          style={{ textWrap: "balance" } as React.CSSProperties}
+        >
+          {post.title}
+        </h3>
+        {post.dek && (
+          <p className="text-white/35 text-sm leading-relaxed line-clamp-2">
+            {post.dek}
+          </p>
+        )}
+      </Link>
+      {pdfUrl && (
         <a
-          href={INFOGRAPHIC_PDF_MAP[post.slug]}
+          href={pdfUrl}
           download
-          onClick={(e) => e.stopPropagation()}
-          className="inline-flex items-center gap-1.5 text-accent text-[10px] font-medium tracking-[0.06em] uppercase mt-3 hover:text-gold-light transition-colors"
+          className="inline-flex items-center gap-1.5 mt-3 text-accent text-[10px] font-mono tracking-[0.1em] uppercase hover:text-gold-light transition-colors"
         >
           <Download className="h-3 w-3" />
           Download Infographic
         </a>
       )}
-    </Link>
+    </article>
   );
 };
 

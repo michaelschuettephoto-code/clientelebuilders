@@ -64,12 +64,23 @@ const SCORECARD_AREAS = [
   "Infrastructure & Data",
 ];
 
-const INSIGHT_TOPICS = [
-  "Recruiting trends in insurance",
-  "Agent activation benchmarks",
-  "Persistency and retention patterns",
-  "Market shifts impacting distribution",
-  "Competitive positioning strategies",
+/* ── Content Pillars (from Shawn's framework) ── */
+const CONTENT_PILLARS = [
+  "Recruiting Systems",
+  "Onboarding Systems",
+  "Agent Production",
+  "Retention & Persistency",
+  "Leadership & Duplication",
+  "Infrastructure & Data",
+];
+
+/* ── Authority Anchor Topics ── */
+const AUTHORITY_TOPICS = [
+  "Why Most IMOs Fail to Scale Past $10M",
+  "The Hidden Economics of Agent Retention",
+  "The 7 KPIs That Actually Drive IMO Profitability",
+  "What Top 10% IMOs Do Differently",
+  "The Real Cost of Chargebacks",
 ];
 
 const Index = () => {

@@ -3,12 +3,39 @@ import { Footer } from "@/components/layout/Footer";
 import { Helmet } from "react-helmet";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 
+const NEWSLETTER_THEMES = [
+  {
+    label: "Carrier Behavior",
+    angle: "Carriers tightening underwriting → lower placement rates",
+  },
+  {
+    label: "Agent Trends",
+    angle: "Why agents are leaving IMOs — and what the data says",
+  },
+  {
+    label: "Tech Stack",
+    angle: "AI is replacing manual recruiting — who adapts, who stalls",
+  },
+  {
+    label: "Economics",
+    angle: "Where margins are shrinking across the distribution chain",
+  },
+  {
+    label: "Compliance",
+    angle: "New risks IMOs aren't prepared for — and how to get ahead",
+  },
+  {
+    label: "Market Shifts",
+    angle: "The shift from recruiting volume → retention leverage",
+  },
+];
+
 const Newsletter = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
         <title>Newsletter — Clientele Builders</title>
-        <meta name="description" content="Weekly distribution intelligence for IMOs, agency owners, and insurance leaders. Research, benchmarks, and systems — not tips." />
+        <meta name="description" content="Weekly distribution intelligence for IMOs, agency owners, and insurance leaders. Market signals, system insights, and strategic opportunities." />
       </Helmet>
       <Header />
 
@@ -23,8 +50,8 @@ const Newsletter = () => {
             The Weekly Brief
           </h1>
           <p className="text-primary-foreground/55 text-lg font-light leading-relaxed max-w-lg mx-auto">
-            Research, benchmarks, and system strategies for insurance distribution leaders.
-            No fluff. No listicles. Just intelligence.
+            Market signals, system insights, and strategic opportunities for insurance distribution leaders.
+            Calm. Observational. Strategic.
           </p>
         </div>
       </section>
@@ -34,28 +61,49 @@ const Newsletter = () => {
           <NewsletterSignup />
         </div>
 
-        <div className="border border-border p-8 md:p-10">
-          <h2 className="font-serif text-2xl font-bold mb-6">What You'll Receive</h2>
-          <ul className="space-y-4 text-muted-foreground text-sm leading-relaxed">
+        {/* Briefing Structure */}
+        <div className="border border-border p-8 md:p-10 mb-12">
+          <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase block mb-6">
+            Every Issue Follows This Structure
+          </span>
+          <div className="space-y-6">
             {[
-              "KPI benchmarks and production analytics from active distribution organizations",
-              "System breakdowns — recruiting, onboarding, persistency, and compensation analysis",
-              "Case studies from IMOs and agencies building scalable infrastructure",
-              "Frameworks and mental models for distribution leadership",
-              "Early access to research reports and intelligence briefings",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="text-accent mt-0.5 text-xs">■</span>
-                {item}
-              </li>
+              { num: "01", label: "Market Signal", desc: "A trend, news event, or data point shaping insurance distribution right now." },
+              { num: "02", label: "What It Means", desc: "Translation into distribution impact — what this signals for IMOs and agencies." },
+              { num: "03", label: "System Insight", desc: "How it ties back to your recruiting, onboarding, or production systems." },
+              { num: "04", label: "The Opportunity", desc: "What smart operators should do now — concrete, strategic, actionable." },
+            ].map((step) => (
+              <div key={step.num} className="flex items-start gap-4">
+                <span className="font-mono text-[10px] tracking-[0.15em] text-accent mt-1 shrink-0">{step.num}</span>
+                <div>
+                  <h3 className="font-serif text-base font-bold mb-1">{step.label}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
+        {/* Themes */}
+        <div className="mb-12">
+          <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase block mb-6">
+            Recurring Themes
+          </span>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {NEWSLETTER_THEMES.map((theme) => (
+              <div key={theme.label} className="border border-border p-5 hover:border-accent/40 transition-colors">
+                <h3 className="font-serif text-sm font-bold mb-1">{theme.label}</h3>
+                <p className="text-muted-foreground text-xs leading-relaxed italic">"{theme.angle}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Positioning cards */}
+        <div className="grid md:grid-cols-3 gap-6">
           {[
             { label: "Weekly", desc: "Every Monday morning — one brief, one focus" },
-            { label: "Research-Backed", desc: "Grounded in data, not opinions" },
+            { label: "Bloomberg-Style", desc: "Calm, observational, strategic — not tips" },
             { label: "Distribution-Only", desc: "Built for IMOs, agencies, and leaders" },
           ].map((item) => (
             <div key={item.label} className="text-center p-6 border border-border">
