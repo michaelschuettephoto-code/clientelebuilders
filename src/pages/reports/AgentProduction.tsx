@@ -433,7 +433,7 @@ const AgentProduction = () => {
             <SidebarCard title="Market Benchmarks 2026">
               {[
                 { label: "Agent-led life insurance sales share", val: "~90%", trend: "nt" },
-                { label: "U.S. life insurance companies", val: "711", trend: "nt" },
+                { label: "U.S. life insurance industry revenue", val: "$1.1T", trend: "nt" },
                 { label: "Brokerage industry workforce", val: "~1M", trend: "nt" },
                 { label: "Rev/employee — top carrier", val: "$5.0M", trend: "up" },
                 { label: "Avg producing agent % of licensed", val: "~22%", trend: "dn" },
