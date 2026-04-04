@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Helmet } from "react-helmet";
-import { Download, ArrowRight } from "lucide-react";
+import { Download, ArrowRight, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
