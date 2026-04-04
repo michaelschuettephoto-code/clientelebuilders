@@ -38,7 +38,7 @@ const REPORT_TYPES = [
   },
   {
     title: "Tech Stack Report",
-    desc: "CRM adoption, automation maturity, and the data infrastructure behind scalable distribution organizations.",
+    desc: "Automation maturity, tool adoption, and the data infrastructure behind scalable distribution organizations.",
   },
 ];
 
@@ -68,7 +68,7 @@ const INFOGRAPHIC_TYPES = [
 ];
 
 const INFOGRAPHIC_PDF_MAP: Record<string, string> = {
-  "modernizing-insurance-crm-systems-approach": "/downloads/infographic-crm-systems.pdf",
+  
   "automation-playbook-insurance-agencies": "/downloads/infographic-automation-playbook.pdf",
   "million-dollar-mindset-agency-owners": "/downloads/infographic-mindset-models.pdf",
 };

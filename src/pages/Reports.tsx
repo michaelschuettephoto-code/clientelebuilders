@@ -34,7 +34,7 @@ const FLAGSHIP_REPORTS = [
   {
     num: "04",
     title: "Tech Stack Report",
-    desc: "CRM adoption, automation maturity, and the data infrastructure investments that actually move the needle in scalable distribution.",
+    desc: "Automation maturity, tool adoption, and the data infrastructure investments that actually move the needle in scalable distribution.",
   },
 ];
 
