@@ -20,9 +20,6 @@ import {
   Rocket,
   MessageSquare,
   CheckCircle2,
-  Megaphone,
-  DollarSign,
-  Target,
   Building2,
   Wrench,
   Users,
@@ -31,14 +28,12 @@ import {
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
 const IDOS_SYSTEMS = [
-  { icon: UserPlus, label: "Recruiting", desc: "Predictable agent sourcing with pipeline-stage tracking" },
-  { icon: BookOpen, label: "Onboarding", desc: "Structured ramp that reduces early attrition" },
-  { icon: Megaphone, label: "Marketing", desc: "Agent and consumer-facing campaigns that drive awareness and flow" },
-  { icon: Target, label: "Sales", desc: "Sales enablement systems that convert opportunities into production" },
-  { icon: Shield, label: "Persistency", desc: "Retention systems that protect revenue and lower lapse rates" },
-  { icon: DollarSign, label: "Compensation", desc: "Comp structures that align incentives with organizational growth" },
-  { icon: Crown, label: "Leadership", desc: "Accountability frameworks and performance duplication" },
-  { icon: Cpu, label: "Tech / Data", desc: "CRM, automation, and analytics infrastructure" },
+  { icon: UserPlus, label: "Recruiting", desc: "Predictable agent sourcing with pipeline-stage tracking and quality metrics" },
+  { icon: BookOpen, label: "Onboarding", desc: "Structured ramp sequences that reduce early attrition and accelerate time-to-production" },
+  { icon: Zap, label: "Activation", desc: "Converting agent capacity into measurable organizational output" },
+  { icon: Shield, label: "Retention", desc: "Revenue compounding through policy persistency and agent tenure" },
+  { icon: Crown, label: "Leadership", desc: "Accountability frameworks and performance duplication across teams" },
+  { icon: Cpu, label: "Infrastructure", desc: "Reporting systems, diagnostics, and data visibility across all IDOS™ stages" },
 ];
 
 const INTELLIGENCE_PILLARS = [
@@ -74,13 +69,12 @@ const CONTENT_PILLARS = [
   "Infrastructure & Data",
 ];
 
-/* ── Authority Anchor Topics ── */
-const AUTHORITY_TOPICS = [
-  "Why 49% of Americans Still Don't Own Life Insurance",
-  "The $373B Investment Income Engine Behind Life Insurance",
-  "711 Companies, 3 Control 10% — The Concentration Problem",
-  "Independent Agents Now Own 53% of Distribution",
-  "The $1.2T Outlook: What's Driving 2026–2031 Growth",
+/* ── Research Areas ── */
+const RESEARCH_AREAS = [
+  "How production variance is reduced through infrastructure investment",
+  "The compounding economics of agent retention vs. recruiting replacement",
+  "Why revenue-per-employee ratios vary 4.5x across major carriers",
+  "System-level determinants of time-to-production in new agents",
 ];
 
 const Index = () => {
@@ -286,7 +280,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {IDOS_SYSTEMS.map((sys, i) => (
               <div
                 key={sys.label}
@@ -388,10 +382,10 @@ const Index = () => {
 
           {/* Authority Topics */}
           <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-4">
-            Upcoming Analysis
+            Topics We're Investigating
           </span>
           <ul className="space-y-3 max-w-2xl mb-14">
-            {AUTHORITY_TOPICS.map((topic) => (
+            {RESEARCH_AREAS.map((topic) => (
               <li key={topic} className="flex items-start gap-3 text-primary-foreground/60">
                 <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                 <span className="text-base leading-relaxed">{topic}</span>
@@ -485,14 +479,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── SOCIAL PROOF ── */}
+      {/* ── PUBLISHED WORK ── */}
       <section className="bg-primary">
         <div className="container max-w-5xl mx-auto px-6 py-16 md:py-20">
           <div className="grid sm:grid-cols-3 gap-8 text-center">
             {[
-              { icon: Building2, text: "Advised growing IMOs on distribution strategy" },
-              { icon: Wrench, text: "Built recruiting and onboarding systems from the ground up" },
-              { icon: Users, text: "Specializing in distribution infrastructure for insurance organizations" },
+              { icon: Building2, text: "Published: 2026 Agent Production Report — sourced from IBISWorld & IDOS™ analysis" },
+              { icon: Wrench, text: "Published: 3 Intelligence Briefs on production, retention, and infrastructure" },
+              { icon: Users, text: "Focused exclusively on insurance distribution system design and optimization" },
             ].map((proof) => (
               <div key={proof.text} className="flex flex-col items-center gap-3">
                 <proof.icon className="h-6 w-6 text-accent" />
