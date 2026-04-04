@@ -11,8 +11,8 @@ const MARKET_SNAPSHOT = [
   { stat: "893", label: "Businesses", source: "IBISWorld 2026" },
   { stat: "329K", label: "Employees", source: "IBISWorld 2026" },
   { stat: "16.7%", label: "Profit Margin", source: "IBISWorld 2026" },
-  { stat: "711", label: "Life Insurance Cos.", source: "Statista 2024" },
-  { stat: "$5.6T", label: "Total Investments", source: "ACLI / NAIC" },
+  { stat: "51%", label: "Ownership Rate", source: "LIMRA / Statista 2024" },
+  { stat: "2.0%", label: "Revenue CAGR", source: "IBISWorld 2026" },
 ];
 
 const FLAGSHIP_REPORTS = [
