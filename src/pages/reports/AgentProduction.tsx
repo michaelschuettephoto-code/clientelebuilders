@@ -293,7 +293,7 @@ const AgentProduction = () => {
 
             <div className="bg-[hsl(var(--fog))] border-l-[3px] border-[hsl(var(--steel))] p-3.5 my-4">
               <div className="font-mono text-[8px] tracking-[0.2em] text-[hsl(var(--steel))] uppercase mb-1.5">Market Scale</div>
-              <div className="text-[13px] leading-[1.7]">The U.S. market includes 711 life insurance companies and hundreds of millions of policies in force. The brokerage industry employs approximately 1 million workers. Agent-led distribution accounts for roughly 90% of total life insurance sales — making distribution infrastructure the primary competitive variable at scale.</div>
+              <div className="text-[13px] leading-[1.7]">The U.S. life insurance industry generates over $1.1 trillion in annual revenue and hundreds of millions of policies in force. The brokerage industry employs approximately 1 million workers. Agent-led distribution accounts for roughly 90% of total life insurance sales — making distribution infrastructure the primary competitive variable at scale.</div>
             </div>
 
             <p className="text-sm leading-[1.85] mb-3.5">The insurance market is mature and densely competitive. Carriers cannot meaningfully differentiate on product alone — the policies themselves are commodity-adjacent. In this environment, the dominant competitive variable is system efficiency: how effectively an organization converts agent input into sustained policy output.</p>
@@ -433,7 +433,7 @@ const AgentProduction = () => {
             <SidebarCard title="Market Benchmarks 2026">
               {[
                 { label: "Agent-led life insurance sales share", val: "~90%", trend: "nt" },
-                { label: "U.S. life insurance companies", val: "711", trend: "nt" },
+                { label: "U.S. life insurance industry revenue", val: "$1.1T", trend: "nt" },
                 { label: "Brokerage industry workforce", val: "~1M", trend: "nt" },
                 { label: "Rev/employee — top carrier", val: "$5.0M", trend: "up" },
                 { label: "Avg producing agent % of licensed", val: "~22%", trend: "dn" },
@@ -507,7 +507,7 @@ const AgentProduction = () => {
             <div>
               <div className="font-mono text-[9px] tracking-[0.28em] text-[hsl(var(--gold-light))] uppercase mb-2.5">Section 09 — Distribution Assessment</div>
               <div className="font-serif text-2xl md:text-[26px] font-bold text-primary-foreground leading-tight mb-2.5">See How Your System Compares</div>
-              <div className="text-[13px] text-primary-foreground/55 leading-[1.7] max-w-[480px]">The Distribution Scorecard assesses your organization across all 8 IDOS™ systems — recruiting, onboarding, activation, retention, leadership, compensation, marketing, and infrastructure. You'll receive a score, a system breakdown, and your highest-leverage next move. Takes 7 minutes.</div>
+              <div className="text-[13px] text-primary-foreground/55 leading-[1.7] max-w-[480px]">The Distribution Scorecard assesses your organization across all six IDOS™ stages — recruiting, onboarding, activation, retention, leadership, and infrastructure. You'll receive a score, a system breakdown, and your highest-leverage next move. Takes 3 minutes.</div>
             </div>
             <a
               href={SCORECARD_URL}
