@@ -14,7 +14,7 @@ const ENGAGEMENTS = [
   {
     tier: "02",
     label: "System Buildout",
-    items: ["Recruiting pipeline infrastructure", "CRM configuration and automation", "Training and onboarding program design"],
+    items: ["Recruiting pipeline infrastructure", "Automation and systems configuration", "Training and onboarding program design"],
   },
   {
     tier: "03",
