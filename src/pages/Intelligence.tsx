@@ -26,6 +26,7 @@ const REPORT_TYPES = [
   {
     title: "Agent Production Report",
     desc: "Conversion rates, ramp timelines, and production benchmarks. With only 13.5% of revenue from under-34 consumers, activation systems must evolve.",
+    link: "/reports/agent-production",
   },
   {
     title: "Persistency Report",
