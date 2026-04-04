@@ -530,6 +530,24 @@ const AgentProduction = () => {
         </div>
       </div>
 
+      {/* ══════════ BRIEFS BANNER ══════════ */}
+      <section className="bg-[hsl(var(--ink))]">
+        <div className="max-w-[1000px] mx-auto px-6 md:px-16 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <span className="font-mono text-[9px] tracking-[0.28em] text-[hsl(var(--gold-light))] uppercase block mb-2">Companion Resource</span>
+            <h3 className="font-serif text-xl font-bold text-primary-foreground mb-1">Intelligence Briefs — Production Report Series</h3>
+            <p className="text-primary-foreground/45 text-sm max-w-md">Three short-form analytical briefs isolating structural findings from this report for focused examination.</p>
+          </div>
+          <Link
+            to="/reports/agent-production/briefs"
+            className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-7 py-3.5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97] whitespace-nowrap"
+          >
+            Read the Briefs
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
