@@ -25,27 +25,27 @@ const CATEGORIES = [
 const REPORT_TYPES = [
   {
     title: "Agent Production Report",
-    desc: "Conversion rates, ramp timelines, and production benchmarks. With only 13.5% of revenue from under-34 consumers, activation systems must evolve.",
+    desc: "KPI benchmarking, revenue efficiency, time-to-production diagnostics, and the IDOS™ system framework applied to agent activation.",
     link: "/reports/agent-production",
   },
   {
     title: "Persistency Report",
-    desc: "Retention analytics, lapse patterns — ownership down from 65% (2011) to 51% (2024). Every retained policy matters more.",
+    desc: "Retention analytics, lapse patterns, and the structural relationship between agent tenure and revenue compounding.",
   },
   {
     title: "Compensation Benchmark Report",
-    desc: "Comp structures across IMOs. 16.7% industry profit margin, 4.3% wages-to-revenue — compensation design is the highest-leverage variable.",
+    desc: "How compensation structures shape agent behavior, production volume, and organizational growth across distribution models.",
   },
   {
     title: "Tech Stack Report",
-    desc: "CRM adoption and automation maturity. From New York Life's cloud CRM rollout to 70%+ AI adoption — what actually moves the needle.",
+    desc: "CRM adoption, automation maturity, and the data infrastructure behind scalable distribution organizations.",
   },
 ];
 
 const FRAMEWORKS = [
   {
-    title: "8-System Model (IDOS)",
-    description: "The operating system behind every scalable insurance distribution organization.",
+    title: "IDOS™ Framework",
+    description: "Six-stage operating system: Recruiting, Onboarding, Activation, Retention, Leadership, Infrastructure.",
   },
   {
     title: "Recruiting Pipeline Blueprint",
@@ -183,8 +183,8 @@ const Intelligence = () => {
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             {[
               { stat: "$1.1 trillion", label: "Industry Revenue", source: "IBISWorld 2026" },
-              { stat: "711", label: "Life Insurance Companies", source: "Statista 2024" },
-              { stat: "262M", label: "Policies in Force", source: "ACLI 2024" },
+              { stat: "893", label: "Total Businesses", source: "IBISWorld 2026" },
+              { stat: "51%", label: "Ownership Rate", source: "LIMRA / Statista 2024" },
             ].map((item) => (
               <div key={item.label} className="text-center">
                 <span className="font-serif text-2xl md:text-3xl font-black text-accent block">{item.stat}</span>

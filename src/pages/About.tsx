@@ -68,9 +68,9 @@ const About = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
               {[
-                { label: "Data & Research", desc: "KPI benchmarking, production analytics, and distribution intelligence." },
-                { label: "Marketing & Content", desc: "Authority systems that attract qualified producers and position your brand." },
-                { label: "Operations & Systems", desc: "Recruiting infrastructure, onboarding design, and performance frameworks." },
+                { label: "Research & Analysis", desc: "Agent production benchmarks, retention economics, and distribution system diagnostics — published in our intelligence reports." },
+                { label: "System Design (IDOS™)", desc: "Our proprietary six-stage framework for mapping where performance breaks down across recruiting, onboarding, activation, retention, leadership, and infrastructure." },
+                { label: "Distribution Intelligence", desc: "Ongoing insight articles, intelligence briefs, and data visualizations grounded in sourced industry data." },
               ].map((item) => (
                 <div key={item.label} className="border border-border p-6">
                   <h3 className="font-serif text-lg font-bold mb-2">{item.label}</h3>
