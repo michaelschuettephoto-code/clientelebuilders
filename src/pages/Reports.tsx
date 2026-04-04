@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Helmet } from "react-helmet";
-import { Download, ArrowRight } from "lucide-react";
+import { Download, ArrowRight, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
@@ -91,13 +91,25 @@ const Reports = () => {
               key={report.num}
               className="border border-border p-8 md:p-10 relative group hover:border-accent/40 transition-colors"
             >
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className={`absolute top-0 left-0 right-0 h-[3px] bg-accent ${report.num === "01" ? "opacity-100" : "opacity-0 group-hover:opacity-100"} transition-opacity`} />
               <div className="flex flex-col md:flex-row md:items-start gap-6">
                 <div className="md:w-1/3">
                   <span className="font-mono text-[8px] tracking-[0.18em] text-accent uppercase block mb-2">
                     Report {report.num}
                   </span>
                   <h2 className="font-serif text-2xl font-bold leading-tight">{report.title}</h2>
+                  {report.num === "01" ? (
+                    <Link
+                      to="/reports/agent-production"
+                      className="inline-flex items-center gap-1.5 mt-3 font-mono text-[9px] tracking-[0.15em] uppercase text-accent hover:text-accent/80 transition-colors font-medium"
+                    >
+                      <FileText className="h-3.5 w-3.5" />
+                      Read Full Report
+                      <ArrowRight className="h-3 w-3" />
+                    </Link>
+                  ) : (
+                    <span className="inline-block mt-3 font-mono text-[9px] tracking-[0.15em] uppercase text-muted-foreground/50">Coming Soon</span>
+                  )}
                 </div>
                 <p className="md:w-2/3 text-muted-foreground text-sm leading-relaxed">
                   {report.desc}
