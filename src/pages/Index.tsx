@@ -72,13 +72,12 @@ const CONTENT_PILLARS = [
   "Infrastructure & Data",
 ];
 
-/* ── Authority Anchor Topics ── */
-const AUTHORITY_TOPICS = [
-  "Why 49% of Americans Still Don't Own Life Insurance",
-  "The $373B Investment Income Engine Behind Life Insurance",
-  "711 Companies, 3 Control 10% — The Concentration Problem",
-  "Independent Agents Now Own 53% of Distribution",
-  "The $1.2T Outlook: What's Driving 2026–2031 Growth",
+/* ── Research Areas ── */
+const RESEARCH_AREAS = [
+  "How production variance is reduced through infrastructure investment",
+  "The compounding economics of agent retention vs. recruiting replacement",
+  "Why revenue-per-employee ratios vary 4.5x across major carriers",
+  "System-level determinants of time-to-production in new agents",
 ];
 
 const Index = () => {
