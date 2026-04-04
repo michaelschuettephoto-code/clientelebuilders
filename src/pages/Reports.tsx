@@ -6,26 +6,35 @@ import { Link } from "react-router-dom";
 
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
+const MARKET_SNAPSHOT = [
+  { stat: "$1.1T", label: "Industry Revenue", source: "IBISWorld 2026" },
+  { stat: "893", label: "Businesses", source: "IBISWorld 2026" },
+  { stat: "329K", label: "Employees", source: "IBISWorld 2026" },
+  { stat: "16.7%", label: "Profit Margin", source: "IBISWorld 2026" },
+  { stat: "711", label: "Life Insurance Cos.", source: "Statista 2024" },
+  { stat: "$5.6T", label: "Total Investments", source: "ACLI / NAIC" },
+];
+
 const FLAGSHIP_REPORTS = [
   {
     num: "01",
     title: "Agent Production Report",
-    desc: "Conversion rates, ramp timelines, and the benchmarks that separate activating agents from churning ones. System breakdown of where production fails — and what top performers do differently.",
+    desc: "Conversion rates, ramp timelines, and the benchmarks that separate activating agents from churning ones. With 329K industry employees and individuals aged 34 and younger increasingly delaying purchases (only 13.5% of market revenue), production systems must adapt to shifting demographics.",
   },
   {
     num: "02",
     title: "Persistency Report",
-    desc: "Retention analytics, lapse patterns, and the operational levers that protect revenue. Why retention — not recruiting — is where 80% of profit is made or lost.",
+    desc: "Retention analytics, lapse patterns, and the operational levers that protect revenue. Life insurance ownership has declined from 65% in 2011 to 51% in 2024 — meaning every retained policy matters more. Why retention, not recruiting, is where 80% of profit is made or lost.",
   },
   {
     num: "03",
     title: "Compensation Benchmark Report",
-    desc: "Comp structures across IMOs and how incentives shape agent behavior, production volume, and organizational growth. Side-by-side: Top 10% vs Average vs Bottom 50%.",
+    desc: "Comp structures across IMOs and how incentives shape agent behavior, production volume, and organizational growth. With industry profit margins at 16.7% and wages at just 4.3% of revenue, compensation design is the highest-leverage variable in distribution economics.",
   },
   {
     num: "04",
     title: "Tech Stack Report",
-    desc: "CRM adoption, automation maturity, and the data infrastructure behind scalable distribution. Which tools actually move the needle — and which create expensive noise.",
+    desc: "CRM adoption, automation maturity, and the data infrastructure behind scalable distribution. From New York Life's cloud CRM rollout (2022) to 70%+ of insurance professionals now using AI tools — which technology investments actually move the needle.",
   },
 ];
 
