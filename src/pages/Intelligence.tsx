@@ -176,6 +176,25 @@ const Intelligence = () => {
         </div>
       </section>
 
+      {/* ═══ MARKET CONTEXT BAR ═══ */}
+      <section className="border-b border-white/[0.06] bg-[hsl(var(--ink))]">
+        <div className="container max-w-7xl mx-auto px-6 py-6">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+            {[
+              { stat: "$1.1 trillion", label: "Industry Revenue", source: "IBISWorld 2026" },
+              { stat: "711", label: "Life Insurance Companies", source: "Statista 2024" },
+              { stat: "262M", label: "Policies in Force", source: "ACLI 2024" },
+            ].map((item) => (
+              <div key={item.label} className="text-center">
+                <span className="font-serif text-2xl md:text-3xl font-black text-accent block">{item.stat}</span>
+                <span className="text-white/50 text-xs font-medium block">{item.label}</span>
+                <span className="font-mono text-[7px] tracking-[0.1em] text-white/20 uppercase">{item.source}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══ 2. FEATURED INSIGHT ═══ */}
       {featuredPost && (
         <section className="border-b border-white/[0.06]">

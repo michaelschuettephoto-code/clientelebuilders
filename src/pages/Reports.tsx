@@ -65,6 +65,24 @@ const Reports = () => {
         </div>
       </section>
 
+      {/* Market Snapshot */}
+      <section className="bg-[hsl(var(--fog))] border-b border-border">
+        <div className="container max-w-4xl mx-auto px-6 py-14">
+          <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase block mb-6">
+            Market Snapshot
+          </span>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            {MARKET_SNAPSHOT.map((item) => (
+              <div key={item.label} className="border border-border bg-card p-4 text-center">
+                <span className="font-serif text-2xl font-black text-accent block mb-1">{item.stat}</span>
+                <span className="text-foreground text-xs font-medium block mb-1">{item.label}</span>
+                <span className="font-mono text-[7px] tracking-[0.1em] text-muted-foreground uppercase">{item.source}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Flagship Reports */}
       <section className="container max-w-4xl mx-auto px-6 py-20">
         <div className="space-y-8">
