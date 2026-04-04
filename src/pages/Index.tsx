@@ -76,11 +76,11 @@ const CONTENT_PILLARS = [
 
 /* ── Authority Anchor Topics ── */
 const AUTHORITY_TOPICS = [
-  "Why Most IMOs Fail to Scale Past $10M",
-  "The Hidden Economics of Agent Retention",
-  "The 7 KPIs That Actually Drive IMO Profitability",
-  "What Top 10% IMOs Do Differently",
-  "The Real Cost of Chargebacks",
+  "Why 49% of Americans Still Don't Own Life Insurance",
+  "The $373B Investment Income Engine Behind Life Insurance",
+  "711 Companies, 3 Control 10% — The Concentration Problem",
+  "Independent Agents Now Own 53% of Distribution",
+  "The $1.2T Outlook: What's Driving 2026–2031 Growth",
 ];
 
 const Index = () => {
