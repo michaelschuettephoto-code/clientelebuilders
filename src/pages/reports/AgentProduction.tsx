@@ -507,7 +507,7 @@ const AgentProduction = () => {
             <div>
               <div className="font-mono text-[9px] tracking-[0.28em] text-[hsl(var(--gold-light))] uppercase mb-2.5">Section 09 — Distribution Assessment</div>
               <div className="font-serif text-2xl md:text-[26px] font-bold text-primary-foreground leading-tight mb-2.5">See How Your System Compares</div>
-              <div className="text-[13px] text-primary-foreground/55 leading-[1.7] max-w-[480px]">The Distribution Scorecard assesses your organization across all 8 IDOS™ systems — recruiting, onboarding, activation, retention, leadership, compensation, marketing, and infrastructure. You'll receive a score, a system breakdown, and your highest-leverage next move. Takes 7 minutes.</div>
+              <div className="text-[13px] text-primary-foreground/55 leading-[1.7] max-w-[480px]">The Distribution Scorecard assesses your organization across all six IDOS™ stages — recruiting, onboarding, activation, retention, leadership, and infrastructure. You'll receive a score, a system breakdown, and your highest-leverage next move. Takes 3 minutes.</div>
             </div>
             <a
               href={SCORECARD_URL}
