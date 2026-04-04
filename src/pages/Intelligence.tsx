@@ -316,7 +316,7 @@ const Intelligence = () => {
                 key={i}
                 className="group border border-white/[0.06] p-8 hover:border-accent/30 transition-colors relative overflow-hidden"
               >
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className={`absolute top-0 left-0 right-0 h-[2px] bg-accent ${(report as any).link ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} transition-transform duration-500 origin-left`} />
                 <span className="font-mono text-[9px] tracking-[0.18em] text-white/25 uppercase">
                   Report {String(i + 1).padStart(2, "0")}
                 </span>
@@ -324,6 +324,16 @@ const Intelligence = () => {
                   {report.title}
                 </h3>
                 <p className="text-white/40 text-sm leading-relaxed">{report.desc}</p>
+                {(report as any).link ? (
+                  <Link
+                    to={(report as any).link}
+                    className="inline-flex items-center gap-1.5 mt-4 font-mono text-[9px] tracking-[0.15em] uppercase text-accent hover:text-[hsl(var(--gold-light))] transition-colors font-medium"
+                  >
+                    Read Full Report <ArrowRight className="h-3 w-3" />
+                  </Link>
+                ) : (
+                  <span className="inline-block mt-4 font-mono text-[9px] tracking-[0.15em] uppercase text-white/20">Coming Soon</span>
+                )}
               </div>
             ))}
           </div>
