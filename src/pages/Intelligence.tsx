@@ -25,19 +25,19 @@ const CATEGORIES = [
 const REPORT_TYPES = [
   {
     title: "Agent Production Report",
-    desc: "Conversion rates, ramp timelines, and the benchmarks that separate activating agents from churning ones.",
+    desc: "Conversion rates, ramp timelines, and production benchmarks. With only 13.5% of revenue from under-34 consumers, activation systems must evolve.",
   },
   {
     title: "Persistency Report",
-    desc: "Retention analytics, lapse patterns, and what top-10% organizations do differently to protect revenue.",
+    desc: "Retention analytics, lapse patterns — ownership down from 65% (2011) to 51% (2024). Every retained policy matters more.",
   },
   {
     title: "Compensation Benchmark Report",
-    desc: "Comp structures across IMOs — how incentives shape agent behavior, production, and organizational growth.",
+    desc: "Comp structures across IMOs. 16.7% industry profit margin, 4.3% wages-to-revenue — compensation design is the highest-leverage variable.",
   },
   {
     title: "Tech Stack Report",
-    desc: "CRM adoption, automation maturity, and the data infrastructure behind scalable distribution.",
+    desc: "CRM adoption and automation maturity. From New York Life's cloud CRM rollout to 70%+ AI adoption — what actually moves the needle.",
   },
 ];
 
