@@ -44,8 +44,8 @@ const REPORT_TYPES = [
 
 const FRAMEWORKS = [
   {
-    title: "8-System Model (IDOS)",
-    description: "The operating system behind every scalable insurance distribution organization.",
+    title: "IDOS™ Framework",
+    description: "Six-stage operating system: Recruiting, Onboarding, Activation, Retention, Leadership, Infrastructure.",
   },
   {
     title: "Recruiting Pipeline Blueprint",
