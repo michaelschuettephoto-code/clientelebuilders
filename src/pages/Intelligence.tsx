@@ -25,19 +25,19 @@ const CATEGORIES = [
 const REPORT_TYPES = [
   {
     title: "Agent Production Report",
-    desc: "Conversion rates, ramp timelines, and the benchmarks that separate activating agents from churning ones.",
+    desc: "Conversion rates, ramp timelines, and production benchmarks. With only 13.5% of revenue from under-34 consumers, activation systems must evolve.",
   },
   {
     title: "Persistency Report",
-    desc: "Retention analytics, lapse patterns, and what top-10% organizations do differently to protect revenue.",
+    desc: "Retention analytics, lapse patterns — ownership down from 65% (2011) to 51% (2024). Every retained policy matters more.",
   },
   {
     title: "Compensation Benchmark Report",
-    desc: "Comp structures across IMOs — how incentives shape agent behavior, production, and organizational growth.",
+    desc: "Comp structures across IMOs. 16.7% industry profit margin, 4.3% wages-to-revenue — compensation design is the highest-leverage variable.",
   },
   {
     title: "Tech Stack Report",
-    desc: "CRM adoption, automation maturity, and the data infrastructure behind scalable distribution.",
+    desc: "CRM adoption and automation maturity. From New York Life's cloud CRM rollout to 70%+ AI adoption — what actually moves the needle.",
   },
 ];
 
@@ -172,6 +172,25 @@ const Intelligence = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ MARKET CONTEXT BAR ═══ */}
+      <section className="border-b border-white/[0.06] bg-[hsl(var(--ink))]">
+        <div className="container max-w-7xl mx-auto px-6 py-6">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+            {[
+              { stat: "$1.1 trillion", label: "Industry Revenue", source: "IBISWorld 2026" },
+              { stat: "711", label: "Life Insurance Companies", source: "Statista 2024" },
+              { stat: "262M", label: "Policies in Force", source: "ACLI 2024" },
+            ].map((item) => (
+              <div key={item.label} className="text-center">
+                <span className="font-serif text-2xl md:text-3xl font-black text-accent block">{item.stat}</span>
+                <span className="text-white/50 text-xs font-medium block">{item.label}</span>
+                <span className="font-mono text-[7px] tracking-[0.1em] text-white/20 uppercase">{item.source}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

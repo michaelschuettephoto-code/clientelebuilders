@@ -42,10 +42,10 @@ const IDOS_SYSTEMS = [
 ];
 
 const INTELLIGENCE_PILLARS = [
-  { icon: BarChart3, label: "Industry Intelligence", desc: "IBISWorld, Statista, and proprietary market reports" },
-  { icon: Globe, label: "Consumer Behavior", desc: "Mintel, survey data, and behavioral trend analysis" },
-  { icon: TrendingUp, label: "Market Activity", desc: "News, deal flow, and distribution shift monitoring" },
-  { icon: Settings, label: "Operational Strategy", desc: "Consulting frameworks, benchmarks, and best practices" },
+  { icon: BarChart3, label: "Industry Intelligence", desc: "IBISWorld, Statista, NAIC, ACLI — $1.1 trillion market tracked" },
+  { icon: Globe, label: "Consumer Behavior", desc: "LIMRA ownership surveys, ACSI satisfaction indices, behavioral data" },
+  { icon: TrendingUp, label: "Market Activity", desc: "Carrier deal flow, M&A activity, regulatory shifts" },
+  { icon: Settings, label: "Operational Strategy", desc: "Cost structure benchmarks, financial ratios, competitive analysis" },
 ];
 
 const ENGAGEMENT_MODELS = [
@@ -76,11 +76,11 @@ const CONTENT_PILLARS = [
 
 /* ── Authority Anchor Topics ── */
 const AUTHORITY_TOPICS = [
-  "Why Most IMOs Fail to Scale Past $10M",
-  "The Hidden Economics of Agent Retention",
-  "The 7 KPIs That Actually Drive IMO Profitability",
-  "What Top 10% IMOs Do Differently",
-  "The Real Cost of Chargebacks",
+  "Why 49% of Americans Still Don't Own Life Insurance",
+  "The $373B Investment Income Engine Behind Life Insurance",
+  "711 Companies, 3 Control 10% — The Concentration Problem",
+  "Independent Agents Now Own 53% of Distribution",
+  "The $1.2T Outlook: What's Driving 2026–2031 Growth",
 ];
 
 const Index = () => {
@@ -325,11 +325,11 @@ const Index = () => {
           </p>
 
           {/* KPI Benchmark Cards */}
-          <div className="grid sm:grid-cols-3 gap-5 mb-14">
+          <div className="grid sm:grid-cols-3 gap-5 mb-6">
             {[
-              { stat: "85%+", label: "Persistency", sub: "Top 10% IMO benchmark" },
-              { stat: "20%+", label: "Producer Activation", sub: "First-year conversion rate" },
-              { stat: "3–5×", label: "Agent Productivity", sub: "vs. industry average" },
+              { stat: "$1.1T", label: "Industry Revenue", sub: "US Life Insurance & Annuities", source: "IBISWorld 2026" },
+              { stat: "893", label: "Total Businesses", sub: "US Life Insurance market", source: "IBISWorld 2026" },
+              { stat: "51%", label: "Ownership Rate", sub: "Americans with life insurance", source: "LIMRA / Statista 2024" },
             ].map((kpi) => (
               <div
                 key={kpi.label}
@@ -342,8 +342,37 @@ const Index = () => {
                 <span className="font-serif text-base font-bold text-primary-foreground block mb-1">
                   {kpi.label}
                 </span>
-                <span className="font-mono text-[9px] tracking-[0.12em] text-primary-foreground/40 uppercase">
+                <span className="font-mono text-[9px] tracking-[0.12em] text-primary-foreground/40 uppercase block">
                   {kpi.sub}
+                </span>
+                <span className="font-mono text-[7px] tracking-[0.1em] text-primary-foreground/25 uppercase mt-2 block">
+                  Source: {kpi.source}
+                </span>
+              </div>
+            ))}
+          </div>
+          <div className="grid sm:grid-cols-3 gap-5 mb-14">
+            {[
+              { stat: "16.7%", label: "Profit Margin", sub: "Industry average", source: "IBISWorld 2026" },
+              { stat: "53%", label: "Independent Agents", sub: "Share of distribution", source: "LIMRA 2023" },
+              { stat: "2.0%", label: "Revenue CAGR", sub: "Forecast 2026–2031", source: "IBISWorld 2026" },
+            ].map((kpi) => (
+              <div
+                key={kpi.label}
+                className="border border-primary-foreground/10 p-8 text-center relative group hover:border-accent/40 transition-colors"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent opacity-50" />
+                <span className="font-serif text-4xl md:text-5xl font-black text-accent block mb-2">
+                  {kpi.stat}
+                </span>
+                <span className="font-serif text-base font-bold text-primary-foreground block mb-1">
+                  {kpi.label}
+                </span>
+                <span className="font-mono text-[9px] tracking-[0.12em] text-primary-foreground/40 uppercase block">
+                  {kpi.sub}
+                </span>
+                <span className="font-mono text-[7px] tracking-[0.1em] text-primary-foreground/25 uppercase mt-2 block">
+                  Source: {kpi.source}
                 </span>
               </div>
             ))}
