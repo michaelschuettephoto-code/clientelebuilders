@@ -42,10 +42,10 @@ const IDOS_SYSTEMS = [
 ];
 
 const INTELLIGENCE_PILLARS = [
-  { icon: BarChart3, label: "Industry Intelligence", desc: "IBISWorld, Statista, and proprietary market reports" },
-  { icon: Globe, label: "Consumer Behavior", desc: "Mintel, survey data, and behavioral trend analysis" },
-  { icon: TrendingUp, label: "Market Activity", desc: "News, deal flow, and distribution shift monitoring" },
-  { icon: Settings, label: "Operational Strategy", desc: "Consulting frameworks, benchmarks, and best practices" },
+  { icon: BarChart3, label: "Industry Intelligence", desc: "IBISWorld, Statista, NAIC, ACLI — $1.1 trillion market tracked" },
+  { icon: Globe, label: "Consumer Behavior", desc: "LIMRA ownership surveys, ACSI satisfaction indices, behavioral data" },
+  { icon: TrendingUp, label: "Market Activity", desc: "Carrier deal flow, M&A activity, regulatory shifts" },
+  { icon: Settings, label: "Operational Strategy", desc: "Cost structure benchmarks, financial ratios, competitive analysis" },
 ];
 
 const ENGAGEMENT_MODELS = [
