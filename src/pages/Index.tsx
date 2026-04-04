@@ -42,10 +42,10 @@ const IDOS_SYSTEMS = [
 ];
 
 const INTELLIGENCE_PILLARS = [
-  { icon: BarChart3, label: "Industry Intelligence", desc: "IBISWorld, Statista, NAIC, ACLI — $1.1 trillion market tracked" },
-  { icon: Globe, label: "Consumer Behavior", desc: "LIMRA ownership surveys, ACSI satisfaction indices, behavioral data" },
-  { icon: TrendingUp, label: "Market Activity", desc: "Carrier deal flow, M&A activity, regulatory shifts" },
-  { icon: Settings, label: "Operational Strategy", desc: "Cost structure benchmarks, financial ratios, competitive analysis" },
+  { icon: BarChart3, label: "Agent Production Analysis", desc: "KPI benchmarking, revenue efficiency, and time-to-production diagnostics across distribution teams" },
+  { icon: Globe, label: "System Design (IDOS™)", desc: "Our proprietary framework mapping the six stages where distribution performance breaks down" },
+  { icon: TrendingUp, label: "Recruiting & Retention", desc: "Pipeline structure, ramp time analysis, and the compounding economics of agent retention" },
+  { icon: Settings, label: "Infrastructure & Variance", desc: "How operational systems reduce performance variance and increase output predictability at scale" },
 ];
 
 const ENGAGEMENT_MODELS = [
@@ -186,9 +186,8 @@ const Index = () => {
               <span className="text-accent">Not Guesswork</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Clientele Builders operates at the intersection of industry intelligence, consumer behavior,
-              market activity, and operational strategy. We don't just build marketing.
-              We build distribution systems backed by data.
+              Every insight we publish is grounded in sourced industry data and our proprietary IDOS™ framework.
+              From agent production benchmarks to retention economics — if it's on our platform, it's been analyzed, not assumed.
             </p>
           </div>
 
