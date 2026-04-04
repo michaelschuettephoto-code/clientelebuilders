@@ -108,13 +108,6 @@ const Reports = () => {
                         Read Full Report
                         <ArrowRight className="h-3 w-3" />
                       </Link>
-                      <Link
-                        to="/reports/agent-production/briefs"
-                        className="inline-flex items-center gap-1.5 font-mono text-[9px] tracking-[0.15em] uppercase text-muted-foreground hover:text-accent transition-colors font-medium"
-                      >
-                        Intelligence Briefs
-                        <ArrowRight className="h-3 w-3" />
-                      </Link>
                     </div>
                   ) : (
                     <span className="inline-block mt-3 font-mono text-[9px] tracking-[0.15em] uppercase text-muted-foreground/50">Coming Soon</span>
