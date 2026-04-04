@@ -267,11 +267,31 @@ const Intelligence = () => {
             ))}
           </div>
         ) : filteredPosts.length === 0 ? (
-          <div className="text-center py-24">
-            <p className="text-white/50 text-lg">No articles in this category yet.</p>
-            <p className="text-white/30 text-sm mt-2">
-              Check back soon — new intelligence is published regularly.
-            </p>
+          <div className="py-12">
+            <span className="font-mono text-[9px] tracking-[0.32em] text-[hsl(var(--gold-light))] uppercase block mb-8">
+              Intelligence Briefs — Agent Production Series
+            </span>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { num: "001", title: "Production as a System Output in Commission-Based Distribution", desc: "Why agent production is a structural output — not a motivational one — and how the IDOS™ framework reframes activation as system design." },
+                { num: "002", title: "Retention as a Structural Determinant of Revenue Compounding", desc: "How retention compounds revenue over time, and why most distribution organizations underinvest in the systems that drive it." },
+                { num: "003", title: "Infrastructure as a Variance Reduction Mechanism in Agent Distribution", desc: "The role of operational infrastructure in reducing performance variance and enabling scalable, predictable agent output." },
+              ].map((brief) => (
+                <Link
+                  key={brief.num}
+                  to={`/reports/agent-production/briefs#brief-${brief.num}`}
+                  className="border border-white/[0.06] p-6 hover:border-[hsl(var(--gold-light))]/30 transition-colors group block"
+                >
+                  <span className="font-mono text-[8px] tracking-[0.18em] text-[hsl(var(--gold-light))] uppercase block mb-3">
+                    Brief {brief.num}
+                  </span>
+                  <h3 className="font-serif text-sm font-bold text-white leading-snug mb-3 group-hover:text-[hsl(var(--gold-light))] transition-colors">
+                    {brief.title}
+                  </h3>
+                  <p className="text-white/40 text-xs leading-relaxed">{brief.desc}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         ) : (
           <div>
