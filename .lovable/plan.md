@@ -1,59 +1,44 @@
 
 
-## Integrate the Agent Production Report Into the Website
+## Add Intelligence Briefs Page
 
-The uploaded HTML file is a complete, institutional-quality intelligence report. We'll convert it into a dedicated React page and update the rest of the site to feature it as the first live report.
+Convert the uploaded HTML into a new React page at `/reports/agent-production/briefs` — three short-form analytical briefs derived from the Agent Production Report.
 
 ### Changes
 
-**1. New Page: `src/pages/reports/AgentProduction.tsx`**
+**1. New Page: `src/pages/reports/AgentProductionBriefs.tsx`**
 
-Convert the full HTML report into a React component using the existing design system (Tailwind classes matching the site's navy/gold/cream palette). The report has 9 sections:
+A single React component containing all three briefs in sequence, using the site's Header/Footer and design tokens. The page structure:
 
-- Cover (hero banner)
-- Table of Contents
-- Executive Brief (At a Glance box + narrative)
-- System Breakdown (IDOS framework SVG + time-to-production SVG)
-- KPI Analysis (revenue efficiency table + 4 KPI insight cards)
-- Bottleneck Identification (pipeline degradation SVG + 6 bottleneck items)
-- Market Intelligence (data blocks + pull quote)
-- Strategic Recommendations (5 recommendation cards)
-- Extended Observations (5 pattern items)
-- Visual Intelligence (Pipeline vs Flywheel SVG + Variance Reduction SVG)
-- Sidebar (Market Benchmarks, Confidence Levels, Data Sources, 5 System Shifts)
-- Scorecard CTA
+- **Masthead** — dark `bg-[hsl(var(--ink))]` hero with title "Intelligence Briefs — Production Report Series", metadata (Source, Framework, Published, Briefs count)
+- **Brief Index** — 3-item grid navigation bar on `bg-primary`
+- **Brief 001** — "Production as a System Output in Commission-Based Distribution" (5 sections: Context, Data with 3 callout cards, Insight, IDOS panel, Structural Implication, Closing Observation)
+- **Brief 002** — "Retention as a Structural Determinant of Revenue Compounding" (same 5-section structure, 3 data callouts)
+- **Brief 003** — "Infrastructure as a Variance Reduction Mechanism" (same 5-section structure, 3 data callouts)
 
-The page will use the site's Header/Footer, Helmet for SEO, and inline SVGs for the data visualizations. The two-column layout (main + sidebar) will be preserved.
+Design elements mapped to existing tokens:
+- Section tags: `font-mono text-[8px] tracking-[0.3em]` with colored rule lines (steel, amber for data, green for insight)
+- Data callouts: `bg-[hsl(var(--gold)/0.08)]` with gold left border
+- IDOS panels: `bg-primary` with gold-light labels and 6 component tags
+- Implication boxes: `bg-[hsl(var(--fog))]` with border
+- Closing observations: italic, border-top rule
 
 **2. Route: `src/App.tsx`**
 
-Add route: `/reports/agent-production` → `AgentProduction` component (lazy loaded).
+Add lazy-loaded route: `/reports/agent-production/briefs` → `AgentProductionBriefs`
 
-**3. Reports Page: `src/pages/Reports.tsx`**
+**3. Link from Report: `src/pages/reports/AgentProduction.tsx`**
 
-Update the Agent Production Report card (report 01) to include a "Read Report" link pointing to `/reports/agent-production`, visually distinguishing it as the first available report. Other reports remain as "Coming Soon."
+Add a "Read the Intelligence Briefs" link/banner near the top or bottom of the Agent Production Report page, connecting the two assets.
 
-**4. Intelligence Hub: `src/pages/Intelligence.tsx`**
+**4. Reports Page: `src/pages/Reports.tsx`**
 
-Update the Agent Production Report entry in `REPORT_TYPES` to link to the new page.
-
-**5. Homepage: `src/pages/Index.tsx`**
-
-Update the intelligence/benchmarks section to feature the live report as a callout — e.g., "Now Available: 2026 Agent Production Report" with a link.
-
-### Design Approach
-
-- All content from the HTML preserved exactly (copy, data, quotes, SVGs)
-- Tailwind classes mapped from the report's CSS variables to the site's existing design tokens
-- SVGs rendered inline as JSX
-- Two-column layout with sticky sidebar on desktop, stacked on mobile
-- No new dependencies
+Add "Intelligence Briefs" as a sub-item under the Agent Production Report card, with a link to the new page.
 
 ### Files Modified
 
-- `src/pages/reports/AgentProduction.tsx` (new)
+- `src/pages/reports/AgentProductionBriefs.tsx` (new)
 - `src/App.tsx` (new route)
-- `src/pages/Reports.tsx` (link to live report)
-- `src/pages/Intelligence.tsx` (link to live report)
-- `src/pages/Index.tsx` (featured report callout)
+- `src/pages/reports/AgentProduction.tsx` (link to briefs)
+- `src/pages/Reports.tsx` (briefs sub-link)
 
