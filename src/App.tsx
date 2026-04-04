@@ -15,6 +15,7 @@ const Story = lazy(() => import("./pages/Story"));
 const Tag = lazy(() => import("./pages/Tag"));
 const Scorecard = lazy(() => import("./pages/Scorecard"));
 const Reports = lazy(() => import("./pages/Reports"));
+const AgentProduction = lazy(() => import("./pages/reports/AgentProduction"));
 const Frameworks = lazy(() => import("./pages/Frameworks"));
 const Consulting = lazy(() => import("./pages/Consulting"));
 const AdminLogin = lazy(() => import("./pages/admin/Login"));
