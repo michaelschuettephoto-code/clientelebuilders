@@ -293,7 +293,7 @@ const AgentProduction = () => {
 
             <div className="bg-[hsl(var(--fog))] border-l-[3px] border-[hsl(var(--steel))] p-3.5 my-4">
               <div className="font-mono text-[8px] tracking-[0.2em] text-[hsl(var(--steel))] uppercase mb-1.5">Market Scale</div>
-              <div className="text-[13px] leading-[1.7]">The U.S. market includes 711 life insurance companies and hundreds of millions of policies in force. The brokerage industry employs approximately 1 million workers. Agent-led distribution accounts for roughly 90% of total life insurance sales — making distribution infrastructure the primary competitive variable at scale.</div>
+              <div className="text-[13px] leading-[1.7]">The U.S. life insurance industry generates over $1.1 trillion in annual revenue and hundreds of millions of policies in force. The brokerage industry employs approximately 1 million workers. Agent-led distribution accounts for roughly 90% of total life insurance sales — making distribution infrastructure the primary competitive variable at scale.</div>
             </div>
 
             <p className="text-sm leading-[1.85] mb-3.5">The insurance market is mature and densely competitive. Carriers cannot meaningfully differentiate on product alone — the policies themselves are commodity-adjacent. In this environment, the dominant competitive variable is system efficiency: how effectively an organization converts agent input into sustained policy output.</p>
