@@ -186,9 +186,8 @@ const Index = () => {
               <span className="text-accent">Not Guesswork</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Clientele Builders operates at the intersection of industry intelligence, consumer behavior,
-              market activity, and operational strategy. We don't just build marketing.
-              We build distribution systems backed by data.
+              Every insight we publish is grounded in sourced industry data and our proprietary IDOS™ framework.
+              From agent production benchmarks to retention economics — if it's on our platform, it's been analyzed, not assumed.
             </p>
           </div>
 
