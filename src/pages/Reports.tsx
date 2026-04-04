@@ -19,22 +19,22 @@ const FLAGSHIP_REPORTS = [
   {
     num: "01",
     title: "Agent Production Report",
-    desc: "Conversion rates, ramp timelines, and the benchmarks that separate activating agents from churning ones. With 329K industry employees and individuals aged 34 and younger increasingly delaying purchases (only 13.5% of market revenue), production systems must adapt to shifting demographics.",
+    desc: "KPI benchmarking, revenue efficiency, time-to-production diagnostics, and the IDOS™ system framework applied to agent activation. Includes intelligence briefs on production systems, retention compounding, and infrastructure variance.",
   },
   {
     num: "02",
     title: "Persistency Report",
-    desc: "Retention analytics, lapse patterns, and the operational levers that protect revenue. Life insurance ownership has declined from 65% in 2011 to 51% in 2024 — meaning every retained policy matters more. Why retention, not recruiting, is where 80% of profit is made or lost.",
+    desc: "Retention analytics, lapse patterns, and the structural relationship between agent tenure, policy persistency, and long-term revenue compounding in distribution organizations.",
   },
   {
     num: "03",
     title: "Compensation Benchmark Report",
-    desc: "Comp structures across IMOs and how incentives shape agent behavior, production volume, and organizational growth. With industry profit margins at 16.7% and wages at just 4.3% of revenue, compensation design is the highest-leverage variable in distribution economics.",
+    desc: "How compensation structures shape agent behavior, production volume, and organizational growth across insurance distribution models.",
   },
   {
     num: "04",
     title: "Tech Stack Report",
-    desc: "CRM adoption, automation maturity, and the data infrastructure behind scalable distribution. From New York Life's cloud CRM rollout (2022) to 70%+ of insurance professionals now using AI tools — which technology investments actually move the needle.",
+    desc: "CRM adoption, automation maturity, and the data infrastructure investments that actually move the needle in scalable distribution.",
   },
 ];
 

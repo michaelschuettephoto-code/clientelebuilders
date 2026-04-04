@@ -183,8 +183,8 @@ const Intelligence = () => {
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             {[
               { stat: "$1.1 trillion", label: "Industry Revenue", source: "IBISWorld 2026" },
-              { stat: "711", label: "Life Insurance Companies", source: "Statista 2024" },
-              { stat: "262M", label: "Policies in Force", source: "ACLI 2024" },
+              { stat: "893", label: "Total Businesses", source: "IBISWorld 2026" },
+              { stat: "51%", label: "Ownership Rate", source: "LIMRA / Statista 2024" },
             ].map((item) => (
               <div key={item.label} className="text-center">
                 <span className="font-serif text-2xl md:text-3xl font-black text-accent block">{item.stat}</span>
