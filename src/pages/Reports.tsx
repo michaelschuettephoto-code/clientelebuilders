@@ -99,14 +99,23 @@ const Reports = () => {
                   </span>
                   <h2 className="font-serif text-2xl font-bold leading-tight">{report.title}</h2>
                   {report.num === "01" ? (
-                    <Link
-                      to="/reports/agent-production"
-                      className="inline-flex items-center gap-1.5 mt-3 font-mono text-[9px] tracking-[0.15em] uppercase text-accent hover:text-accent/80 transition-colors font-medium"
-                    >
-                      <FileText className="h-3.5 w-3.5" />
-                      Read Full Report
-                      <ArrowRight className="h-3 w-3" />
-                    </Link>
+                    <div className="flex flex-col gap-1.5 mt-3">
+                      <Link
+                        to="/reports/agent-production"
+                        className="inline-flex items-center gap-1.5 font-mono text-[9px] tracking-[0.15em] uppercase text-accent hover:text-accent/80 transition-colors font-medium"
+                      >
+                        <FileText className="h-3.5 w-3.5" />
+                        Read Full Report
+                        <ArrowRight className="h-3 w-3" />
+                      </Link>
+                      <Link
+                        to="/reports/agent-production/briefs"
+                        className="inline-flex items-center gap-1.5 font-mono text-[9px] tracking-[0.15em] uppercase text-muted-foreground hover:text-accent transition-colors font-medium"
+                      >
+                        Intelligence Briefs
+                        <ArrowRight className="h-3 w-3" />
+                      </Link>
+                    </div>
                   ) : (
                     <span className="inline-block mt-3 font-mono text-[9px] tracking-[0.15em] uppercase text-muted-foreground/50">Coming Soon</span>
                   )}
