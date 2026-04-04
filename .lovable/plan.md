@@ -1,44 +1,26 @@
 
 
-## Add Intelligence Briefs Page
+## Remove CRM Content & Fix Remaining Inconsistencies
 
-Convert the uploaded HTML into a new React page at `/reports/agent-production/briefs` — three short-form analytical briefs derived from the Agent Production Report.
+### Problem
+1. The CRM article is a published post in the database flagged as `is_featured`, so it shows as the "Featured Insight" on the Intelligence page
+2. The Agent Production Report Section 09 CTA still says "all 8 IDOS™ systems" and lists 8 stages
+3. The sidebar still references "711" life insurance companies (unverified stat removed elsewhere)
 
 ### Changes
 
-**1. New Page: `src/pages/reports/AgentProductionBriefs.tsx`**
+**1. Database: Unpublish / unflag the CRM post**
+- Run a migration to set `is_featured = false` and `is_published = false` on the CRM article so it no longer appears anywhere on the site
 
-A single React component containing all three briefs in sequence, using the site's Header/Footer and design tokens. The page structure:
+**2. `src/pages/reports/AgentProduction.tsx` — Fix Section 09 CTA**
+- Change "all 8 IDOS™ systems" → "all six IDOS™ stages"
+- Update the list from 8 items to the correct 6: Recruiting, Onboarding, Activation, Retention, Leadership, Infrastructure
+- Update "Takes 7 minutes" → "Takes 3 minutes" (consistent with other CTAs)
 
-- **Masthead** — dark `bg-[hsl(var(--ink))]` hero with title "Intelligence Briefs — Production Report Series", metadata (Source, Framework, Published, Briefs count)
-- **Brief Index** — 3-item grid navigation bar on `bg-primary`
-- **Brief 001** — "Production as a System Output in Commission-Based Distribution" (5 sections: Context, Data with 3 callout cards, Insight, IDOS panel, Structural Implication, Closing Observation)
-- **Brief 002** — "Retention as a Structural Determinant of Revenue Compounding" (same 5-section structure, 3 data callouts)
-- **Brief 003** — "Infrastructure as a Variance Reduction Mechanism" (same 5-section structure, 3 data callouts)
-
-Design elements mapped to existing tokens:
-- Section tags: `font-mono text-[8px] tracking-[0.3em]` with colored rule lines (steel, amber for data, green for insight)
-- Data callouts: `bg-[hsl(var(--gold)/0.08)]` with gold left border
-- IDOS panels: `bg-primary` with gold-light labels and 6 component tags
-- Implication boxes: `bg-[hsl(var(--fog))]` with border
-- Closing observations: italic, border-top rule
-
-**2. Route: `src/App.tsx`**
-
-Add lazy-loaded route: `/reports/agent-production/briefs` → `AgentProductionBriefs`
-
-**3. Link from Report: `src/pages/reports/AgentProduction.tsx`**
-
-Add a "Read the Intelligence Briefs" link/banner near the top or bottom of the Agent Production Report page, connecting the two assets.
-
-**4. Reports Page: `src/pages/Reports.tsx`**
-
-Add "Intelligence Briefs" as a sub-item under the Agent Production Report card, with a link to the new page.
+**3. `src/pages/reports/AgentProduction.tsx` — Fix sidebar stats**
+- Replace "U.S. life insurance companies → 711" with a verified stat (e.g., "Industry Revenue → $1.1T" sourced from IBISWorld 2026)
 
 ### Files Modified
-
-- `src/pages/reports/AgentProductionBriefs.tsx` (new)
-- `src/App.tsx` (new route)
-- `src/pages/reports/AgentProduction.tsx` (link to briefs)
-- `src/pages/Reports.tsx` (briefs sub-link)
+- Database migration (unpublish CRM post)
+- `src/pages/reports/AgentProduction.tsx` (Section 09 CTA + sidebar)
 
