@@ -38,7 +38,7 @@ const REPORT_TYPES = [
   },
   {
     title: "Tech Stack Report",
-    desc: "CRM adoption, automation maturity, and the data infrastructure behind scalable distribution organizations.",
+    desc: "Automation maturity, tool adoption, and the data infrastructure behind scalable distribution organizations.",
   },
 ];
 
