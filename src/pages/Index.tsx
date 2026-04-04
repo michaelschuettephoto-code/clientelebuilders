@@ -31,14 +31,12 @@ import {
 const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
 
 const IDOS_SYSTEMS = [
-  { icon: UserPlus, label: "Recruiting", desc: "Predictable agent sourcing with pipeline-stage tracking" },
-  { icon: BookOpen, label: "Onboarding", desc: "Structured ramp that reduces early attrition" },
-  { icon: Megaphone, label: "Marketing", desc: "Agent and consumer-facing campaigns that drive awareness and flow" },
-  { icon: Target, label: "Sales", desc: "Sales enablement systems that convert opportunities into production" },
-  { icon: Shield, label: "Persistency", desc: "Retention systems that protect revenue and lower lapse rates" },
-  { icon: DollarSign, label: "Compensation", desc: "Comp structures that align incentives with organizational growth" },
-  { icon: Crown, label: "Leadership", desc: "Accountability frameworks and performance duplication" },
-  { icon: Cpu, label: "Tech / Data", desc: "CRM, automation, and analytics infrastructure" },
+  { icon: UserPlus, label: "Recruiting", desc: "Predictable agent sourcing with pipeline-stage tracking and quality metrics" },
+  { icon: BookOpen, label: "Onboarding", desc: "Structured ramp sequences that reduce early attrition and accelerate time-to-production" },
+  { icon: Zap, label: "Activation", desc: "Converting agent capacity into measurable organizational output" },
+  { icon: Shield, label: "Retention", desc: "Revenue compounding through policy persistency and agent tenure" },
+  { icon: Crown, label: "Leadership", desc: "Accountability frameworks and performance duplication across teams" },
+  { icon: Cpu, label: "Infrastructure", desc: "Reporting systems, diagnostics, and data visibility across all IDOS™ stages" },
 ];
 
 const INTELLIGENCE_PILLARS = [
