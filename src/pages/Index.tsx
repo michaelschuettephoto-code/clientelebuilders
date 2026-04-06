@@ -37,17 +37,17 @@ const IDOS_SYSTEMS = [
 ];
 
 const INTELLIGENCE_PILLARS = [
-  { icon: BarChart3, label: "Agent Production Analysis", desc: "KPI benchmarking, revenue efficiency, and time-to-production diagnostics across distribution teams" },
-  { icon: Globe, label: "System Design (IDOS™)", desc: "Our proprietary framework mapping the six stages where distribution performance breaks down" },
-  { icon: TrendingUp, label: "Recruiting & Retention", desc: "Pipeline structure, ramp time analysis, and the compounding economics of agent retention" },
-  { icon: Settings, label: "Infrastructure & Variance", desc: "How operational systems reduce performance variance and increase output predictability at scale" },
+  { icon: BarChart3, label: "Production Pipeline Tracking", desc: "KPI benchmarking, revenue efficiency, and time-to-production diagnostics across distribution teams" },
+  { icon: Globe, label: "System Architecture (IDOS™)", desc: "Our proprietary framework mapping the six stages where distribution performance breaks down" },
+  { icon: TrendingUp, label: "Recruiting & Retention Control", desc: "Pipeline structure, ramp time analysis, and the compounding economics of agent retention" },
+  { icon: Settings, label: "Infrastructure & Variance Reduction", desc: "How operational systems reduce performance variance and increase output predictability at scale" },
 ];
 
 const ENGAGEMENT_MODELS = [
-  { icon: Search, label: "Diagnostic & Strategy", desc: "Identify constraints and map out a growth plan" },
-  { icon: Layers, label: "System Buildout", desc: "Design and implement your distribution infrastructure" },
-  { icon: Rocket, label: "Growth Infrastructure", desc: "End-to-end system optimization across recruiting, onboarding, and production" },
-  { icon: MessageSquare, label: "Advisory", desc: "Ongoing strategic support and performance optimization" },
+  { icon: Search, label: "System Diagnostic", desc: "Identify constraints and map your distribution system architecture" },
+  { icon: Layers, label: "Infrastructure Buildout", desc: "Design and implement your distribution operating layer" },
+  { icon: Rocket, label: "Growth Engine", desc: "End-to-end system optimization across recruiting, onboarding, and production" },
+  { icon: MessageSquare, label: "Ongoing Optimization", desc: "Continuous performance tracking, benchmarking, and system refinement" },
 ];
 
 const SCORECARD_AREAS = [
@@ -59,7 +59,6 @@ const SCORECARD_AREAS = [
   "Infrastructure & Data",
 ];
 
-/* ── Content Pillars (from Shawn's framework) ── */
 const CONTENT_PILLARS = [
   "Recruiting Systems",
   "Onboarding Systems",
@@ -69,7 +68,6 @@ const CONTENT_PILLARS = [
   "Infrastructure & Data",
 ];
 
-/* ── Research Areas ── */
 const RESEARCH_AREAS = [
   "How production variance is reduced through infrastructure investment",
   "The compounding economics of agent retention vs. recruiting replacement",
@@ -77,14 +75,23 @@ const RESEARCH_AREAS = [
   "System-level determinants of time-to-production in new agents",
 ];
 
+const PIPELINE_STAGES = ["Lead", "Recruit", "Contract", "Activate", "Produce", "Retain"];
+
+const BENCHMARK_DATA = [
+  { metric: "Agent Activation Rate", top: "78%", avg: "42%", bottom: "18%" },
+  { metric: "12-Mo Persistency", top: "89%", avg: "72%", bottom: "54%" },
+  { metric: "Time-to-First-Sale", top: "14 days", avg: "38 days", bottom: "67 days" },
+  { metric: "Revenue per Agent", top: "$142K", avg: "$68K", bottom: "$23K" },
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Clientele Builders — Insurance Distribution Intelligence & Consulting</title>
+        <title>Clientele Builders — The Operating System for Insurance Distribution</title>
         <meta
           name="description"
-          content="We build, optimize, and scale insurance distribution systems. Data-driven consulting for IMOs, agencies, and distribution leaders."
+          content="Clientele Builders is the system layer that powers recruiting, onboarding, activation, and retention inside insurance distribution organizations. Pipeline tracking. Performance benchmarking. Operational control."
         />
       </Helmet>
       <Header />
@@ -99,13 +106,12 @@ const Index = () => {
             Insurance Distribution Architects
           </span>
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] tracking-tight max-w-4xl mb-7">
-            Most insurance organizations don't have a recruiting problem…{" "}
-            <span className="text-accent">they have a broken distribution system.</span>
+            The Operating System for{" "}
+            <span className="text-accent">Insurance Distribution</span>
           </h1>
           <p className="text-primary-foreground/55 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-12">
-            Clientele Builders is the intelligence and growth infrastructure behind modern insurance distribution.
-            We diagnose, benchmark, and optimize your recruiting, onboarding, activation, and retention systems
-            using real market data — not guesswork.
+            Clientele Builders is the system layer that powers recruiting, onboarding, activation, and retention
+            inside insurance distribution organizations. Pipeline tracking. Performance benchmarking. Operational control.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -115,7 +121,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
             >
-              Take the IMO Growth Scorecard
+              Get Your Distribution Score
               <ArrowRight className="h-4 w-4" />
             </a>
             <Link
@@ -136,21 +142,21 @@ const Index = () => {
             The Real Issue
           </span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-8 text-primary-foreground">
-            Why Most IMOs Hit a Ceiling
+            Why Most Distribution Organizations Stall
           </h2>
 
           <div className="max-w-3xl mb-10">
             <p className="text-primary-foreground/60 text-lg leading-relaxed mb-6">
               Growth doesn't stall because of effort.
-              It stalls because of hidden constraints inside your system.
+              It stalls because there's no system underneath it.
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "Agents are recruited… but never activate",
-                "New hires stall in onboarding",
-                "Production is inconsistent and unpredictable",
-                "Leadership doesn't duplicate",
-                "There's no visibility into what's actually working",
+                "Recruiting pipeline has no stage tracking or conversion metrics",
+                "Onboarding has no structured ramp sequence",
+                "Production output is unmeasured and unpredictable",
+                "Leadership doesn't duplicate — no accountability infrastructure",
+                "Zero visibility into system-level performance",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-primary-foreground/50">
                   <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
@@ -158,11 +164,8 @@ const Index = () => {
                 </li>
               ))}
             </ul>
-            <p className="text-primary-foreground/40 text-sm leading-relaxed">
-              Most organizations try to fix this with more leads or more recruiting.
-            </p>
             <p className="text-accent font-serif text-xl font-bold mt-4">
-              But the real issue is structural.
+              The problem isn't effort. It's the absence of an operating system.
             </p>
           </div>
         </div>
@@ -176,12 +179,12 @@ const Index = () => {
               Our Edge
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5">
-              Built on Intelligence,{" "}
-              <span className="text-accent">Not Guesswork</span>
+              Not a Service.{" "}
+              <span className="text-accent">A System.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Every insight we publish is grounded in sourced industry data and our proprietary IDOS™ framework.
-              From agent production benchmarks to retention economics — if it's on our platform, it's been analyzed, not assumed.
+              Clientele Builders isn't something you hire — it's something you plug into.
+              An operating layer for distribution performance built on real data and the IDOS™ framework.
             </p>
           </div>
 
@@ -207,14 +210,14 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-14 items-start">
             <div>
               <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
-                Your Starting Point
+                System Entry Point
               </span>
               <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5 text-primary-foreground">
-                IMO Growth Scorecard
+                Distribution System Diagnostic
               </h2>
               <p className="text-primary-foreground/55 leading-relaxed mb-8">
-                In 3–5 minutes, identify exactly what's slowing your growth.
-                This diagnostic evaluates your distribution system across six core areas.
+                In 3–5 minutes, identify exactly where your system is breaking.
+                This diagnostic evaluates your distribution infrastructure across six core areas.
               </p>
               <a
                 href={SCORECARD_URL}
@@ -222,7 +225,7 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
               >
-                Take the Scorecard Now
+                Get Your Distribution Score
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -248,7 +251,7 @@ const Index = () => {
                 </h3>
                 <ul className="space-y-2.5">
                   {[
-                    "A 0–100 growth score",
+                    "A 0–100 system score",
                     "Category breakdowns",
                     "Your two biggest bottlenecks",
                     "Clear next steps",
@@ -273,11 +276,34 @@ const Index = () => {
               The Framework
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5">
-              The Distribution System We Build
+              The Distribution Pipeline
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We don't sell services. We design and optimize the system that drives production.
+              Six stages. One operating system. Every bottleneck mapped.
             </p>
+          </div>
+
+          {/* Pipeline Diagram */}
+          <div className="mb-14 overflow-x-auto">
+            <div className="flex items-center justify-between min-w-[600px] gap-0">
+              {PIPELINE_STAGES.map((stage, i) => (
+                <div key={stage} className="flex items-center flex-1">
+                  <div className="flex flex-col items-center flex-1">
+                    <div className="w-14 h-14 border-2 border-accent flex items-center justify-center mb-2">
+                      <span className="font-mono text-[10px] tracking-[0.15em] text-accent font-medium uppercase">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <span className="font-mono text-[10px] tracking-[0.12em] text-foreground uppercase font-medium">
+                      {stage}
+                    </span>
+                  </div>
+                  {i < PIPELINE_STAGES.length - 1 && (
+                    <ArrowRight className="h-4 w-4 text-accent shrink-0 -mx-1" />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
@@ -298,7 +324,7 @@ const Index = () => {
           </div>
 
           <p className="text-accent font-serif text-xl font-bold">
-            When these systems align, growth becomes predictable.
+            When the pipeline is instrumented, growth becomes predictable.
           </p>
         </div>
       </section>
@@ -310,11 +336,10 @@ const Index = () => {
             Distribution Intelligence
           </span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-5 text-primary-foreground">
-            Insurance Distribution Intelligence
+            Distribution Benchmarks & Intelligence
           </h2>
           <p className="text-primary-foreground/50 max-w-2xl mb-12 leading-relaxed">
-            We publish ongoing insights on the forces shaping insurance distribution.
-            This is where strategy meets data.
+            Real performance data across the insurance distribution landscape. Tracked. Measured. Published.
           </p>
 
           {/* KPI Benchmark Cards */}
@@ -371,6 +396,41 @@ const Index = () => {
             ))}
           </div>
 
+          {/* Benchmarking Comparison Grid */}
+          <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-6">
+            Performance Benchmarks
+          </span>
+          <div className="border border-primary-foreground/10 mb-14 overflow-x-auto">
+            <table className="w-full min-w-[500px]">
+              <thead>
+                <tr className="border-b border-primary-foreground/10">
+                  <th className="text-left font-mono text-[9px] tracking-[0.12em] text-primary-foreground/40 uppercase p-4">
+                    Metric
+                  </th>
+                  <th className="text-center font-mono text-[9px] tracking-[0.12em] text-accent uppercase p-4">
+                    Top 10%
+                  </th>
+                  <th className="text-center font-mono text-[9px] tracking-[0.12em] text-primary-foreground/40 uppercase p-4">
+                    Industry Avg
+                  </th>
+                  <th className="text-center font-mono text-[9px] tracking-[0.12em] text-primary-foreground/30 uppercase p-4">
+                    Bottom 25%
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {BENCHMARK_DATA.map((row) => (
+                  <tr key={row.metric} className="border-b border-primary-foreground/[0.06] last:border-0">
+                    <td className="p-4 text-primary-foreground/60 text-sm font-medium">{row.metric}</td>
+                    <td className="p-4 text-center font-serif text-lg font-bold text-accent">{row.top}</td>
+                    <td className="p-4 text-center font-serif text-lg font-bold text-primary-foreground/50">{row.avg}</td>
+                    <td className="p-4 text-center font-serif text-lg font-bold text-primary-foreground/30">{row.bottom}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
           {/* Content Pillars */}
           <div className="grid sm:grid-cols-3 gap-3 mb-10">
             {CONTENT_PILLARS.map((pillar) => (
@@ -382,7 +442,7 @@ const Index = () => {
 
           {/* Authority Topics */}
           <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-4">
-            Topics We're Investigating
+            System Performance Research
           </span>
           <ul className="space-y-3 max-w-2xl mb-14">
             {RESEARCH_AREAS.map((topic) => (
@@ -417,13 +477,13 @@ const Index = () => {
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <div className="max-w-2xl mb-14">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
-              How We Work
+              Implementation Layers
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5">
-              Engagement Models
+              Implementation Layers
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We partner with organizations at different stages of growth.
+              Organizations connect to the Clientele OS at the layer that matches their stage.
             </p>
           </div>
 
@@ -451,7 +511,7 @@ const Index = () => {
               What We Are
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Clientele Builders is not a marketing agency.
+              Clientele Builders is not a consulting firm.
             </h2>
             <p className="font-serif text-2xl md:text-3xl font-bold text-accent mb-10">
               We are Insurance Distribution Architects.
@@ -459,9 +519,9 @@ const Index = () => {
 
             <div className="grid sm:grid-cols-3 gap-8 mb-10">
               {[
-                "Drive agent production",
-                "Increase retention",
-                "Create scalable growth",
+                "Instrument the pipeline",
+                "Reduce performance variance",
+                "Scale distribution infrastructure",
               ].map((outcome) => (
                 <div key={outcome} className="text-center">
                   <CheckCircle2 className="h-6 w-6 text-accent mx-auto mb-3" />
@@ -471,9 +531,9 @@ const Index = () => {
             </div>
 
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xl mx-auto">
-              Our model combines <span className="text-foreground font-medium">intelligence</span>,{" "}
-              <span className="text-foreground font-medium">infrastructure</span>, and{" "}
-              <span className="text-foreground font-medium">execution strategy</span>.
+              Our model combines <span className="text-foreground font-medium">system design</span>,{" "}
+              <span className="text-foreground font-medium">data infrastructure</span>, and{" "}
+              <span className="text-foreground font-medium">operational control</span>.
             </p>
           </div>
         </div>
@@ -506,11 +566,10 @@ const Index = () => {
             Start Here
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-black text-primary-foreground leading-tight mb-5">
-            Find Out What's Slowing Your Growth
+            See Where Your System Is Breaking
           </h2>
           <p className="text-primary-foreground/50 max-w-lg mx-auto mb-10 leading-relaxed">
-            Most organizations are closer than they think.
-            They're just missing visibility.
+            Most organizations don't lack effort — they lack system visibility.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -519,7 +578,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-10 py-5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
             >
-              Take the IMO Growth Scorecard
+              Get Your Distribution Score
               <ArrowRight className="h-4 w-4" />
             </a>
             <Link
