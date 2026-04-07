@@ -26,6 +26,7 @@ const AdminPostEditor = lazy(() => import("./pages/admin/PostEditor"));
 const AdminReadme = lazy(() => import("./pages/admin/Readme"));
 const RSS = lazy(() => import("./pages/RSS"));
 const InsightArticle = lazy(() => import("./pages/InsightArticle"));
+const EditorialBrief = lazy(() => import("./pages/EditorialBrief"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
@@ -51,6 +52,7 @@ const App = () => (
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/insights/recruiting-difficulty" element={<InsightArticle />} />
+        <Route path="/insights/demand-technology-buyer" element={<EditorialBrief />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/posts" element={<AdminPosts />} />
