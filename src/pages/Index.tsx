@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import "./homepage-editorial.css";
+
 import {
   ArrowRight,
   ChevronRight,
