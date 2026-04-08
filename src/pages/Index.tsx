@@ -38,17 +38,17 @@ const IDOS_SYSTEMS = [
 ];
 
 const INTELLIGENCE_PILLARS = [
-  { icon: BarChart3, label: "Production Pipeline Tracking", desc: "KPI benchmarking, revenue efficiency, and time-to-production diagnostics across distribution teams" },
-  { icon: Globe, label: "System Architecture (IDOS™)", desc: "Our proprietary framework mapping the six stages where distribution performance breaks down" },
-  { icon: TrendingUp, label: "Recruiting & Retention Control", desc: "Pipeline structure, ramp time analysis, and the compounding economics of agent retention" },
-  { icon: Settings, label: "Infrastructure & Variance Reduction", desc: "How operational systems reduce performance variance and increase output predictability at scale" },
+  { icon: BarChart3, label: "Production Pipeline Tracking", desc: "Without KPI benchmarking, what determines whether production is improving or declining?" },
+  { icon: Globe, label: "System Architecture (IDOS™)", desc: "Without a framework mapping the six stages of distribution, what determines where performance breaks down?" },
+  { icon: TrendingUp, label: "Recruiting & Retention Control", desc: "Without pipeline structure and ramp time analysis, what determines whether recruiting investment compounds or leaks?" },
+  { icon: Settings, label: "Infrastructure & Variance Reduction", desc: "Without operational systems, what determines whether performance variance increases or decreases at scale?" },
 ];
 
 const ENGAGEMENT_MODELS = [
-  { icon: Search, label: "System Diagnostic", desc: "Identify constraints and map your distribution system architecture" },
-  { icon: Layers, label: "Infrastructure Buildout", desc: "Design and implement your distribution operating layer" },
-  { icon: Rocket, label: "Growth Engine", desc: "End-to-end system optimization across recruiting, onboarding, and production" },
-  { icon: MessageSquare, label: "Ongoing Optimization", desc: "Continuous performance tracking, benchmarking, and system refinement" },
+  { icon: Search, label: "Diagnostic Layer", desc: "The layer where constraints are identified and your distribution system architecture is mapped" },
+  { icon: Layers, label: "Infrastructure Layer", desc: "The layer where distribution becomes measurable and controlled" },
+  { icon: Rocket, label: "Growth Engine Layer", desc: "The layer where recruiting, onboarding, and production are optimized end-to-end" },
+  { icon: MessageSquare, label: "Optimization Layer", desc: "The layer where performance is continuously tracked, benchmarked, and refined" },
 ];
 
 const SCORECARD_AREAS = [
@@ -110,9 +110,12 @@ const Index = () => {
             The Operating System for{" "}
             <span className="text-accent">Insurance Distribution</span>
           </h1>
-          <p className="text-primary-foreground/55 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-12">
-            Clientele Builders is the system layer that powers recruiting, onboarding, activation, and retention
-            inside insurance distribution organizations. Pipeline tracking. Performance benchmarking. Operational control.
+          <p className="text-primary-foreground/55 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4">
+            Clientele Builders is the operating system layer that instruments recruiting, onboarding, activation, and retention
+            inside insurance distribution organizations. Pipeline tracking. Performance benchmarking. System-level visibility.
+          </p>
+          <p className="text-primary-foreground/40 font-serif text-lg italic mb-12 max-w-2xl">
+            If distribution is not instrumented, what determines performance?
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -129,7 +132,7 @@ const Index = () => {
               to="/intelligence"
               className="inline-flex items-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
             >
-              View Latest Intelligence Report
+              View Intelligence Report
               <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
@@ -153,11 +156,11 @@ const Index = () => {
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "Recruiting pipeline has no stage tracking or conversion metrics",
-                "Onboarding has no structured ramp sequence",
-                "Production output is unmeasured and unpredictable",
-                "Leadership doesn't duplicate — no accountability infrastructure",
-                "Zero visibility into system-level performance",
+                "If recruiting pipelines are not tracked by stage, what determines conversion?",
+                "If onboarding has no structured ramp sequence, what determines time-to-production?",
+                "If production output is unmeasured, what determines whether it's improving or declining?",
+                "If leadership doesn't duplicate through accountability infrastructure, what determines scale?",
+                "If there is zero visibility into system-level performance, what determines where growth is lost?",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-primary-foreground/50">
                   <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
@@ -166,18 +169,18 @@ const Index = () => {
               ))}
             </ul>
             <p className="text-accent font-serif text-xl font-bold mt-4">
-              The problem isn't effort. It's the absence of an operating system.
+              If these are not measured, what determines where growth is lost?
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── 3. YOUR EDGE ── */}
+      {/* ── 3. THE SYSTEM LAYER ── */}
       <section className="bg-background">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <div className="max-w-2xl mb-14">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
-              Our Edge
+              The System Layer
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5">
               Not a Service.{" "}
@@ -216,9 +219,12 @@ const Index = () => {
               <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5 text-primary-foreground">
                 Distribution System Diagnostic
               </h2>
-              <p className="text-primary-foreground/55 leading-relaxed mb-8">
+              <p className="text-primary-foreground/55 leading-relaxed mb-4">
                 In 3–5 minutes, identify exactly where your system is breaking.
                 This diagnostic evaluates your distribution infrastructure across six core areas.
+              </p>
+              <p className="text-primary-foreground/40 font-serif text-base italic mb-8">
+                If you cannot see where your system is breaking, what determines what you fix?
               </p>
               <a
                 href={SCORECARD_URL}
@@ -279,8 +285,11 @@ const Index = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5">
               The Distribution Pipeline
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed mb-3">
               Six stages. One operating system. Every bottleneck mapped.
+            </p>
+            <p className="text-muted-foreground/70 font-serif text-base italic">
+              If any stage of the distribution pipeline breaks, what happens to output?
             </p>
           </div>
 
@@ -324,6 +333,9 @@ const Index = () => {
             ))}
           </div>
 
+          <p className="text-muted-foreground font-serif text-base italic mb-3">
+            This is not a framework. This is a measurable system.
+          </p>
           <p className="text-accent font-serif text-xl font-bold">
             When the pipeline is instrumented, growth becomes predictable.
           </p>
@@ -339,8 +351,11 @@ const Index = () => {
           <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight max-w-3xl mb-5 text-primary-foreground">
             Distribution Benchmarks & Intelligence
           </h2>
-          <p className="text-primary-foreground/50 max-w-2xl mb-12 leading-relaxed">
+          <p className="text-primary-foreground/50 max-w-2xl mb-3 leading-relaxed">
             Real performance data across the insurance distribution landscape. Tracked. Measured. Published.
+          </p>
+          <p className="text-primary-foreground/35 font-serif text-base italic mb-12">
+            If performance varies across organizations, what determines the difference?
           </p>
 
           {/* KPI Benchmark Cards */}
@@ -401,7 +416,7 @@ const Index = () => {
           <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-6">
             Performance Benchmarks
           </span>
-          <div className="border border-primary-foreground/10 mb-14 overflow-x-auto">
+          <div className="border border-primary-foreground/10 mb-6 overflow-x-auto">
             <table className="w-full min-w-[500px]">
               <thead>
                 <tr className="border-b border-primary-foreground/10">
@@ -431,6 +446,9 @@ const Index = () => {
               </tbody>
             </table>
           </div>
+          <p className="text-primary-foreground/35 font-serif text-sm italic mb-14">
+            These are not market statistics. These are system-level signals.
+          </p>
 
           {/* Content Pillars */}
           <div className="grid sm:grid-cols-3 gap-3 mb-10">
@@ -473,15 +491,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 7. ENGAGEMENT MODELS ── */}
+      {/* ── 7. SYSTEM INTEGRATION LAYERS ── */}
       <section className="bg-background">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <div className="max-w-2xl mb-14">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
-              Implementation Layers
+              System Integration
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-5">
-              Implementation Layers
+              System Integration Layers
             </h2>
             <p className="text-muted-foreground leading-relaxed">
               Organizations connect to the Clientele OS at the layer that matches their stage.
@@ -572,24 +590,15 @@ const Index = () => {
           <p className="text-primary-foreground/50 max-w-lg mx-auto mb-10 leading-relaxed">
             Most organizations don't lack effort — they lack system visibility.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={SCORECARD_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-10 py-5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
-            >
-              Get Your Distribution Score
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-10 py-5 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
-            >
-              Book a Strategy Call
-              <ChevronRight className="h-4 w-4" />
-            </Link>
-          </div>
+          <a
+            href={SCORECARD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-10 py-5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
+          >
+            Get Your Distribution Score
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </section>
 
