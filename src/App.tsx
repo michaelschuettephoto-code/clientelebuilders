@@ -27,6 +27,7 @@ const AdminReadme = lazy(() => import("./pages/admin/Readme"));
 const RSS = lazy(() => import("./pages/RSS"));
 const InsightArticle = lazy(() => import("./pages/InsightArticle"));
 const EditorialBrief = lazy(() => import("./pages/EditorialBrief"));
+const MarketCapture = lazy(() => import("./pages/MarketCapture"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
