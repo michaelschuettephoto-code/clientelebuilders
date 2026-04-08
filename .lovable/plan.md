@@ -1,35 +1,27 @@
 
 
-## System-Level Positioning Refinement
+## Add New Intelligence Brief: "The Market Can Grow. The Question Is: Who Captures It?"
 
-### What's changing
-Applying Shawn's 11-point positioning correction across 3 files. No layout changes — only copy, labels, and framing updates to shift every section from "service/consulting" to "system/infrastructure/diagnostic."
+### Best placement
+Following the established pattern, this goes as a new Insight page at **`/insights/market-capture`** — alongside the existing briefs at `/insights/recruiting-difficulty` and `/insights/demand-technology-buyer`.
 
-### Files Modified
+### Technical approach
 
-**1. `src/components/layout/Header.tsx`**
-- `"Services"` → `"System Layers"` (nav link label, keeps `/consulting` route)
+**1. New CSS file: `src/pages/market-capture-editorial.css`**
+- All styles from the HTML (`.masthead`, `.signal`, `.fact-statement`, `.pull`, `.if-lines`, `.not-but`, `.stacked`, `.blist`, `.sys-list`, `.scope-block`, `.closing`, etc.)
+- Scoped with a `.mc-editorial` wrapper to avoid conflicts with existing editorial CSS
 
-**2. `src/components/layout/Footer.tsx`**
-- Tagline: `"Insurance distribution intelligence, frameworks, and consulting."` → `"Insurance distribution intelligence, diagnostics, and operating systems."`
-- "Company" section: `"Consulting"` label → `"System Layers"`
+**2. New page: `src/pages/MarketCapture.tsx`**
+- Header + Footer wrapper (matching existing insight pages)
+- Full HTML content converted to JSX
+- Imports the scoped CSS
 
-**3. `src/pages/Index.tsx`** — Section-by-section copy updates:
+**3. Updated: `src/App.tsx`**
+- Add lazy import for `MarketCapture`
+- Add route: `/insights/market-capture`
 
-| Section | Change |
-|---------|--------|
-| **Hero** | Add tension line below subheadline: *"If distribution is not instrumented, what determines performance?"* Remove "Book a Strategy Call" from final CTA |
-| **The Real Issue (§2)** | Convert all 5 bullets to question-driven framing (e.g., *"If recruiting pipelines are not tracked by stage, what determines conversion?"*). Closing line → *"If these are not measured, what determines where growth is lost?"* |
-| **Our Edge (§3)** | Section label → `"The System Layer"`. Pillar descriptions rewritten as necessity questions (e.g., *"Without KPI benchmarking, what determines whether production is improving or declining?"*) |
-| **Scorecard (§4)** | Add pre-CTA tension: *"If you cannot see where your system is breaking, what determines what you fix?"* |
-| **Pipeline (§5)** | Add pre-pipeline line: *"If any stage of the distribution pipeline breaks, what happens to output?"*. Add clarity line: *"This is not a framework. This is a measurable system."* |
-| **Benchmarks (§6)** | Add intro: *"If performance varies across organizations, what determines the difference?"*. Add footer: *"These are not market statistics. These are system-level signals."* |
-| **Implementation (§7)** | Header → `"System Integration Layers"`. Reframe model descriptions to "layer you connect into" language (e.g., *"Infrastructure Layer — where distribution becomes measurable and controlled"*) |
-| **Positioning (§8)** | Outcome pills → *"Instrument the pipeline" / "Reduce performance variance" / "Scale distribution infrastructure"* (already correct — keep) |
-| **Final CTA (§9)** | Remove "Book a Strategy Call" secondary CTA. Keep only "Get Your Distribution Score" |
-
-### What's NOT changing
-- Layout, design, colors, typography
-- Route structure
-- Any page other than Index, Header, Footer
+### Files
+- `src/pages/market-capture-editorial.css` (new)
+- `src/pages/MarketCapture.tsx` (new)
+- `src/App.tsx` (updated — one new route)
 
