@@ -27,6 +27,7 @@ const AdminReadme = lazy(() => import("./pages/admin/Readme"));
 const RSS = lazy(() => import("./pages/RSS"));
 const InsightArticle = lazy(() => import("./pages/InsightArticle"));
 const EditorialBrief = lazy(() => import("./pages/EditorialBrief"));
+const MarketCapture = lazy(() => import("./pages/MarketCapture"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
@@ -53,6 +54,7 @@ const App = () => (
         <Route path="/terms" element={<Terms />} />
         <Route path="/insights/recruiting-difficulty" element={<InsightArticle />} />
         <Route path="/insights/demand-technology-buyer" element={<EditorialBrief />} />
+        <Route path="/insights/market-capture" element={<MarketCapture />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/posts" element={<AdminPosts />} />
