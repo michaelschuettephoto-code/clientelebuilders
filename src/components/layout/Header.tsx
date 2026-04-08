@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { to: "/intelligence", label: "Intelligence" },
-  { to: "/consulting", label: "Services" },
+  { to: "/consulting", label: "System Layers" },
   { to: "/reports", label: "Reports" },
   { to: "/frameworks", label: "Frameworks" },
   { to: "/scorecard", label: "Scorecard" },
