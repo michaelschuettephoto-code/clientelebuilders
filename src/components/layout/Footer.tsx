@@ -8,7 +8,7 @@ export const Footer = () => {
           <div>
             <span className="font-serif text-lg font-bold block mb-4">Clientele Builders</span>
             <p className="text-sm text-primary-foreground/60">
-              Insurance distribution intelligence, frameworks, and consulting.
+              Insurance distribution intelligence, diagnostics, and operating systems.
             </p>
           </div>
 
@@ -25,7 +25,7 @@ export const Footer = () => {
           <div>
             <h3 className="font-serif font-bold mb-4 text-sm text-primary-foreground">Company</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/60">
-              <li><Link to="/consulting" className="hover:text-[hsl(var(--gold-light))] transition-colors">Consulting</Link></li>
+              <li><Link to="/consulting" className="hover:text-[hsl(var(--gold-light))] transition-colors">System Layers</Link></li>
               <li><Link to="/about" className="hover:text-[hsl(var(--gold-light))] transition-colors">About</Link></li>
               <li><Link to="/contact" className="hover:text-[hsl(var(--gold-light))] transition-colors">Contact</Link></li>
               <li><Link to="/newsletter" className="hover:text-[hsl(var(--gold-light))] transition-colors">Newsletter</Link></li>
