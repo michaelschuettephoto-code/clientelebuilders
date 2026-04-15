@@ -8,7 +8,7 @@ export const Footer = () => {
           <div>
             <span className="font-serif text-lg font-bold block mb-4">Clientele Builders</span>
             <p className="text-sm text-primary-foreground/60">
-              Insurance distribution intelligence, diagnostics, and operating systems.
+              Insurance distribution diagnostics, revenue leak identification, and system optimization.
             </p>
           </div>
 
