@@ -15,6 +15,7 @@ export const Footer = () => {
           <div>
             <h3 className="font-serif font-bold mb-4 text-sm text-primary-foreground">Platform</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/60">
+              <li><Link to="/lifeinsurance" className="hover:text-[hsl(var(--gold-light))] transition-colors">Life Insurance</Link></li>
               <li><Link to="/intelligence" className="hover:text-[hsl(var(--gold-light))] transition-colors">Intelligence</Link></li>
               <li><Link to="/reports" className="hover:text-[hsl(var(--gold-light))] transition-colors">Reports</Link></li>
               <li><Link to="/frameworks" className="hover:text-[hsl(var(--gold-light))] transition-colors">Frameworks</Link></li>
