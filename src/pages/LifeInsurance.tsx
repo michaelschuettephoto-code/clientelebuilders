@@ -63,17 +63,30 @@ const BENCHMARK_DATA = [
   { metric: "Revenue per Agent", top: "$142K", avg: "$68K", bottom: "$23K" },
 ];
 
-const Index = () => {
+const LifeInsurance = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Clientele Builders — We Find and Fix Revenue Leaks in Insurance Distribution</title>
+        <title>Life Insurance Distribution — Clientele Builders</title>
         <meta
           name="description"
-          content="Most IMOs are losing 20–40% of revenue due to broken recruiting, onboarding, and persistency systems. We find the leaks and show you exactly how much they're costing you."
+          content="For IMOs and life insurance distribution organizations: most are losing 20–40% of revenue due to broken recruiting, onboarding, and persistency systems. We find the leaks and show you exactly how much they're costing you."
         />
       </Helmet>
       <Header />
+
+      {/* Breadcrumb */}
+      <div className="bg-background border-b border-border">
+        <div className="container max-w-5xl mx-auto px-6 py-4">
+          <nav className="font-mono text-[10px] tracking-[0.15em] uppercase text-muted-foreground flex items-center gap-2">
+            <Link to="/" className="hover:text-accent transition-colors">Home</Link>
+            <span className="text-muted-foreground/40">/</span>
+            <Link to="/#industries" className="hover:text-accent transition-colors">Industries</Link>
+            <span className="text-muted-foreground/40">/</span>
+            <span className="text-foreground">Life Insurance Distribution</span>
+          </nav>
+        </div>
+      </div>
 
       {/* ── 1. HERO ── */}
       <section className="bg-primary relative overflow-hidden">
