@@ -524,4 +524,4 @@ const LifeInsurance = () => {
   );
 };
 
-export default Index;
+export default LifeInsurance;
