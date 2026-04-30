@@ -28,6 +28,7 @@ const RSS = lazy(() => import("./pages/RSS"));
 const InsightArticle = lazy(() => import("./pages/InsightArticle"));
 const EditorialBrief = lazy(() => import("./pages/EditorialBrief"));
 const MarketCapture = lazy(() => import("./pages/MarketCapture"));
+const LifeInsurance = lazy(() => import("./pages/LifeInsurance"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => (
@@ -37,6 +38,7 @@ const App = () => (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/lifeinsurance" element={<LifeInsurance />} />
         <Route path="/intelligence" element={<Intelligence />} />
         <Route path="/blog" element={<Intelligence />} />
         <Route path="/story/:slug" element={<Story />} />

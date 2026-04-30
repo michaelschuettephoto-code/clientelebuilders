@@ -8,13 +8,14 @@ export const Footer = () => {
           <div>
             <span className="font-serif text-lg font-bold block mb-4">Clientele Builders</span>
             <p className="text-sm text-primary-foreground/60">
-              Insurance distribution diagnostics, revenue leak identification, and system optimization.
+              Distribution intelligence across industries. Where businesses lose money — and how to fix it.
             </p>
           </div>
 
           <div>
             <h3 className="font-serif font-bold mb-4 text-sm text-primary-foreground">Platform</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/60">
+              <li><Link to="/lifeinsurance" className="hover:text-[hsl(var(--gold-light))] transition-colors">Life Insurance</Link></li>
               <li><Link to="/intelligence" className="hover:text-[hsl(var(--gold-light))] transition-colors">Intelligence</Link></li>
               <li><Link to="/reports" className="hover:text-[hsl(var(--gold-light))] transition-colors">Reports</Link></li>
               <li><Link to="/frameworks" className="hover:text-[hsl(var(--gold-light))] transition-colors">Frameworks</Link></li>
