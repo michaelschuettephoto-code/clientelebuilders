@@ -160,7 +160,29 @@ const LifeInsurance = () => {
               <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-6">
                 Where Your Money Is Leaking
               </span>
-              <div className="flex items-center justify-between overflow-x-auto min-w-[500px] gap-0">
+              {/* Mobile: vertical list */}
+              <div className="flex flex-col sm:hidden gap-3">
+                {PIPELINE_STAGES.map((stage, i) => (
+                  <div key={stage.label} className={`flex items-center gap-4 border p-3 ${stage.leaks ? "border-accent/40" : "border-primary-foreground/10"}`}>
+                    <div className={`w-10 h-10 border-2 flex items-center justify-center shrink-0 ${stage.leaks ? "border-accent" : "border-primary-foreground/20"}`}>
+                      <span className={`font-mono text-[10px] tracking-[0.15em] font-medium uppercase ${stage.leaks ? "text-accent" : "text-primary-foreground/40"}`}>
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <div className="flex flex-col flex-1">
+                      <span className="font-mono text-[10px] tracking-[0.12em] text-primary-foreground/70 uppercase font-medium">
+                        {stage.label}
+                      </span>
+                      {stage.leaks && (
+                        <span className="font-mono text-[8px] text-accent mt-1">▼ LEAK</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop / tablet: horizontal flow */}
+              <div className="hidden sm:flex items-center justify-between gap-0">
                 {PIPELINE_STAGES.map((stage, i) => (
                   <div key={stage.label} className="flex items-center flex-1">
                     <div className="flex flex-col items-center flex-1 relative">
@@ -169,7 +191,7 @@ const LifeInsurance = () => {
                           {String(i + 1).padStart(2, "0")}
                         </span>
                       </div>
-                      <span className="font-mono text-[10px] tracking-[0.12em] text-primary-foreground/70 uppercase font-medium">
+                      <span className="font-mono text-[10px] tracking-[0.12em] text-primary-foreground/70 uppercase font-medium text-center">
                         {stage.label}
                       </span>
                       {stage.leaks && (

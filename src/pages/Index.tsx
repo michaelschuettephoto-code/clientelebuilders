@@ -144,14 +144,35 @@ const Index = () => {
             <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-8">
               The Five Stages
             </span>
-            <div className="flex items-center justify-between overflow-x-auto min-w-[500px] gap-0">
+
+            {/* Mobile: vertical stack */}
+            <div className="flex flex-col sm:hidden gap-4">
+              {SYSTEM_STAGES.map((stage, i) => (
+                <div key={stage.label} className="flex items-center gap-4 border border-primary-foreground/10 p-4">
+                  <div className="w-12 h-12 border-2 border-accent flex items-center justify-center shrink-0">
+                    <stage.icon className="h-4 w-4 text-accent" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-mono text-[10px] tracking-[0.15em] text-primary-foreground/80 uppercase font-medium">
+                      {stage.label}
+                    </span>
+                    <span className="font-mono text-[8px] tracking-[0.15em] text-primary-foreground/30 mt-1">
+                      Stage {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop / tablet: horizontal flow */}
+            <div className="hidden sm:flex items-center justify-between gap-0">
               {SYSTEM_STAGES.map((stage, i) => (
                 <div key={stage.label} className="flex items-center flex-1">
                   <div className="flex flex-col items-center flex-1 relative">
                     <div className="w-16 h-16 border-2 border-accent flex items-center justify-center mb-3">
                       <stage.icon className="h-5 w-5 text-accent" />
                     </div>
-                    <span className="font-mono text-[10px] tracking-[0.15em] text-primary-foreground/80 uppercase font-medium">
+                    <span className="font-mono text-[10px] tracking-[0.15em] text-primary-foreground/80 uppercase font-medium text-center">
                       {stage.label}
                     </span>
                     <span className="font-mono text-[8px] tracking-[0.15em] text-primary-foreground/30 mt-1">
