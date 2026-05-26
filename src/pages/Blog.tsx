@@ -1,11 +1,18 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Helmet } from "react-helmet";
 import "./insight-article.css";
 
 const Blog = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Why Insurance Teams Struggle to Grow — And What Fixes It</title>
+        <meta name="description" content="It's not a lead problem — it's a system problem. How recruiting, onboarding, and ramp-time structure determine whether insurance teams actually scale." />
+        <link rel="canonical" href="https://www.clientelebuilders.com/blog" />
+      </Helmet>
       <Header />
+
 
       <div className="insight-article">
         {/* ── MASTHEAD ── */}

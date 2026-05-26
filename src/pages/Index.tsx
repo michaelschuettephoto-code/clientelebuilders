@@ -78,8 +78,9 @@ const Index = () => {
         <title>Clientele Builders — Distribution Intelligence for Insurance</title>
         <meta
           name="description"
-          content="Revenue leaks hide inside distribution systems. We help insurance organizations identify operational blind spots across recruiting, onboarding, trust, sales, persistency, and leadership."
+          content="Distribution intelligence for insurance. We surface revenue leaks across recruiting, onboarding, sales, persistency, and leadership."
         />
+        <link rel="canonical" href="https://www.clientelebuilders.com/" />
       </Helmet>
       <Header />
 

@@ -7,8 +7,9 @@ const MarketCapture = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>The Market Can Grow. The Question Is: Who Captures It? — Clientele Builders</title>
-        <meta name="description" content="An intelligence brief examining market growth conditions in insurance distribution — and what determines whether that growth is actually captured. Published by Clientele Builders." />
+        <title>Who Captures Market Growth? — Clientele Builders</title>
+        <meta name="description" content="An intelligence brief on insurance distribution market growth — and what determines which organizations actually capture it." />
+        <link rel="canonical" href="https://www.clientelebuilders.com/intelligence/market-capture" />
       </Helmet>
       <Header />
 
