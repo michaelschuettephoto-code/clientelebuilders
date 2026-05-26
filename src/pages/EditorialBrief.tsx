@@ -9,7 +9,7 @@ const EditorialBrief = () => {
       <Helmet>
         <title>Demand, Technology, Buyer — Clientele Builders</title>
         <meta name="description" content="An intelligence brief on the forces reshaping insurance distribution: rising demand, shifting technology, and a clearer buyer." />
-        <link rel="canonical" href="https://www.clientelebuilders.com/intelligence/editorial-brief" />
+        <link rel="canonical" href="https://www.clientelebuilders.com/insights/demand-technology-buyer" />
       </Helmet>
       <Header />
 
