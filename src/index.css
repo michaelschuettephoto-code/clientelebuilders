@@ -70,12 +70,23 @@ All colors MUST be HSL.
     font-feature-settings: "kern" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
+
+  /* Mobile: prevent wide media/tables/svgs from forcing page-level scroll */
+  @media (max-width: 760px) {
+    img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+    table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    pre, code { max-width: 100%; overflow-x: auto; word-wrap: break-word; }
+  }
+
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', Georgia, serif;
