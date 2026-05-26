@@ -101,11 +101,12 @@ const Intelligence = () => {
   return (
     <div className="min-h-screen bg-primary">
       <Helmet>
-        <title>Insurance Distribution Intelligence — Clientele Builders</title>
+        <title>Intelligence Hub — Insurance Distribution Research</title>
         <meta
           name="description"
-          content="Strategic insights on recruiting, onboarding, and scaling insurance organizations."
+          content="Research, frameworks, and operating models for insurance distribution leaders — recruiting, onboarding, retention, and leadership."
         />
+        <link rel="canonical" href="https://www.clientelebuilders.com/intelligence" />
       </Helmet>
       <Header />
 

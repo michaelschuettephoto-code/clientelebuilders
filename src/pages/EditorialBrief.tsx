@@ -7,8 +7,9 @@ const EditorialBrief = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Demand Is Rising. Technology Is Shifting. The Buyer Is Clear. — Clientele Builders</title>
-        <meta name="description" content="An intelligence brief on the forces reshaping insurance distribution — demand, technology, and the buyer. Published by Clientele Builders." />
+        <title>Demand, Technology, Buyer — Clientele Builders</title>
+        <meta name="description" content="An intelligence brief on the forces reshaping insurance distribution: rising demand, shifting technology, and a clearer buyer." />
+        <link rel="canonical" href="https://www.clientelebuilders.com/intelligence/editorial-brief" />
       </Helmet>
       <Header />
 
