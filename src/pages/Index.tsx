@@ -364,11 +364,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 7. THE PLATFORM ── */}
+      {/* ── 7. FOCUS AREAS ── */}
       <section className="bg-[hsl(var(--ink))] text-primary-foreground">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
-            The Platform
+            Focus Areas
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight max-w-3xl mb-6 text-primary-foreground">
             Operational visibility, <span className="text-accent">focus area by focus area.</span>
