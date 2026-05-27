@@ -93,35 +93,35 @@ const LifeInsurance = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--navy)/0.6),transparent_70%)] pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-accent via-[hsl(var(--gold-light))] to-accent" />
 
-        <div className="container max-w-5xl mx-auto px-6 py-28 md:py-40 relative z-10">
+        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-40 relative z-10">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-5">
             Revenue Leak Diagnostics
           </span>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] tracking-tight max-w-4xl mb-7">
+          <h1 className="font-serif text-[2rem] sm:text-5xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] tracking-tight max-w-4xl mb-7">
             We Identify and Fix{" "}
             <span className="text-accent">Revenue Leaks</span> Inside Life Insurance Distribution
           </h1>
-          <p className="text-primary-foreground/55 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4">
+          <p className="text-primary-foreground/55 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4">
             Most IMOs are losing 20–40% of their revenue due to broken recruiting, onboarding, and persistency systems.
             We find the leaks — and show you exactly how much they're costing you.
           </p>
-          <p className="text-primary-foreground/40 font-serif text-lg italic mb-12 max-w-2xl">
+          <p className="text-primary-foreground/40 font-serif text-base sm:text-lg italic mb-10 sm:mb-12 max-w-2xl">
             If you can't measure where revenue is lost, how do you fix it?
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
               href={SCORECARD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
             >
               Find Your Revenue Leaks
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="#how-it-works"
-              className="inline-flex items-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
             >
               See How It Works
               <ChevronRight className="h-4 w-4" />
