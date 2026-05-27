@@ -117,13 +117,6 @@ const Index = () => {
               Diagnose Your Distribution System
               <ArrowRight className="h-4 w-4" />
             </a>
-            <Link
-              to="/intelligence"
-              className="inline-flex items-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
-            >
-              View Intelligence Reports
-              <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
 
           <p className="font-mono text-[10px] tracking-[0.18em] text-primary-foreground/35 uppercase mt-10">
