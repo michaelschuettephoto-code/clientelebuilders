@@ -98,7 +98,7 @@ const Index = () => {
             <span className="text-accent">distribution systems.</span>
           </h1>
           <p className="text-primary-foreground/65 text-lg md:text-xl font-light leading-relaxed max-w-3xl mb-5">
-            Clientele Builders helps insurance organizations identify operational blind spots across recruiting, onboarding, trust, marketing, sales, persistency, and leadership.
+            We help life insurance IMOs and agencies diagnose where trust, recruiting, sales, onboarding, and retention are leaking revenue.
           </p>
           <p className="text-primary-foreground/45 leading-relaxed max-w-2xl mb-3">
             Modern distribution is fragmented. Most firms don't realize where momentum breaks until production slows, trust weakens, or retention falls apart.
@@ -114,7 +114,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
             >
-              Diagnose Your Distribution System
+              Find Your Distribution Leaks
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -237,6 +237,37 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── 3.5 WHO WE HELP ── */}
+      <section className="bg-background border-t border-border">
+        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+          <div className="max-w-3xl mb-12">
+            <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
+              Who We Help
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
+              Built for the operators behind life insurance distribution.
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              We work with the leaders responsible for moving recruits, agents, and revenue through complex distribution systems.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-5">
+            {[
+              { label: "IMO Owners", desc: "Operators scaling multi-agency distribution and accountable for trust, production, and persistency across the network." },
+              { label: "Agency Owners", desc: "Leaders responsible for recruiting, onboarding, activation, and the operational engine that turns agents into producers." },
+              { label: "Distribution Leaders", desc: "Executives and directors of distribution focused on visibility, trust infrastructure, and long-term retention economics." },
+            ].map((w, i) => (
+              <div key={w.label} className="border border-border p-6 relative">
+                <span className="font-mono text-[8px] tracking-[0.15em] text-accent block mb-3">{String(i+1).padStart(2,"0")}</span>
+                <h3 className="font-serif text-lg font-bold mb-2 leading-snug">{w.label}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 4. WHAT WE ACTUALLY DO ── */}
       <section className="bg-background">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
@@ -333,17 +364,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── 7. THE PLATFORM ── */}
+      {/* ── 7. FOCUS AREAS ── */}
       <section className="bg-[hsl(var(--ink))] text-primary-foreground">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
-            The Platform
+            Focus Areas
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight max-w-3xl mb-6 text-primary-foreground">
-            The Distribution <span className="text-accent">Operating System.</span>
+            Operational visibility, <span className="text-accent">focus area by focus area.</span>
           </h2>
           <p className="text-primary-foreground/65 leading-relaxed max-w-3xl mb-12">
-            We are building infrastructure for operational visibility inside insurance distribution. The platform is designed to help organizations monitor:
+            Our work centers on the operational signals that determine whether distribution systems compound or quietly leak. These are the areas we help organizations see more clearly:
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
@@ -356,7 +387,7 @@ const Index = () => {
           </div>
 
           <p className="font-serif text-xl md:text-2xl font-bold text-primary-foreground max-w-3xl mb-10">
-            The future of distribution belongs to organizations that can see clearly.
+            Clarity in these areas is what separates organizations that compound from organizations that stall.
           </p>
 
         </div>
@@ -384,7 +415,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
             >
-              Diagnose Your Distribution System
+              Find Your Distribution Leaks
               <ArrowRight className="h-4 w-4" />
             </a>
             <Link
