@@ -371,10 +371,10 @@ const Index = () => {
             Focus Areas
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight max-w-3xl mb-6 text-primary-foreground">
-            Operational visibility, <span className="text-accent">focus area by focus area.</span>
+            We look where others <span className="text-accent">don't.</span>
           </h2>
           <p className="text-primary-foreground/65 leading-relaxed max-w-3xl mb-12">
-            Our work centers on the operational signals that determine whether distribution systems compound or quietly leak. These are the areas we help organizations see more clearly:
+            Most firms track the obvious metrics. We dig into the signals that actually determine whether your distribution compounds — or quietly leaks. Here's what we watch:
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
@@ -387,7 +387,7 @@ const Index = () => {
           </div>
 
           <p className="font-serif text-xl md:text-2xl font-bold text-primary-foreground max-w-3xl mb-10">
-            Clarity in these areas is what separates organizations that compound from organizations that stall.
+            Seeing clearly here is what separates firms that scale from firms that stall.
           </p>
 
         </div>
