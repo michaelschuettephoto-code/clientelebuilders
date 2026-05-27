@@ -371,10 +371,10 @@ const Index = () => {
             The Platform
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight max-w-3xl mb-6 text-primary-foreground">
-            The Distribution <span className="text-accent">Operating System.</span>
+            Operational visibility, <span className="text-accent">focus area by focus area.</span>
           </h2>
           <p className="text-primary-foreground/65 leading-relaxed max-w-3xl mb-12">
-            We are building infrastructure for operational visibility inside insurance distribution. The platform is designed to help organizations monitor:
+            Our work centers on the operational signals that determine whether distribution systems compound or quietly leak. These are the areas we help organizations see more clearly:
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
@@ -387,7 +387,7 @@ const Index = () => {
           </div>
 
           <p className="font-serif text-xl md:text-2xl font-bold text-primary-foreground max-w-3xl mb-10">
-            The future of distribution belongs to organizations that can see clearly.
+            Clarity in these areas is what separates organizations that compound from organizations that stall.
           </p>
 
         </div>
