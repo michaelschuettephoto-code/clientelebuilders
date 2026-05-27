@@ -98,13 +98,13 @@ const Index = () => {
             <span className="text-accent">distribution systems.</span>
           </h1>
           <p className="text-primary-foreground/65 text-lg md:text-xl font-light leading-relaxed max-w-3xl mb-5">
-            We help life insurance IMOs and agencies diagnose where trust, recruiting, sales, onboarding, and retention are leaking revenue.
+            We help life insurance IMOs and agencies find where revenue leaks — across trust, recruiting, sales, onboarding, and retention.
           </p>
           <p className="text-primary-foreground/45 leading-relaxed max-w-2xl mb-3">
-            Modern distribution is fragmented. Most firms don't realize where momentum breaks until production slows, trust weakens, or retention falls apart.
+            Most firms only notice the leak once production drops or retention crumbles. By then, the damage is already done.
           </p>
           <p className="text-primary-foreground/40 font-serif text-lg italic mb-12 max-w-2xl">
-            We map the systems behind growth.
+            We show you where to look before it costs you.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
