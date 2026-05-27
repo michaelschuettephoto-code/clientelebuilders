@@ -339,13 +339,13 @@ const Index = () => {
               Industry Intelligence
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Research-backed operational visibility.
+              We study how distribution actually works.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Our research systems monitor insurance distribution trends, consumer behavior, fintech adoption, AI-driven discovery, trust patterns, advertising shifts, recruiting environments, and market positioning.
+              Our research tracks distribution trends, consumer behavior, fintech adoption, AI-driven discovery, trust patterns, and recruiting environments — so you don't have to.
             </p>
             <p className="font-serif text-lg italic text-foreground">
-              We study how distribution actually works.
+              Research-backed clarity. Not guesswork.
             </p>
           </div>
 
@@ -359,7 +359,7 @@ const Index = () => {
           </div>
 
           <p className="font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
-            Built using institutional research frameworks and multi-source market intelligence.
+            Built on institutional frameworks and multi-source market intelligence.
           </p>
         </div>
       </section>
