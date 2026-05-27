@@ -170,7 +170,7 @@ const Index = () => {
             Distribution is a system. Not a single department.
           </h2>
           <p className="text-primary-foreground/60 leading-relaxed max-w-3xl mb-10">
-            Every organization operates inside a connected chain.
+            Every organization sits inside a connected chain. When one link weakens, the whole thing feels it.
           </p>
 
           {/* Chain */}
@@ -205,9 +205,9 @@ const Index = () => {
 
           <div className="grid sm:grid-cols-3 gap-5 mb-10">
             {[
-              "A recruiting issue becomes a persistency issue.",
-              "A trust issue becomes a placement issue.",
-              "A leadership issue becomes a retention issue.",
+              "A recruiting problem becomes a persistency problem.",
+              "A trust problem becomes a placement problem.",
+              "A leadership problem becomes a retention problem.",
             ].map((line) => (
               <div key={line} className="border border-primary-foreground/10 p-5">
                 <p className="font-serif text-base font-bold leading-snug text-primary-foreground">{line}</p>
@@ -216,7 +216,7 @@ const Index = () => {
           </div>
 
           <p className="text-primary-foreground/60 leading-relaxed max-w-3xl mb-12">
-            We help organizations identify where pressure accumulates before growth slows down.
+            We help you spot pressure before it crushes growth.
           </p>
 
           {/* Pipeline stages */}
