@@ -408,8 +408,32 @@ const LifeInsurance = () => {
           <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-6">
             Performance Benchmarks
           </span>
-          <div className="border border-primary-foreground/10 mb-6 overflow-x-auto">
-            <table className="w-full min-w-[500px]">
+          {/* Mobile: stacked cards */}
+          <div className="sm:hidden space-y-3 mb-6">
+            {BENCHMARK_DATA.map((row) => (
+              <div key={row.metric} className="border border-primary-foreground/10 p-4">
+                <p className="text-primary-foreground/70 text-sm font-medium mb-3">{row.metric}</p>
+                <div className="grid grid-cols-3 gap-2 text-center">
+                  <div>
+                    <span className="font-mono text-[8px] tracking-[0.12em] text-accent uppercase block mb-1">Top 10%</span>
+                    <span className="font-serif text-lg font-bold text-accent">{row.top}</span>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[8px] tracking-[0.12em] text-primary-foreground/40 uppercase block mb-1">Industry</span>
+                    <span className="font-serif text-lg font-bold text-primary-foreground/50">{row.avg}</span>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[8px] tracking-[0.12em] text-primary-foreground/30 uppercase block mb-1">Bottom 25%</span>
+                    <span className="font-serif text-lg font-bold text-primary-foreground/30">{row.bottom}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop/tablet: table */}
+          <div className="hidden sm:block border border-primary-foreground/10 mb-6">
+            <table className="w-full">
               <thead>
                 <tr className="border-b border-primary-foreground/10">
                   <th className="text-left font-mono text-[9px] tracking-[0.12em] text-primary-foreground/40 uppercase p-4">
