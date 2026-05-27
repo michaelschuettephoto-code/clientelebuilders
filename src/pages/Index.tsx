@@ -133,10 +133,10 @@ const Index = () => {
               The Real Problem
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Most organizations don't know where momentum breaks.
+              Most firms don't know where growth breaks.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Growth problems are rarely random. Momentum usually breaks somewhere inside the distribution chain:
+              Problems rarely come out of nowhere. Something inside the chain gives way first:
             </p>
           </div>
 
@@ -149,13 +149,13 @@ const Index = () => {
           </div>
 
           <p className="font-serif text-2xl md:text-3xl font-bold text-foreground max-w-3xl mb-3">
-            Most firms only see the symptoms.
+            Most teams only see the symptoms.
           </p>
           <p className="font-serif text-2xl md:text-3xl font-bold text-accent max-w-3xl mb-6">
-            Very few can see the actual leak.
+            Very few find the actual leak.
           </p>
           <p className="text-muted-foreground max-w-2xl italic">
-            That's where operational visibility matters.
+            That's where we come in.
           </p>
         </div>
       </section>
