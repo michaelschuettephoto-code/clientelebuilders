@@ -98,7 +98,7 @@ const Index = () => {
             <span className="text-accent">distribution systems.</span>
           </h1>
           <p className="text-primary-foreground/65 text-lg md:text-xl font-light leading-relaxed max-w-3xl mb-5">
-            Clientele Builders helps insurance organizations identify operational blind spots across recruiting, onboarding, trust, marketing, sales, persistency, and leadership.
+            We help life insurance IMOs and agencies diagnose where trust, recruiting, sales, onboarding, and retention are leaking revenue.
           </p>
           <p className="text-primary-foreground/45 leading-relaxed max-w-2xl mb-3">
             Modern distribution is fragmented. Most firms don't realize where momentum breaks until production slows, trust weakens, or retention falls apart.
