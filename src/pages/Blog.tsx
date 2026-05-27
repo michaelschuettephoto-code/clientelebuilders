@@ -389,7 +389,7 @@ const Blog = () => {
                   Ready to find where your growth is breaking down?
                 </p>
                 <a
-                  href="https://start.clientelebuilders.com/growth-diagnostic"
+                  href="https://start.clientelebuilders.com/distributionleak"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

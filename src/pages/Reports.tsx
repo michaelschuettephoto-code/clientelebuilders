@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { Download, ArrowRight, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
+const SCORECARD_URL = "https://start.clientelebuilders.com/distributionleak";
 
 const MARKET_SNAPSHOT = [
   { stat: "$1.1T", label: "Industry Revenue", source: "IBISWorld 2026" },

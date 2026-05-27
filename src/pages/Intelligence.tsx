@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet";
 import { ArrowRight, Download, ClipboardCheck } from "lucide-react";
 import { forwardRef } from "react";
 
-const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
+const SCORECARD_URL = "https://start.clientelebuilders.com/distributionleak";
 
 /* ── Content Pillars (from Shawn's framework) ── */
 const CATEGORIES = [

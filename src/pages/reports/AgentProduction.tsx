@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Helmet } from "react-helmet";
 import "./agent-production.css";
 
-const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
+const SCORECARD_URL = "https://start.clientelebuilders.com/distributionleak";
 
 const AgentProduction = () => {
   return (

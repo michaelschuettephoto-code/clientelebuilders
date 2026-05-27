@@ -21,7 +21,7 @@ import {
   Eye,
 } from "lucide-react";
 
-const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
+const SCORECARD_URL = "https://start.clientelebuilders.com/distributionleak";
 
 const DISTRIBUTION_CHAIN = [
   "Carrier",
