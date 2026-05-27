@@ -98,13 +98,13 @@ const Index = () => {
             <span className="text-accent">distribution systems.</span>
           </h1>
           <p className="text-primary-foreground/65 text-lg md:text-xl font-light leading-relaxed max-w-3xl mb-5">
-            We help life insurance IMOs and agencies diagnose where trust, recruiting, sales, onboarding, and retention are leaking revenue.
+            We help life insurance IMOs and agencies find where revenue leaks — across trust, recruiting, sales, onboarding, and retention.
           </p>
           <p className="text-primary-foreground/45 leading-relaxed max-w-2xl mb-3">
-            Modern distribution is fragmented. Most firms don't realize where momentum breaks until production slows, trust weakens, or retention falls apart.
+            Most firms only notice the leak once production drops or retention crumbles. By then, the damage is already done.
           </p>
           <p className="text-primary-foreground/40 font-serif text-lg italic mb-12 max-w-2xl">
-            We map the systems behind growth.
+            We show you where to look before it costs you.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -133,10 +133,10 @@ const Index = () => {
               The Real Problem
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Most organizations don't know where momentum breaks.
+              Most firms don't know where growth breaks.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Growth problems are rarely random. Momentum usually breaks somewhere inside the distribution chain:
+              Problems rarely come out of nowhere. Something inside the chain gives way first:
             </p>
           </div>
 
@@ -149,13 +149,13 @@ const Index = () => {
           </div>
 
           <p className="font-serif text-2xl md:text-3xl font-bold text-foreground max-w-3xl mb-3">
-            Most firms only see the symptoms.
+            Most teams only see the symptoms.
           </p>
           <p className="font-serif text-2xl md:text-3xl font-bold text-accent max-w-3xl mb-6">
-            Very few can see the actual leak.
+            Very few find the actual leak.
           </p>
           <p className="text-muted-foreground max-w-2xl italic">
-            That's where operational visibility matters.
+            That's where we come in.
           </p>
         </div>
       </section>
@@ -170,7 +170,7 @@ const Index = () => {
             Distribution is a system. Not a single department.
           </h2>
           <p className="text-primary-foreground/60 leading-relaxed max-w-3xl mb-10">
-            Every organization operates inside a connected chain.
+            Every organization sits inside a connected chain. When one link weakens, the whole thing feels it.
           </p>
 
           {/* Chain */}
@@ -205,9 +205,9 @@ const Index = () => {
 
           <div className="grid sm:grid-cols-3 gap-5 mb-10">
             {[
-              "A recruiting issue becomes a persistency issue.",
-              "A trust issue becomes a placement issue.",
-              "A leadership issue becomes a retention issue.",
+              "A recruiting problem becomes a persistency problem.",
+              "A trust problem becomes a placement problem.",
+              "A leadership problem becomes a retention problem.",
             ].map((line) => (
               <div key={line} className="border border-primary-foreground/10 p-5">
                 <p className="font-serif text-base font-bold leading-snug text-primary-foreground">{line}</p>
@@ -216,7 +216,7 @@ const Index = () => {
           </div>
 
           <p className="text-primary-foreground/60 leading-relaxed max-w-3xl mb-12">
-            We help organizations identify where pressure accumulates before growth slows down.
+            We help you spot pressure before it crushes growth.
           </p>
 
           {/* Pipeline stages */}
@@ -245,18 +245,18 @@ const Index = () => {
               Who We Help
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Built for the operators behind life insurance distribution.
+              Built for the operators running distribution.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We work with the leaders responsible for moving recruits, agents, and revenue through complex distribution systems.
+              The leaders moving recruits, agents, and revenue through complex systems.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-5">
             {[
-              { label: "IMO Owners", desc: "Operators scaling multi-agency distribution and accountable for trust, production, and persistency across the network." },
-              { label: "Agency Owners", desc: "Leaders responsible for recruiting, onboarding, activation, and the operational engine that turns agents into producers." },
-              { label: "Distribution Leaders", desc: "Executives and directors of distribution focused on visibility, trust infrastructure, and long-term retention economics." },
+              { label: "IMO Owners", desc: "Scaling multi-agency networks. Accountable for trust, production, and persistency across the board." },
+              { label: "Agency Owners", desc: "Running the operational engine that turns recruits into producers — and keeps them producing." },
+              { label: "Distribution Leaders", desc: "Focused on visibility, trust infrastructure, and the economics of long-term retention." },
             ].map((w, i) => (
               <div key={w.label} className="border border-border p-6 relative">
                 <span className="font-mono text-[8px] tracking-[0.15em] text-accent block mb-3">{String(i+1).padStart(2,"0")}</span>
@@ -276,13 +276,13 @@ const Index = () => {
               What We Actually Do
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
-              We diagnose distribution inefficiencies.
+              We find where your distribution is bleeding.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Clientele Builders combines operational diagnostics, market intelligence, benchmark systems, trust analysis, distribution mapping, consumer research, and AI visibility analysis — to help organizations understand how money, trust, attention, and momentum move through their systems.
+              We combine operational diagnostics, market intelligence, and trust analysis to show how money, attention, and momentum actually move through your system. Not how you think they move — how they really move.
             </p>
             <p className="font-serif text-lg italic text-foreground">
-              This is not traditional consulting. This is distribution intelligence.
+              Not consulting. Intelligence.
             </p>
           </div>
 
@@ -307,13 +307,13 @@ const Index = () => {
               Trust Economy
             </span>
             <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight mb-8 text-primary-foreground">
-              Trust became <span className="text-accent">infrastructure.</span>
+              Trust is your real <span className="text-accent">infrastructure.</span>
             </h2>
             <p className="text-primary-foreground/70 leading-relaxed mb-4">
-              Modern consumers are overwhelmed with information. Attention fragmented. Discovery shifted. AI is changing how people search for financial guidance.
+              Consumers are overwhelmed. Attention is scattered. AI is rewriting how people find financial advice.
             </p>
             <p className="text-primary-foreground/70 leading-relaxed mb-8">
-              At the same time, human trust still drives conversion. The organizations that win over the next decade will be the ones that:
+              But trust still converts. The firms that win the next decade will be the ones that:
             </p>
           </div>
 
@@ -326,7 +326,7 @@ const Index = () => {
           </div>
 
           <p className="font-serif text-xl md:text-2xl font-bold text-primary-foreground max-w-3xl">
-            Trust is no longer branding. <span className="text-accent">It's operational infrastructure.</span>
+            Trust isn't branding anymore. <span className="text-accent">It's operations.</span>
           </p>
         </div>
       </section>
@@ -339,13 +339,13 @@ const Index = () => {
               Industry Intelligence
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Research-backed operational visibility.
+              We study how distribution actually works.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Our research systems monitor insurance distribution trends, consumer behavior, fintech adoption, AI-driven discovery, trust patterns, advertising shifts, recruiting environments, and market positioning.
+              Our research tracks distribution trends, consumer behavior, fintech adoption, AI-driven discovery, trust patterns, and recruiting environments — so you don't have to.
             </p>
             <p className="font-serif text-lg italic text-foreground">
-              We study how distribution actually works.
+              Research-backed clarity. Not guesswork.
             </p>
           </div>
 
@@ -359,7 +359,7 @@ const Index = () => {
           </div>
 
           <p className="font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
-            Built using institutional research frameworks and multi-source market intelligence.
+            Built on institutional frameworks and multi-source market intelligence.
           </p>
         </div>
       </section>
@@ -371,10 +371,10 @@ const Index = () => {
             Focus Areas
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight max-w-3xl mb-6 text-primary-foreground">
-            Operational visibility, <span className="text-accent">focus area by focus area.</span>
+            We look where others <span className="text-accent">don't.</span>
           </h2>
           <p className="text-primary-foreground/65 leading-relaxed max-w-3xl mb-12">
-            Our work centers on the operational signals that determine whether distribution systems compound or quietly leak. These are the areas we help organizations see more clearly:
+            Most firms track the obvious metrics. We dig into the signals that actually determine whether your distribution compounds — or quietly leaks. Here's what we watch:
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
@@ -387,7 +387,7 @@ const Index = () => {
           </div>
 
           <p className="font-serif text-xl md:text-2xl font-bold text-primary-foreground max-w-3xl mb-10">
-            Clarity in these areas is what separates organizations that compound from organizations that stall.
+            Seeing clearly here is what separates firms that scale from firms that stall.
           </p>
 
         </div>
@@ -403,10 +403,10 @@ const Index = () => {
             You can't fix what you can't see.
           </h2>
           <p className="text-primary-foreground/60 max-w-xl mx-auto mb-4 leading-relaxed">
-            Most organizations are operating with delayed visibility. By the time problems appear in production numbers, the leak has usually existed for months.
+            Most firms are flying blind. By the time a leak shows up in your numbers, it's been bleeding for months.
           </p>
           <p className="text-primary-foreground/45 font-serif italic max-w-xl mx-auto mb-10">
-            Operational clarity changes decision-making.
+            Clarity changes everything.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
