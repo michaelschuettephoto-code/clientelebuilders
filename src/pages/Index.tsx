@@ -403,10 +403,10 @@ const Index = () => {
             You can't fix what you can't see.
           </h2>
           <p className="text-primary-foreground/60 max-w-xl mx-auto mb-4 leading-relaxed">
-            Most organizations are operating with delayed visibility. By the time problems appear in production numbers, the leak has usually existed for months.
+            Most firms are flying blind. By the time a leak shows up in your numbers, it's been bleeding for months.
           </p>
           <p className="text-primary-foreground/45 font-serif italic max-w-xl mx-auto mb-10">
-            Operational clarity changes decision-making.
+            Clarity changes everything.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
