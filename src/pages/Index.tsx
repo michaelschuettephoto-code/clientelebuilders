@@ -307,13 +307,13 @@ const Index = () => {
               Trust Economy
             </span>
             <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight mb-8 text-primary-foreground">
-              Trust became <span className="text-accent">infrastructure.</span>
+              Trust is your real <span className="text-accent">infrastructure.</span>
             </h2>
             <p className="text-primary-foreground/70 leading-relaxed mb-4">
-              Modern consumers are overwhelmed with information. Attention fragmented. Discovery shifted. AI is changing how people search for financial guidance.
+              Consumers are overwhelmed. Attention is scattered. AI is rewriting how people find financial advice.
             </p>
             <p className="text-primary-foreground/70 leading-relaxed mb-8">
-              At the same time, human trust still drives conversion. The organizations that win over the next decade will be the ones that:
+              But trust still converts. The firms that win the next decade will be the ones that:
             </p>
           </div>
 
@@ -326,7 +326,7 @@ const Index = () => {
           </div>
 
           <p className="font-serif text-xl md:text-2xl font-bold text-primary-foreground max-w-3xl">
-            Trust is no longer branding. <span className="text-accent">It's operational infrastructure.</span>
+            Trust isn't branding anymore. <span className="text-accent">It's operations.</span>
           </p>
         </div>
       </section>
