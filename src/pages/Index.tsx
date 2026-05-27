@@ -276,13 +276,13 @@ const Index = () => {
               What We Actually Do
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
-              We diagnose distribution inefficiencies.
+              We find where your distribution is bleeding.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Clientele Builders combines operational diagnostics, market intelligence, benchmark systems, trust analysis, distribution mapping, consumer research, and AI visibility analysis — to help organizations understand how money, trust, attention, and momentum move through their systems.
+              We combine operational diagnostics, market intelligence, and trust analysis to show how money, attention, and momentum actually move through your system. Not how you think they move — how they really move.
             </p>
             <p className="font-serif text-lg italic text-foreground">
-              This is not traditional consulting. This is distribution intelligence.
+              Not consulting. Intelligence.
             </p>
           </div>
 
