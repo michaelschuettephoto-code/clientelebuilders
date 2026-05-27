@@ -93,35 +93,35 @@ const LifeInsurance = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--navy)/0.6),transparent_70%)] pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-accent via-[hsl(var(--gold-light))] to-accent" />
 
-        <div className="container max-w-5xl mx-auto px-6 py-28 md:py-40 relative z-10">
+        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-40 relative z-10">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-5">
             Revenue Leak Diagnostics
           </span>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] tracking-tight max-w-4xl mb-7">
+          <h1 className="font-serif text-[2rem] sm:text-5xl md:text-6xl lg:text-7xl font-black text-primary-foreground leading-[1.05] tracking-tight max-w-4xl mb-7">
             We Identify and Fix{" "}
             <span className="text-accent">Revenue Leaks</span> Inside Life Insurance Distribution
           </h1>
-          <p className="text-primary-foreground/55 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4">
+          <p className="text-primary-foreground/55 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-4">
             Most IMOs are losing 20–40% of their revenue due to broken recruiting, onboarding, and persistency systems.
             We find the leaks — and show you exactly how much they're costing you.
           </p>
-          <p className="text-primary-foreground/40 font-serif text-lg italic mb-12 max-w-2xl">
+          <p className="text-primary-foreground/40 font-serif text-base sm:text-lg italic mb-10 sm:mb-12 max-w-2xl">
             If you can't measure where revenue is lost, how do you fix it?
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
               href={SCORECARD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
             >
               Find Your Revenue Leaks
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="#how-it-works"
-              className="inline-flex items-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 border border-primary-foreground/20 text-primary-foreground/70 font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:border-primary-foreground/40 hover:text-primary-foreground transition-all"
             >
               See How It Works
               <ChevronRight className="h-4 w-4" />
@@ -132,7 +132,7 @@ const LifeInsurance = () => {
 
       {/* ── 2. PROBLEM — "You're Not Growing Slower… You're Leaking Faster" ── */}
       <section className="bg-[hsl(var(--ink))] text-primary-foreground" id="how-it-works">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
             The Real Problem
           </span>
@@ -211,7 +211,7 @@ const LifeInsurance = () => {
 
       {/* ── 3. IDOS — The Insurance Distribution Operating System ── */}
       <section className="bg-background">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <div className="max-w-2xl mb-14">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
               The System
@@ -246,8 +246,8 @@ const LifeInsurance = () => {
 
       {/* ── 4. STEP 1: DIAGNOSE THE LEAKS ── */}
       <section className="bg-primary text-primary-foreground relative">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
-          <div className="grid md:grid-cols-2 gap-14 items-start">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-start">
             <div>
               <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
                 Step 1
@@ -300,7 +300,7 @@ const LifeInsurance = () => {
 
       {/* ── 5. THE MONEY SECTION ── */}
       <section className="bg-background">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <div className="max-w-2xl mb-14">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
               The Numbers
@@ -368,7 +368,7 @@ const LifeInsurance = () => {
 
       {/* ── 6. CASE STUDY — What a Revenue Leak Looks Like ── */}
       <section className="bg-[hsl(var(--ink))] text-primary-foreground">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
             Case Example
           </span>
@@ -408,8 +408,32 @@ const LifeInsurance = () => {
           <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-6">
             Performance Benchmarks
           </span>
-          <div className="border border-primary-foreground/10 mb-6 overflow-x-auto">
-            <table className="w-full min-w-[500px]">
+          {/* Mobile: stacked cards */}
+          <div className="sm:hidden space-y-3 mb-6">
+            {BENCHMARK_DATA.map((row) => (
+              <div key={row.metric} className="border border-primary-foreground/10 p-4">
+                <p className="text-primary-foreground/70 text-sm font-medium mb-3">{row.metric}</p>
+                <div className="grid grid-cols-3 gap-2 text-center">
+                  <div>
+                    <span className="font-mono text-[8px] tracking-[0.12em] text-accent uppercase block mb-1">Top 10%</span>
+                    <span className="font-serif text-lg font-bold text-accent">{row.top}</span>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[8px] tracking-[0.12em] text-primary-foreground/40 uppercase block mb-1">Industry</span>
+                    <span className="font-serif text-lg font-bold text-primary-foreground/50">{row.avg}</span>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[8px] tracking-[0.12em] text-primary-foreground/30 uppercase block mb-1">Bottom 25%</span>
+                    <span className="font-serif text-lg font-bold text-primary-foreground/30">{row.bottom}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop/tablet: table */}
+          <div className="hidden sm:block border border-primary-foreground/10 mb-6">
+            <table className="w-full">
               <thead>
                 <tr className="border-b border-primary-foreground/10">
                   <th className="text-left font-mono text-[9px] tracking-[0.12em] text-primary-foreground/40 uppercase p-4">
@@ -446,7 +470,7 @@ const LifeInsurance = () => {
 
       {/* ── 7. STEP 2: FIX THE LEAKS ── */}
       <section className="bg-background">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <div className="max-w-2xl mb-14">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
               Step 2
@@ -486,7 +510,7 @@ const LifeInsurance = () => {
 
       {/* ── 8. AUTHORITY ── */}
       <section className="bg-[hsl(var(--fog))] border-y border-border">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
               Built for Operators
@@ -516,7 +540,7 @@ const LifeInsurance = () => {
 
       {/* ── 9. FINAL CTA ── */}
       <section className="bg-primary">
-        <div className="container max-w-3xl mx-auto px-6 py-20 md:py-28 text-center">
+        <div className="container max-w-3xl mx-auto px-6 py-14 md:py-28 text-center">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
             Start Here
           </span>
@@ -533,7 +557,7 @@ const LifeInsurance = () => {
             href={SCORECARD_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-10 py-5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 sm:px-10 py-5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
           >
             Take the Revenue Leak Assessment
             <ArrowRight className="h-4 w-4" />
