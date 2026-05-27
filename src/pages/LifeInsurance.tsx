@@ -247,7 +247,7 @@ const LifeInsurance = () => {
       {/* ── 4. STEP 1: DIAGNOSE THE LEAKS ── */}
       <section className="bg-primary text-primary-foreground relative">
         <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
-          <div className="grid md:grid-cols-2 gap-14 items-start">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-start">
             <div>
               <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
                 Step 1
