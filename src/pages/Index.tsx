@@ -237,6 +237,37 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── 3.5 WHO WE HELP ── */}
+      <section className="bg-background border-t border-border">
+        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+          <div className="max-w-3xl mb-12">
+            <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
+              Who We Help
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
+              Built for the operators behind life insurance distribution.
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              We work with the leaders responsible for moving recruits, agents, and revenue through complex distribution systems.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-5">
+            {[
+              { label: "IMO Owners", desc: "Operators scaling multi-agency distribution and accountable for trust, production, and persistency across the network." },
+              { label: "Agency Owners", desc: "Leaders responsible for recruiting, onboarding, activation, and the operational engine that turns agents into producers." },
+              { label: "Distribution Leaders", desc: "Executives and directors of distribution focused on visibility, trust infrastructure, and long-term retention economics." },
+            ].map((w, i) => (
+              <div key={w.label} className="border border-border p-6 relative">
+                <span className="font-mono text-[8px] tracking-[0.15em] text-accent block mb-3">{String(i+1).padStart(2,"0")}</span>
+                <h3 className="font-serif text-lg font-bold mb-2 leading-snug">{w.label}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── 4. WHAT WE ACTUALLY DO ── */}
       <section className="bg-background">
         <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
