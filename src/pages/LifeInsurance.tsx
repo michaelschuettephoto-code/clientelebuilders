@@ -557,7 +557,7 @@ const LifeInsurance = () => {
             href={SCORECARD_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-10 py-5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 sm:px-10 py-5 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
           >
             Take the Revenue Leak Assessment
             <ArrowRight className="h-4 w-4" />
