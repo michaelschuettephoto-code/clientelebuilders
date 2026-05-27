@@ -132,7 +132,7 @@ const LifeInsurance = () => {
 
       {/* ── 2. PROBLEM — "You're Not Growing Slower… You're Leaking Faster" ── */}
       <section className="bg-[hsl(var(--ink))] text-primary-foreground" id="how-it-works">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
             The Real Problem
           </span>
@@ -211,7 +211,7 @@ const LifeInsurance = () => {
 
       {/* ── 3. IDOS — The Insurance Distribution Operating System ── */}
       <section className="bg-background">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <div className="max-w-2xl mb-14">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
               The System
@@ -246,7 +246,7 @@ const LifeInsurance = () => {
 
       {/* ── 4. STEP 1: DIAGNOSE THE LEAKS ── */}
       <section className="bg-primary text-primary-foreground relative">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <div className="grid md:grid-cols-2 gap-14 items-start">
             <div>
               <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
@@ -300,7 +300,7 @@ const LifeInsurance = () => {
 
       {/* ── 5. THE MONEY SECTION ── */}
       <section className="bg-background">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <div className="max-w-2xl mb-14">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
               The Numbers
@@ -368,7 +368,7 @@ const LifeInsurance = () => {
 
       {/* ── 6. CASE STUDY — What a Revenue Leak Looks Like ── */}
       <section className="bg-[hsl(var(--ink))] text-primary-foreground">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
             Case Example
           </span>
@@ -446,7 +446,7 @@ const LifeInsurance = () => {
 
       {/* ── 7. STEP 2: FIX THE LEAKS ── */}
       <section className="bg-background">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <div className="max-w-2xl mb-14">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
               Step 2
@@ -486,7 +486,7 @@ const LifeInsurance = () => {
 
       {/* ── 8. AUTHORITY ── */}
       <section className="bg-[hsl(var(--fog))] border-y border-border">
-        <div className="container max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="container max-w-5xl mx-auto px-6 py-14 md:py-28">
           <div className="max-w-3xl mx-auto text-center">
             <span className="font-mono text-[9px] tracking-[0.35em] text-accent uppercase block mb-4">
               Built for Operators
@@ -516,7 +516,7 @@ const LifeInsurance = () => {
 
       {/* ── 9. FINAL CTA ── */}
       <section className="bg-primary">
-        <div className="container max-w-3xl mx-auto px-6 py-20 md:py-28 text-center">
+        <div className="container max-w-3xl mx-auto px-6 py-14 md:py-28 text-center">
           <span className="font-mono text-[9px] tracking-[0.35em] text-[hsl(var(--gold-light))] uppercase block mb-4">
             Start Here
           </span>
