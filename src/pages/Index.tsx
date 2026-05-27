@@ -415,7 +415,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-accent text-primary font-mono text-[10px] tracking-[0.15em] uppercase px-8 py-4 font-medium hover:opacity-90 transition-opacity active:scale-[0.97]"
             >
-              Diagnose Your Distribution System
+              Find Your Distribution Leaks
               <ArrowRight className="h-4 w-4" />
             </a>
             <Link
