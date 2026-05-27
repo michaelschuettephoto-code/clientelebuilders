@@ -245,18 +245,18 @@ const Index = () => {
               Who We Help
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Built for the operators behind life insurance distribution.
+              Built for the operators running distribution.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We work with the leaders responsible for moving recruits, agents, and revenue through complex distribution systems.
+              The leaders moving recruits, agents, and revenue through complex systems.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-3 gap-5">
             {[
-              { label: "IMO Owners", desc: "Operators scaling multi-agency distribution and accountable for trust, production, and persistency across the network." },
-              { label: "Agency Owners", desc: "Leaders responsible for recruiting, onboarding, activation, and the operational engine that turns agents into producers." },
-              { label: "Distribution Leaders", desc: "Executives and directors of distribution focused on visibility, trust infrastructure, and long-term retention economics." },
+              { label: "IMO Owners", desc: "Scaling multi-agency networks. Accountable for trust, production, and persistency across the board." },
+              { label: "Agency Owners", desc: "Running the operational engine that turns recruits into producers — and keeps them producing." },
+              { label: "Distribution Leaders", desc: "Focused on visibility, trust infrastructure, and the economics of long-term retention." },
             ].map((w, i) => (
               <div key={w.label} className="border border-border p-6 relative">
                 <span className="font-mono text-[8px] tracking-[0.15em] text-accent block mb-3">{String(i+1).padStart(2,"0")}</span>
