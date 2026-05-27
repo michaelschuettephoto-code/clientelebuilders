@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { ArrowRight, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const SCORECARD_URL = "https://start.clientelebuilders.com/growth-diagnostic";
+const SCORECARD_URL = "https://start.clientelebuilders.com/distributionleak";
 
 const IDOS_STAGES = ["Recruiting", "Onboarding", "Activation", "Retention", "Leadership", "Infrastructure"];
 
