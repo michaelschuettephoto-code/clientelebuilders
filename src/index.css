@@ -95,3 +95,66 @@ All colors MUST be HSL.
     color: hsl(var(--navy));
   }
 }
+
+/* ── Distribution Scroller ── */
+.dist-section {
+  position: relative;
+  height: 800vh; /* 8 stages × 100vh */
+}
+.dist-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.dist-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+}
+.dist-panel { position: relative; }
+.dist-panel-stack { position: relative; min-height: 320px; }
+.dist-stage {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease;
+}
+.dist-scene-col { position: relative; perspective: 1400px; }
+.dist-scene-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.03;
+  max-width: 560px;
+  margin-left: auto;
+}
+.dist-scene {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+}
+.dist-mobile { display: none; }
+
+@media (max-width: 900px) {
+  .dist-section { height: auto; }
+  .dist-sticky { display: none; }
+  .dist-mobile {
+    display: block;
+    padding: 4rem 1.5rem;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dist-scene { transform: none !important; transition: none; }
+  .dist-stage { transition: none; }
+}
