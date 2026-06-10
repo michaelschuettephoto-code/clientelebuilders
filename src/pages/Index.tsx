@@ -1,471 +1,256 @@
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { HomeDistributionScroller } from "@/components/home/HomeDistributionScroller";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
-import {
-  ArrowUpRight,
-  Search,
-  BarChart3,
-  ShieldCheck,
-  Activity,
-  Sparkles,
-  LineChart,
-} from "lucide-react";
+import { ArrowRight, Search, TrendingDown, Eye, Users, GraduationCap, BarChart3, DollarSign, Workflow, Megaphone, Repeat } from "lucide-react";
 
-const SCORECARD_URL = "https://start.clientelebuilders.com/distributionleak";
-
-const CAPABILITIES = [
-  { code: "01", icon: Search, title: "Revenue Leak Diagnostics", desc: "Identify hidden operational bottlenecks impacting growth." },
-  { code: "02", icon: BarChart3, title: "Distribution Benchmarking", desc: "Compare systems against industry patterns and performance indicators." },
-  { code: "03", icon: ShieldCheck, title: "Trust Infrastructure Analysis", desc: "Measure where consumer and agent trust weaken across the organization." },
-  { code: "04", icon: Activity, title: "Persistency Visibility", desc: "Understand where long-term value is leaking after placement." },
-  { code: "05", icon: Sparkles, title: "AI & Attention Analysis", desc: "Track how AI, social platforms, and digital behavior are reshaping discovery." },
-  { code: "06", icon: LineChart, title: "Operational Reporting", desc: "Research-backed intelligence designed for leadership visibility." },
+const leakAreas = [
+  { icon: Users, title: "Recruiting", question: "Can the organization consistently attract and move the right people forward?" },
+  { icon: Workflow, title: "Onboarding", question: "Do new agents know exactly what to do after they join?" },
+  { icon: Megaphone, title: "Marketing", question: "Does the organization build trust before conversations begin?" },
+  { icon: TrendingDown, title: "Sales Process", question: "Can attention reliably become revenue?" },
+  { icon: Repeat, title: "Persistency", question: "Is long-term profit being protected?" },
+  { icon: DollarSign, title: "Compensation", question: "Are incentives aligned with the desired outcomes?" },
+  { icon: GraduationCap, title: "Leadership Development", question: "Is the next generation of leaders being intentionally developed?" },
+  { icon: BarChart3, title: "Technology & Data", question: "Can leadership clearly see what is working and what is not?" },
 ];
 
-const REPORT_EXAMPLES = [
-  { code: "RPT-01", title: "Trust Economy Report" },
-  { code: "RPT-02", title: "Distribution Trends Brief" },
-  { code: "RPT-03", title: "AI Readiness Report" },
-  { code: "RPT-04", title: "Consumer Attention Report" },
-  { code: "RPT-05", title: "Event Intelligence Report" },
-  { code: "RPT-06", title: "Insurance Distribution Outlook" },
+const comparisons: [string, string][] = [
+  ["Most providers sell tactics.", "We focus on systems."],
+  ["Most providers start with marketing.", "We start with diagnosis."],
+  ["Most providers assume the problem.", "We identify it."],
+  ["Most providers help organizations do more.", "We help organizations see more."],
 ];
 
-const WHO = [
-  { code: "I.", label: "IMO Owners", desc: "Scaling multi-agency networks. Accountable for trust, production, and persistency across the board." },
-  { code: "II.", label: "Agency Owners", desc: "Running the operational engine that turns recruits into producers — and keeps them producing." },
-  { code: "III.", label: "Distribution Leaders", desc: "Focused on visibility, trust infrastructure, and the economics of long-term retention." },
-];
-
-// Editorial section header — number + eyebrow + dot meta
-const SectionMeta = ({ index, eyebrow, meta }: { index: string; eyebrow: string; meta?: string }) => (
-  <div className="flex items-baseline gap-4 mb-8">
-    <span className="font-mono text-[10px] tracking-[0.2em] text-accent">§ {index}</span>
-    <span className="eyebrow text-foreground/70">{eyebrow}</span>
-    {meta && <span className="eyebrow text-muted-foreground ml-auto hidden md:inline">{meta}</span>}
-  </div>
-);
-
-const Index = () => {
+export default function Index() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white text-slate-900 font-sans">
       <Helmet>
-        <title>Clientele Builders — Distribution Intelligence for Insurance</title>
-        <meta
-          name="description"
-          content="Distribution intelligence for insurance. We surface revenue leaks across recruiting, onboarding, sales, persistency, and leadership."
-        />
+        <title>Clientele Builders — Distribution Intelligence for Life Insurance</title>
+        <meta name="description" content="Distribution intelligence for life insurance IMOs and agencies. Find where trust, recruiting, onboarding, sales, retention, leadership, and operations are leaking revenue." />
         <link rel="canonical" href="https://www.clientelebuilders.com/" />
       </Helmet>
-      <Header />
 
-      {/* ── HERO ── editorial cover */}
-      <section className="relative bg-background overflow-hidden border-b border-border">
-        <div className="grain" />
-        {/* Hairline grid backdrop */}
+      {/* Nav */}
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+          <span className="text-lg font-semibold tracking-tight">Clientele Builders</span>
+          <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-slate-600">
+            <a href="#approach" className="hover:text-slate-900 transition-colors">Approach</a>
+            <a href="#framework" className="hover:text-slate-900 transition-colors">The Framework</a>
+            <a href="#diagnostic" className="hover:text-slate-900 transition-colors">Diagnostic</a>
+            <a href="#who" className="hover:text-slate-900 transition-colors">Who We Serve</a>
+          </nav>
+          <a href="#diagnostic" className="hidden md:inline-flex items-center gap-2 rounded-full bg-slate-900 text-white text-sm font-medium px-5 py-2.5 hover:bg-slate-700 transition-colors">
+            Get the Diagnostic
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-[#0B1220]">
         <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          className="absolute inset-0 opacity-40"
           style={{
-            backgroundImage:
-              "linear-gradient(hsl(var(--navy)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--navy)) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
+            background:
+              "radial-gradient(60% 50% at 80% 20%, rgba(125,211,170,0.25) 0%, rgba(11,18,32,0) 70%), radial-gradient(50% 40% at 10% 90%, rgba(99,140,255,0.18) 0%, rgba(11,18,32,0) 70%)",
           }}
         />
-
-        <div className="container max-w-7xl mx-auto px-6 pt-16 md:pt-20 pb-24 md:pb-32 relative">
-          {/* Masthead band */}
-          <div className="flex items-center justify-between mb-12 md:mb-20 pb-5 border-b border-border/60">
-            <div className="flex items-baseline gap-6">
-              <span className="eyebrow text-accent">Volume 02 · Issue 06</span>
-              <span className="eyebrow text-muted-foreground hidden md:inline">
-                Insurance Distribution · 2026
-              </span>
-            </div>
-            <span className="eyebrow text-muted-foreground hidden md:inline">
-              Est. 2024 · NYC
-            </span>
-          </div>
-
-          <div className="grid lg:grid-cols-[1fr_320px] gap-12 lg:gap-20 items-end">
-            <div>
-              <span className="eyebrow text-accent block mb-6">
-                Distribution Intelligence — A Brief
-              </span>
-              <h1 className="display-xxl text-[clamp(2.75rem,8vw,7.5rem)] text-primary mb-10">
-                Revenue leaks
-                <br />
-                hide inside
-                <br />
-                <span className="italic font-normal text-accent">distribution</span> systems.
-              </h1>
-
-              <div className="hairline rule-gold w-32 mb-8" />
-
-              <p className="text-foreground/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl mb-5">
-                We help life insurance IMOs and agencies find where revenue leaks — across trust,
-                recruiting, sales, onboarding, and retention.
-              </p>
-              <p className="text-muted-foreground leading-relaxed max-w-2xl mb-10">
-                Most firms only notice the leak once production drops or retention crumbles. By then,
-                the damage is already done.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href={SCORECARD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 bg-primary text-primary-foreground eyebrow px-7 py-4 hover:bg-[hsl(var(--ink))] transition-colors"
-                >
-                  Find Your Distribution Leaks
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-                <Link
-                  to="/intelligence-hub"
-                  className="group inline-flex items-center gap-2 border border-primary/20 text-primary eyebrow px-7 py-4 hover:border-primary/60 transition-colors"
-                >
-                  Read the Intelligence
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right rail metadata card */}
-            <aside className="lg:border-l lg:border-border lg:pl-8 space-y-7">
-              <div>
-                <span className="eyebrow text-muted-foreground block mb-2">Filed Under</span>
-                <p className="font-serif text-xl font-bold text-primary leading-tight">
-                  Operating Clarity · Trust · Persistency
-                </p>
-              </div>
-              <div className="hairline" />
-              <div className="grid grid-cols-2 gap-5">
-                <div>
-                  <span className="eyebrow text-muted-foreground block mb-1">Coverage</span>
-                  <p className="font-mono text-2xl text-primary">08</p>
-                  <span className="eyebrow text-muted-foreground/70">Pipeline stages</span>
-                </div>
-                <div>
-                  <span className="eyebrow text-muted-foreground block mb-1">Audience</span>
-                  <p className="font-mono text-2xl text-primary">IMO</p>
-                  <span className="eyebrow text-muted-foreground/70">Agency · Carrier</span>
-                </div>
-              </div>
-              <div className="hairline" />
-              <p className="font-serif text-base italic text-foreground/75 leading-snug">
-                "We show you where to look before it costs you."
-              </p>
-            </aside>
-          </div>
-        </div>
-        <div className="hairline rule-gold" />
-      </section>
-
-      {/* ── §01 THE REAL PROBLEM ── */}
-      <section className="bg-background">
-        <div className="container max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <SectionMeta index="01" eyebrow="The Real Problem" meta="Diagnosis" />
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-7">
-              <h2 className="font-serif text-4xl md:text-6xl font-black leading-[0.95] tracking-tight mb-10 text-primary">
-                Most firms don't know
-                <br />
-                <span className="italic font-normal">where growth breaks.</span>
-              </h2>
-              <p className="text-foreground/75 text-lg leading-relaxed max-w-2xl mb-6">
-                Problems rarely come out of nowhere. Something inside the chain — recruiting,
-                onboarding, activation, placement, follow-up, persistency, leadership, or trust —
-                gives way first.
-              </p>
-            </div>
-            <div className="lg:col-span-5 lg:border-l lg:border-border lg:pl-10 flex flex-col justify-end">
-              <p className="font-serif text-2xl md:text-3xl font-bold leading-tight mb-3">
-                Most teams only see the symptoms.
-              </p>
-              <p className="font-serif text-2xl md:text-3xl font-bold text-accent italic leading-tight mb-5">
-                Very few find the actual leak.
-              </p>
-              <div className="hairline rule-gold w-16 mb-4" />
-              <p className="text-muted-foreground italic">That's where we come in.</p>
-            </div>
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-28 lg:pt-36 lg:pb-40">
+          <p className="text-sm uppercase tracking-[0.2em] text-emerald-300/80 mb-6">Distribution Intelligence for Life Insurance</p>
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-serif leading-[1.1] text-white max-w-4xl">
+            Most organizations don&apos;t have a lead problem.
+            <br />
+            <span className="text-emerald-300">They have a visibility problem.</span>
+          </h1>
+          <p className="mt-8 text-lg lg:text-xl text-slate-300 max-w-2xl leading-relaxed">
+            Clientele Builders helps IMOs, agencies, and distribution leaders find where trust, recruiting, onboarding, sales, retention, leadership, and operations are leaking revenue &mdash; before they invest in the wrong solution.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="#diagnostic" className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-300 text-slate-900 text-sm font-semibold px-7 py-3.5 hover:bg-emerald-200 transition-colors">
+              Take the Distribution Leak Diagnostic
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a href="#approach" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 text-white text-sm font-semibold px-7 py-3.5 hover:bg-white/10 transition-colors">
+              How We Think
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ── §02 DISTRIBUTION MAP — pinned scroller ── */}
-      <HomeDistributionScroller />
-
-      {/* ── §03 WHO WE HELP ── */}
-      <section className="bg-background border-t border-border">
-        <div className="container max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <SectionMeta index="03" eyebrow="Who We Help" meta="Audience" />
-          <div className="grid lg:grid-cols-12 gap-12 mb-14">
-            <h2 className="lg:col-span-8 font-serif text-4xl md:text-5xl font-black leading-[1.0] text-primary">
-              Built for the operators running distribution.
+      {/* What We Believe */}
+      <section id="approach" className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+          <div className="lg:col-span-5">
+            <p className="text-sm uppercase tracking-[0.2em] text-emerald-600 mb-4">What We Believe</p>
+            <h2 className="text-3xl lg:text-5xl font-serif leading-tight">
+              Growth is not random.
+              <br />
+              It&apos;s the result of systems.
             </h2>
-            <p className="lg:col-span-4 text-muted-foreground leading-relaxed lg:border-l lg:border-border lg:pl-8 self-end">
-              The leaders moving recruits, agents, and revenue through complex systems.
+          </div>
+          <div className="lg:col-span-7 flex flex-col gap-6 text-lg text-slate-600 leading-relaxed">
+            <p>
+              When a system is healthy, momentum compounds. When a system is unhealthy, leaks compound. Most organizations only see the symptoms &mdash; slowing recruiting, falling persistency, inconsistent production. We help leadership teams see the source.
+            </p>
+            <p>
+              We call these breakdowns <span className="font-semibold text-slate-900">Distribution Leaks</span> &mdash; any place where momentum breaks down on the path from{" "}
+              <span className="font-semibold text-slate-900">Attention&nbsp;&rarr;&nbsp;Trust&nbsp;&rarr;&nbsp;Activation&nbsp;&rarr;&nbsp;Revenue&nbsp;&rarr;&nbsp;Retention.</span>
+            </p>
+            <p>
+              Recruiting people who never activate. Onboarding that creates confusion. Weak follow-up systems. Low trust positioning. Retention problems. Leadership gaps. Disconnected technology. Most organizations experience these problems &mdash; very few can clearly identify them.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-3 gap-px bg-border">
-            {WHO.map((w) => (
-              <div
-                key={w.label}
-                className="bg-background p-8 md:p-10 group hover:bg-secondary/40 transition-colors"
-              >
-                <span className="font-mono text-[11px] tracking-[0.2em] text-accent block mb-6">
-                  {w.code}
-                </span>
-                <h3 className="font-serif text-2xl font-bold mb-4 leading-tight text-primary">
-                  {w.label}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">{w.desc}</p>
+      {/* The 8 Core Areas */}
+      <section id="framework" className="bg-slate-50 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="max-w-2xl mb-16">
+            <p className="text-sm uppercase tracking-[0.2em] text-emerald-600 mb-4">The Diagnostic Framework</p>
+            <h2 className="text-3xl lg:text-5xl font-serif leading-tight mb-6">
+              Eight areas. One question behind each:
+              <br />
+              is momentum building or breaking?
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Our framework evaluates the health of a distribution system across the areas that drive &mdash; or quietly drain &mdash; growth.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200 rounded-2xl overflow-hidden">
+            {leakAreas.map(({ icon: Icon, title, question }) => (
+              <div key={title} className="bg-slate-50 p-8 hover:bg-white transition-colors">
+                <Icon className="w-6 h-6 text-emerald-600 mb-6" strokeWidth={1.5} />
+                <h3 className="text-lg font-semibold mb-2">{title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{question}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── §04 WHAT WE ACTUALLY DO ── */}
-      <section className="bg-[hsl(var(--bone))] border-t border-border">
-        <div className="container max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <SectionMeta index="04" eyebrow="What We Actually Do" meta="Capabilities" />
-          <div className="grid lg:grid-cols-12 gap-12 mb-14">
-            <div className="lg:col-span-7">
-              <h2 className="font-serif text-4xl md:text-6xl font-black leading-[0.95] text-primary mb-8">
-                We find where your distribution{" "}
-                <span className="italic font-normal text-accent">is bleeding.</span>
-              </h2>
-              <p className="text-foreground/75 text-lg leading-relaxed max-w-2xl mb-5">
-                We combine operational diagnostics, market intelligence, and trust analysis to show
-                how money, attention, and momentum actually move through your system. Not how you
-                think they move — how they really move.
-              </p>
-              <p className="font-serif text-xl italic text-primary">Not consulting. Intelligence.</p>
-            </div>
+      {/* The Diagnostic Process */}
+      <section id="diagnostic" className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <div className="lg:col-span-5">
+            <p className="text-sm uppercase tracking-[0.2em] text-emerald-600 mb-4">How It Works</p>
+            <h2 className="text-3xl lg:text-5xl font-serif leading-tight mb-6">
+              We start with visibility &mdash; not solutions.
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              The Distribution Leak Diagnostic is a strategic assessment that identifies where momentum is breaking inside your distribution organization. The goal isn&apos;t information. The goal is clarity.
+            </p>
+            <a href="#" className="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white text-sm font-semibold px-7 py-3.5 hover:bg-slate-700 transition-colors">
+              Start the Diagnostic
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-            {CAPABILITIES.map((c) => (
-              <div
-                key={c.title}
-                className="bg-background p-8 group relative hover:bg-secondary/40 transition-colors"
-              >
-                <div className="flex items-start justify-between mb-6">
-                  <c.icon className="h-5 w-5 text-accent" strokeWidth={1.5} />
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground">
-                    {c.code}
-                  </span>
-                </div>
-                <h3 className="font-serif text-xl font-bold mb-3 leading-snug text-primary">
-                  {c.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── §05 TRUST ECONOMY ── dark editorial spread */}
-      <section className="bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="grain" />
-        <div className="container max-w-7xl mx-auto px-6 py-28 md:py-40 relative">
-          <div className="flex items-baseline gap-4 mb-10">
-            <span className="font-mono text-[10px] tracking-[0.2em] text-[hsl(var(--gold-light))]">§ 05</span>
-            <span className="eyebrow text-primary-foreground/60">Trust Economy</span>
-          </div>
-
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-8">
-              <h2 className="display-xxl text-[clamp(2.5rem,6.5vw,6rem)] text-primary-foreground mb-10">
-                Trust is your real
-                <br />
-                <span className="italic font-normal text-accent">infrastructure.</span>
-              </h2>
-              <div className="hairline rule-gold w-32 mb-8" />
-              <p className="text-primary-foreground/75 text-lg leading-relaxed mb-5 max-w-2xl">
-                Consumers are overwhelmed. Attention is scattered. AI is rewriting how people find
-                financial advice.
-              </p>
-              <p className="text-primary-foreground/75 text-lg leading-relaxed mb-10 max-w-2xl">
-                But trust still converts. The firms that win the next decade will be the ones that
-                reduce friction, improve clarity, strengthen trust, simplify onboarding, and
-                maintain visibility.
-              </p>
-              <p className="font-serif text-2xl md:text-3xl font-bold text-primary-foreground max-w-3xl">
-                Trust isn't branding anymore.{" "}
-                <span className="text-accent italic">It's operations.</span>
-              </p>
-            </div>
-
-            <aside className="lg:col-span-4 space-y-6 lg:border-l lg:border-primary-foreground/15 lg:pl-8">
+          <div className="lg:col-span-7">
+            <ol className="space-y-8">
               {[
-                { k: "01", v: "Reduce friction" },
-                { k: "02", v: "Improve clarity" },
-                { k: "03", v: "Strengthen trust" },
-                { k: "04", v: "Simplify onboarding" },
-                { k: "05", v: "Maintain visibility" },
-              ].map((row) => (
-                <div key={row.k} className="flex items-baseline gap-4 border-b border-primary-foreground/10 pb-4">
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-[hsl(var(--gold-light))]">
-                    {row.k}
+                { title: "Identify your biggest leak", desc: "Pinpoint where momentum is breaking between attention, trust, activation, revenue, and retention." },
+                { title: "Understand what it means", desc: "See how the leak shows up across recruiting, onboarding, sales, persistency, and leadership." },
+                { title: "See why it matters financially", desc: "Translate the leak into its real cost &mdash; in production, retention, and growth." },
+                { title: "Know what usually causes it", desc: "Understand the systemic patterns that create this leak across distribution organizations." },
+                { title: "Know what to fix first", desc: "Walk away with a clear, sequenced view of what to address &mdash; before investing in a solution." },
+              ].map((step, i) => (
+                <li key={step.title} className="flex gap-6">
+                  <span className="flex-none w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-serif text-lg flex items-center justify-center">
+                    {i + 1}
                   </span>
-                  <span className="font-serif text-lg font-bold text-primary-foreground">{row.v}</span>
-                </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">{step.title}</h3>
+                    <p className="text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: step.desc }} />
+                  </div>
+                </li>
               ))}
-            </aside>
+            </ol>
           </div>
         </div>
       </section>
 
-      {/* ── §06 INDUSTRY INTELLIGENCE ── reports */}
-      <section className="bg-background border-t border-border">
-        <div className="container max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <SectionMeta index="06" eyebrow="Industry Intelligence" meta="Research" />
-          <div className="grid lg:grid-cols-12 gap-12 mb-14">
-            <h2 className="lg:col-span-8 font-serif text-4xl md:text-6xl font-black leading-[0.95] text-primary">
-              We study how distribution{" "}
-              <span className="italic font-normal">actually works.</span>
+      {/* What Makes Us Different */}
+      <section className="bg-[#0B1220] py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="max-w-2xl mb-16">
+            <p className="text-sm uppercase tracking-[0.2em] text-emerald-300/80 mb-4">What Makes Us Different</p>
+            <h2 className="text-3xl lg:text-5xl font-serif leading-tight text-white">
+              Better decisions come from better visibility.
             </h2>
-            <p className="lg:col-span-4 text-muted-foreground leading-relaxed lg:border-l lg:border-border lg:pl-8 self-end">
-              Our research tracks distribution trends, consumer behavior, fintech adoption,
-              AI-driven discovery, trust patterns, and recruiting environments — so you don't have to.
-            </p>
           </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border mb-8">
-            {REPORT_EXAMPLES.map((r) => (
-              <Link
-                key={r.title}
-                to="/intelligence-hub"
-                className="bg-background p-7 group hover:bg-secondary/40 transition-colors relative"
-              >
-                <div className="flex items-center justify-between mb-6">
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-accent">{r.code}</span>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
-                </div>
-                <h3 className="font-serif text-lg font-bold leading-snug text-primary">{r.title}</h3>
-              </Link>
-            ))}
-          </div>
-
-          <p className="eyebrow text-muted-foreground">
-            Built on institutional frameworks and multi-source market intelligence.
-          </p>
-        </div>
-      </section>
-
-      {/* ── §07 FOCUS AREAS ── dark accent band */}
-      <section className="bg-[hsl(var(--ink))] text-primary-foreground border-t border-primary-foreground/5">
-        <div className="container max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="flex items-baseline gap-4 mb-10">
-            <span className="font-mono text-[10px] tracking-[0.2em] text-[hsl(var(--gold-light))]">§ 07</span>
-            <span className="eyebrow text-primary-foreground/60">Focus Areas</span>
-          </div>
-          <h2 className="display-xxl text-[clamp(2.5rem,6vw,5.5rem)] text-primary-foreground mb-10 max-w-4xl">
-            We look where others{" "}
-            <span className="italic font-normal text-accent">don't.</span>
-          </h2>
-          <p className="text-primary-foreground/65 text-lg leading-relaxed max-w-3xl mb-12">
-            Most firms track the obvious metrics. We dig into the signals that actually determine
-            whether your distribution compounds — or quietly leaks.
-          </p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-primary-foreground/10">
-            {[
-              "Recruiting velocity",
-              "Onboarding performance",
-              "Activation rates",
-              "Persistency trends",
-              "Trust indicators",
-              "Leadership pressure points",
-              "Operational bottlenecks",
-              "Revenue leakage",
-            ].map((item, i) => (
-              <div key={item} className="bg-[hsl(var(--ink))] p-6">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-[hsl(var(--gold-light))] block mb-3">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="font-serif text-lg font-bold text-primary-foreground leading-snug">
-                  {item}
+          <div className="grid sm:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden">
+            {comparisons.map(([them, us]) => (
+              <div key={us} className="bg-[#0B1220] p-8 lg:p-10">
+                <p className="text-slate-400 text-base mb-3 flex items-start gap-3">
+                  <Search className="w-5 h-5 flex-none mt-0.5 text-slate-500" strokeWidth={1.5} />
+                  {them}
+                </p>
+                <p className="text-white text-xl font-serif flex items-start gap-3">
+                  <Eye className="w-5 h-5 flex-none mt-1.5 text-emerald-300" strokeWidth={1.5} />
+                  {us}
                 </p>
               </div>
             ))}
           </div>
-
-          <p className="font-serif text-xl md:text-2xl italic text-primary-foreground/85 max-w-3xl mt-12">
-            Seeing clearly here is what separates firms that scale from firms that stall.
-          </p>
         </div>
       </section>
 
-      {/* ── §08 FINAL CTA ── */}
-      <section className="bg-background">
-        <div className="container max-w-7xl mx-auto px-6 py-28 md:py-40">
-          <div className="grid lg:grid-cols-12 gap-12 items-end">
-            <div className="lg:col-span-8">
-              <span className="font-mono text-[10px] tracking-[0.2em] text-accent block mb-6">
-                § 08 · Operational Clarity
-              </span>
-              <h2 className="display-xxl text-[clamp(2.75rem,8vw,7rem)] text-primary mb-8">
-                You can't fix
-                <br />
-                what you can't{" "}
-                <span className="italic font-normal text-accent">see.</span>
-              </h2>
-              <div className="hairline rule-gold w-32 mb-8" />
-              <p className="text-foreground/75 text-lg leading-relaxed max-w-xl mb-3">
-                Most firms are flying blind. By the time a leak shows up in your numbers, it's been
-                bleeding for months.
-              </p>
-              <p className="font-serif italic text-muted-foreground max-w-xl mb-10">
-                Clarity changes everything.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href={SCORECARD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 bg-primary text-primary-foreground eyebrow px-7 py-4 hover:bg-[hsl(var(--ink))] transition-colors"
-                >
-                  Find Your Distribution Leaks
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-                <Link
-                  to="/contact"
-                  className="group inline-flex items-center gap-2 border border-primary/20 text-primary eyebrow px-7 py-4 hover:border-primary/60 transition-colors"
-                >
-                  Schedule A Strategy Call
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-              </div>
-            </div>
-
-            <aside className="lg:col-span-4 lg:border-l lg:border-border lg:pl-8 space-y-5">
-              <span className="eyebrow text-muted-foreground block">Next Steps</span>
-              {[
-                { k: "01", v: "Take the diagnostic" },
-                { k: "02", v: "Receive a leak map" },
-                { k: "03", v: "Schedule a strategy call" },
-              ].map((s) => (
-                <div key={s.k} className="flex items-baseline gap-4 border-b border-border pb-4">
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-accent">{s.k}</span>
-                  <span className="font-serif text-lg font-bold text-primary">{s.v}</span>
+      {/* Who We Serve */}
+      <section id="who" className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div className="lg:col-span-7 order-2 lg:order-1">
+            <p className="text-sm uppercase tracking-[0.2em] text-emerald-600 mb-4">Who We Serve</p>
+            <h2 className="text-3xl lg:text-5xl font-serif leading-tight mb-6">
+              Built for the people responsible for the whole system.
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Our primary audience is IMO owners, agency owners, distribution leaders, and executive teams &mdash; people responsible for growth, production, recruiting, retention, and profitability.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              We are not focused on individual agents. We are focused on the organizations that support them.
+            </p>
+          </div>
+          <div className="lg:col-span-5 order-1 lg:order-2">
+            <div className="grid grid-cols-2 gap-px bg-slate-200 rounded-2xl overflow-hidden">
+              {["IMO Owners", "Agency Owners", "Distribution Leaders", "Executive Teams"].map((role) => (
+                <div key={role} className="bg-slate-50 p-8 flex items-center justify-center text-center font-serif text-lg">
+                  {role}
                 </div>
               ))}
-            </aside>
+            </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* Vision / CTA */}
+      <section className="bg-slate-50 py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-8">
+            <p className="text-sm uppercase tracking-[0.2em] text-emerald-600 mb-4">Our Vision</p>
+            <h2 className="text-3xl lg:text-5xl font-serif leading-tight mb-6">
+              Building the intelligence layer for life insurance distribution.
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
+              Today, that begins with diagnostics, assessments, reports, calculators, and strategic advisory. Over time, it expands into benchmarking, operational dashboards, and industry-wide visibility tools &mdash; becoming the most trusted source of operational intelligence in life insurance distribution.
+            </p>
+          </div>
+          <div className="lg:col-span-4 flex lg:justify-end">
+            <a href="#diagnostic" className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 text-white text-sm font-semibold px-8 py-4 hover:bg-slate-700 transition-colors w-full sm:w-auto">
+              Take the Diagnostic
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-100 py-12">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <span className="font-semibold tracking-tight">Clientele Builders</span>
+          <p className="text-sm text-slate-500">
+            Distribution intelligence for life insurance IMOs and agencies.
+          </p>
+        </div>
+      </footer>
     </div>
   );
-};
-
-export default Index;
+}
