@@ -319,18 +319,10 @@ const Index = () => {
           <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight max-w-3xl mb-6 text-primary-foreground">
             We look where others <span className="text-accent">don't.</span>
           </h2>
-          <p className="text-primary-foreground/65 leading-relaxed max-w-3xl mb-12">
-            Most firms track the obvious metrics. We dig into the signals that actually determine whether your distribution compounds — or quietly leaks. Here's what we watch:
+          <p className="text-primary-foreground/65 leading-relaxed max-w-3xl mb-10">
+            Most firms track the obvious metrics. We dig into the signals that actually determine whether your distribution compounds — or quietly leaks: recruiting velocity, onboarding performance, activation rates, persistency trends, trust indicators, leadership pressure points, operational bottlenecks, and revenue leakage.
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
-            {PLATFORM_MONITORS.map((m) => (
-              <div key={m} className="border border-primary-foreground/10 p-4 flex items-center gap-3">
-                <Eye className="h-3.5 w-3.5 text-accent shrink-0" />
-                <span className="font-mono text-[10px] tracking-[0.15em] text-primary-foreground/85 uppercase leading-snug">{m}</span>
-              </div>
-            ))}
-          </div>
 
           <p className="font-serif text-xl md:text-2xl font-bold text-primary-foreground max-w-3xl mb-10">
             Seeing clearly here is what separates firms that scale from firms that stall.
