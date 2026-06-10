@@ -125,6 +125,8 @@ const Index = () => {
           </p>
         </div>
       </section>
+      {/* ── Scroll-driven Distribution Model ── */}
+      <HomeDistributionScroller />
 
       {/* ── 2. THE REAL PROBLEM ── */}
       <section className="bg-background">
