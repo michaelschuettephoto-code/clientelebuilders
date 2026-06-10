@@ -136,17 +136,11 @@ const Index = () => {
               Most firms don't know where growth breaks.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Problems rarely come out of nowhere. Something inside the chain gives way first:
+              Problems rarely come out of nowhere. Something inside the chain — recruiting, onboarding, activation, placement, follow-up, persistency, leadership, or trust — gives way first.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12 max-w-3xl">
-            {["Recruiting","Onboarding","Activation","Placement","Follow-up","Persistency","Leadership","Trust"].map((s) => (
-              <div key={s} className="border border-border p-4">
-                <span className="font-mono text-[10px] tracking-[0.15em] text-foreground uppercase">{s}</span>
-              </div>
-            ))}
-          </div>
+
 
           <p className="font-serif text-2xl md:text-3xl font-bold text-foreground max-w-3xl mb-3">
             Most teams only see the symptoms.
