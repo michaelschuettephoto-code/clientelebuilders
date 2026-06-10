@@ -167,36 +167,6 @@ const Index = () => {
             Every organization sits inside a connected chain. When one link weakens, the whole thing feels it.
           </p>
 
-          {/* Chain */}
-          <div className="border border-primary-foreground/10 p-6 md:p-10 mb-10">
-            <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-8">
-              The Chain
-            </span>
-
-            {/* Mobile vertical */}
-            <div className="flex flex-col sm:hidden gap-3">
-              {DISTRIBUTION_CHAIN.map((node) => (
-                <div key={node} className="border border-primary-foreground/10 p-4">
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-primary-foreground/80 uppercase">{node}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Desktop horizontal */}
-            <div className="hidden sm:flex items-center justify-between gap-2">
-              {DISTRIBUTION_CHAIN.map((node, i) => (
-                <div key={node} className="flex items-center flex-1">
-                  <div className="flex-1 border border-primary-foreground/15 px-4 py-5 text-center">
-                    <span className="font-mono text-[11px] tracking-[0.18em] text-primary-foreground/85 uppercase">{node}</span>
-                  </div>
-                  {i < DISTRIBUTION_CHAIN.length - 1 && (
-                    <ArrowRight className="h-4 w-4 text-accent/60 shrink-0 mx-2" />
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="grid sm:grid-cols-3 gap-5 mb-10">
             {[
               "A recruiting problem becomes a persistency problem.",
@@ -209,25 +179,10 @@ const Index = () => {
             ))}
           </div>
 
-          <p className="text-primary-foreground/60 leading-relaxed max-w-3xl mb-12">
-            We help you spot pressure before it crushes growth.
+          <p className="text-primary-foreground/60 leading-relaxed max-w-3xl">
+            From carrier to consumer — across recruiting, licensing, onboarding, activation, sales, placement, renewals, and retention — we help you spot pressure before it crushes growth.
           </p>
 
-          {/* Pipeline stages */}
-          <span className="font-mono text-[9px] tracking-[0.15em] text-[hsl(var(--gold-light))] uppercase block mb-6">
-            Where Leaks Appear
-          </span>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {PIPELINE_STAGES.map((s, i) => (
-              <div key={s.label} className="border border-primary-foreground/10 p-4 flex items-start gap-3">
-                <s.icon className="h-4 w-4 text-accent shrink-0 mt-0.5" />
-                <div className="flex flex-col">
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-primary-foreground/85 uppercase">{s.label}</span>
-                  <span className="font-mono text-[8px] tracking-[0.15em] text-primary-foreground/30 mt-1">{String(i+1).padStart(2,"0")}</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
