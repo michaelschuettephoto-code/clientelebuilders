@@ -266,13 +266,10 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-10">
-            {["Reduce friction","Improve clarity","Strengthen trust","Simplify onboarding","Maintain visibility"].map((p) => (
-              <div key={p} className="border border-primary-foreground/15 p-4">
-                <span className="font-mono text-[10px] tracking-[0.15em] text-primary-foreground/85 uppercase">{p}</span>
-              </div>
-            ))}
-          </div>
+          <p className="text-primary-foreground/70 leading-relaxed max-w-3xl mb-10">
+            Reduce friction. Improve clarity. Strengthen trust. Simplify onboarding. Maintain visibility.
+          </p>
+
 
           <p className="font-serif text-xl md:text-2xl font-bold text-primary-foreground max-w-3xl">
             Trust isn't branding anymore. <span className="text-accent">It's operations.</span>
