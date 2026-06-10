@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { HomeDistributionScroller } from "@/components/home/HomeDistributionScroller";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
@@ -124,6 +125,8 @@ const Index = () => {
           </p>
         </div>
       </section>
+      {/* ── Scroll-driven Distribution Model ── */}
+      <HomeDistributionScroller />
 
       {/* ── 2. THE REAL PROBLEM ── */}
       <section className="bg-background">
