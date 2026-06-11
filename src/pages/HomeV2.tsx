@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 // Parse a CSS declaration string into a React style object.
 // Keeps CSS custom properties (--foo) verbatim so they reach the DOM.
