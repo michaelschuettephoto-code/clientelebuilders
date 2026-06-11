@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
+import HomeV2 from "./pages/HomeV2";
 import Intelligence from "./pages/Intelligence";
 import About from "./pages/About";
 import Newsletter from "./pages/Newsletter";
