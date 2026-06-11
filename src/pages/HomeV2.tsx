@@ -49,11 +49,11 @@ const LEAK_LEFT: Array<React.CSSProperties> = [
 ];
 
 const STAGES = [
-  { num: "01", color: "#C8902F", name: "Attention", q: "Are the right people even looking?", textColor: "#b9c7d4", center: 0.20, hw: 0.12 },
-  { num: "02", color: "#C8902F", name: "Trust", q: "Do they believe you before they ever talk to you?", textColor: "#b9c7d4", center: 0.40, hw: 0.12 },
-  { num: "03 · LEAK", color: "#d2693f", name: "Activation", q: "Most new agents never truly start. Here's a leak.", textColor: "#e0a585", center: 0.58, hw: 0.11 },
-  { num: "04", color: "#C8902F", name: "Revenue", q: "Does all that effort actually convert to production?", textColor: "#b9c7d4", center: 0.76, hw: 0.12 },
-  { num: "05 · LEAK", color: "#d2693f", name: "Retention", q: "What pours out the bottom is what's left after every leak.", textColor: "#e0a585", center: 0.95, hw: 0.12 },
+  { num: "01", color: "#C8902F", name: "Attention", q: "Are the right people even looking?", textColor: "#b9c7d4", center: 0.20, hw: 0.12, disc: 210 },
+  { num: "02", color: "#C8902F", name: "Trust", q: "Do they believe you before they ever talk to you?", textColor: "#b9c7d4", center: 0.40, hw: 0.12, disc: 318 },
+  { num: "03 · LEAK", color: "#d2693f", name: "Activation", q: "Most new agents never truly start. Here's a leak.", textColor: "#e0a585", center: 0.58, hw: 0.11, disc: 415 },
+  { num: "04", color: "#C8902F", name: "Revenue", q: "Does all that effort actually convert to production?", textColor: "#b9c7d4", center: 0.76, hw: 0.12, disc: 503 },
+  { num: "05 · LEAK", color: "#d2693f", name: "Retention", q: "What pours out the bottom is what's left after every leak.", textColor: "#e0a585", center: 0.95, hw: 0.12, disc: 584 },
 ];
 
 export default function HomeV2() {
