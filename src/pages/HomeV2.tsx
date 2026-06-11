@@ -108,15 +108,18 @@ export default function HomeV2() {
 
         caps.forEach((c) => {
           const center = parseFloat(c.getAttribute("data-center") || "0");
-          let op: number;
           if (c.getAttribute("data-cap") === "overview") {
-            op = clamp(1 - prog / 0.11, 0, 1);
+            const op = clamp(1 - prog / 0.11, 0, 1);
+            c.style.opacity = op.toFixed(3);
+            c.style.transform = `translateY(${((1 - op) * 14).toFixed(1)}px)`;
           } else {
             const hw = parseFloat(c.getAttribute("data-hw") || "0.11");
-            op = clamp(1 - Math.abs(prog - center) / hw, 0, 1);
+            const op = clamp(1 - Math.abs(prog - center) / hw, 0, 1);
+            const discCy = parseFloat(c.getAttribute("data-disc") || "430");
+            const discY = vh / 2 + (discCy / 860 - f) * H * z;
+            c.style.opacity = op.toFixed(3);
+            c.style.transform = `translateY(${(discY + (1 - op) * 14).toFixed(1)}px)`;
           }
-          c.style.opacity = op.toFixed(3);
-          c.style.transform = `translateY(${((1 - op) * 14).toFixed(1)}px)`;
         });
 
         const ai = Math.round(clamp((prog - 0.08) / 0.84, 0, 1) * 4);
