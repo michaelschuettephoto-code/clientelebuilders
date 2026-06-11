@@ -54,6 +54,7 @@ async function prerender() {
   // Define static routes
   const staticRoutes = [
     { path: '/', title: 'Home' },
+    { path: '/home-v2', title: 'Home Preview' },
     { path: '/blog', title: 'Blog' },
     { path: '/about', title: 'About' },
     { path: '/newsletter', title: 'Newsletter' },
