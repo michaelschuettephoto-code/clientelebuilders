@@ -328,7 +328,8 @@ export default function HomeV2() {
                   data-cap="stage"
                   data-center={s.center}
                   data-hw={s.hw}
-                  style={css("position: absolute; bottom: 11%; left: 26px; right: 26px; z-index: 25; text-align: center; opacity: 0;")}
+                  data-disc={s.disc}
+                  style={css("position: absolute; top: 0; left: 26px; right: 26px; z-index: 25; text-align: center; opacity: 0; will-change: transform;")}
                 >
                   <div style={{ ...css("font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 8px;"), color: s.color }}>{s.num}</div>
                   <div style={css("font-family: 'Bodoni Moda', serif; font-weight: 500; font-size: 38px; line-height: 1.0; margin-bottom: 10px; text-shadow: 0 2px 24px rgba(7,15,24,0.8);")}>{s.name}</div>
