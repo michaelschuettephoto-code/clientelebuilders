@@ -49,11 +49,11 @@ const LEAK_LEFT: Array<React.CSSProperties> = [
 ];
 
 const STAGES = [
-  { num: "01", color: "#C8902F", name: "Attention", q: "Are the right people even looking?", textColor: "#b9c7d4", center: 0.20, hw: 0.12 },
-  { num: "02", color: "#C8902F", name: "Trust", q: "Do they believe you before they ever talk to you?", textColor: "#b9c7d4", center: 0.40, hw: 0.12 },
-  { num: "03 · LEAK", color: "#d2693f", name: "Activation", q: "Most new agents never truly start. Here's a leak.", textColor: "#e0a585", center: 0.58, hw: 0.11 },
-  { num: "04", color: "#C8902F", name: "Revenue", q: "Does all that effort actually convert to production?", textColor: "#b9c7d4", center: 0.76, hw: 0.12 },
-  { num: "05 · LEAK", color: "#d2693f", name: "Retention", q: "What pours out the bottom is what's left after every leak.", textColor: "#e0a585", center: 0.95, hw: 0.12 },
+  { num: "01", color: "#C8902F", name: "Attention", q: "Are the right people even looking?", textColor: "#b9c7d4", center: 0.20, hw: 0.12, disc: 210 },
+  { num: "02", color: "#C8902F", name: "Trust", q: "Do they believe you before they ever talk to you?", textColor: "#b9c7d4", center: 0.40, hw: 0.12, disc: 318 },
+  { num: "03 · LEAK", color: "#d2693f", name: "Activation", q: "Most new agents never truly start. Here's a leak.", textColor: "#e0a585", center: 0.58, hw: 0.11, disc: 415 },
+  { num: "04", color: "#C8902F", name: "Revenue", q: "Does all that effort actually convert to production?", textColor: "#b9c7d4", center: 0.76, hw: 0.12, disc: 503 },
+  { num: "05 · LEAK", color: "#d2693f", name: "Retention", q: "What pours out the bottom is what's left after every leak.", textColor: "#e0a585", center: 0.95, hw: 0.12, disc: 584 },
 ];
 
 export default function HomeV2() {
@@ -108,15 +108,18 @@ export default function HomeV2() {
 
         caps.forEach((c) => {
           const center = parseFloat(c.getAttribute("data-center") || "0");
-          let op: number;
           if (c.getAttribute("data-cap") === "overview") {
-            op = clamp(1 - prog / 0.11, 0, 1);
+            const op = clamp(1 - prog / 0.11, 0, 1);
+            c.style.opacity = op.toFixed(3);
+            c.style.transform = `translateY(${((1 - op) * 14).toFixed(1)}px)`;
           } else {
             const hw = parseFloat(c.getAttribute("data-hw") || "0.11");
-            op = clamp(1 - Math.abs(prog - center) / hw, 0, 1);
+            const op = clamp(1 - Math.abs(prog - center) / hw, 0, 1);
+            const discCy = parseFloat(c.getAttribute("data-disc") || "430");
+            const discY = vh / 2 + (discCy / 860 - f) * H * z;
+            c.style.opacity = op.toFixed(3);
+            c.style.transform = `translateY(${(discY + (1 - op) * 14).toFixed(1)}px)`;
           }
-          c.style.opacity = op.toFixed(3);
-          c.style.transform = `translateY(${((1 - op) * 14).toFixed(1)}px)`;
         });
 
         const ai = Math.round(clamp((prog - 0.08) / 0.84, 0, 1) * 4);
@@ -325,7 +328,8 @@ export default function HomeV2() {
                   data-cap="stage"
                   data-center={s.center}
                   data-hw={s.hw}
-                  style={css("position: absolute; bottom: 11%; left: 26px; right: 26px; z-index: 25; text-align: center; opacity: 0;")}
+                  data-disc={s.disc}
+                  style={css("position: absolute; top: 0; left: 26px; right: 26px; z-index: 25; text-align: center; opacity: 0; will-change: transform;")}
                 >
                   <div style={{ ...css("font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; margin-bottom: 8px;"), color: s.color }}>{s.num}</div>
                   <div style={css("font-family: 'Bodoni Moda', serif; font-weight: 500; font-size: 38px; line-height: 1.0; margin-bottom: 10px; text-shadow: 0 2px 24px rgba(7,15,24,0.8);")}>{s.name}</div>
