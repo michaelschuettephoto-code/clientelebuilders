@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
 
 const AdminPostEditor = () => {
   const { id } = useParams();
@@ -12,6 +14,7 @@ const AdminPostEditor = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean | null>(null);
+  const [categories, setCategories] = useState<Array<{ id: string; name: string }>>([]);
   const [post, setPost] = useState({
     title: "",
     slug: "",
@@ -19,6 +22,9 @@ const AdminPostEditor = () => {
     body_html: "",
     cover_image_url: "",
     is_published: false,
+    category_id: null as string | null,
+    cta_text: "",
+    cta_url: "",
   });
 
   useEffect(() => {
@@ -56,9 +62,24 @@ const AdminPostEditor = () => {
   }, [navigate, toast]);
 
   useEffect(() => {
+    if (isAuthorized) {
+      supabase.from("categories").select("id, name").order("name").then(({ data }) => {
+        if (data) setCategories(data);
+      });
+    }
     if (id && isAuthorized) {
       supabase.from("posts").select("*").eq("id", id).single()
-        .then(({ data }) => data && setPost(data));
+        .then(({ data }) => data && setPost({
+          title: data.title ?? "",
+          slug: data.slug ?? "",
+          dek: data.dek ?? "",
+          body_html: data.body_html ?? "",
+          cover_image_url: data.cover_image_url ?? "",
+          is_published: data.is_published ?? false,
+          category_id: data.category_id ?? null,
+          cta_text: data.cta_text ?? "",
+          cta_url: data.cta_url ?? "",
+        }));
     }
   }, [id, isAuthorized]);
 
@@ -122,6 +143,47 @@ const AdminPostEditor = () => {
           </p>
         </div>
         
+        <div className="space-y-2">
+          <Label>Category</Label>
+          <Select
+            value={post.category_id ?? "__none__"}
+            onValueChange={(v) => setPost({ ...post, category_id: v === "__none__" ? null : v })}
+          >
+            <SelectTrigger className="bg-card">
+              <SelectValue placeholder="Select a category" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="__none__">No category</SelectItem>
+              {categories.map((c) => (
+                <SelectItem key={c.id} value={c.id}>{c.name}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
+          <Label>CTA Text</Label>
+          <Input
+            placeholder="e.g. Take the Distribution Scorecard"
+            value={post.cta_text}
+            onChange={(e) => setPost({ ...post, cta_text: e.target.value })}
+            className="bg-card"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label>CTA URL</Label>
+          <Input
+            placeholder="https://..."
+            value={post.cta_url}
+            onChange={(e) => setPost({ ...post, cta_url: e.target.value })}
+            className="bg-card"
+          />
+          <p className="text-xs text-muted-foreground">
+            Both CTA Text and CTA URL must be set for the call-to-action block to appear on the article page.
+          </p>
+        </div>
+
         <Textarea placeholder="Body HTML" value={post.body_html} onChange={(e) => setPost({ ...post, body_html: e.target.value })} className="bg-card min-h-[400px]" />
         
         <div className="flex gap-4">

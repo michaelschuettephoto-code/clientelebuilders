@@ -75,6 +75,11 @@ async function prerender() {
     .from('tags')
     .select('slug, name');
 
+  console.log('Fetching categories...');
+  const { data: categories } = await supabase
+    .from('categories')
+    .select('slug, name');
+
   // Build dynamic routes
   const dynamicRoutes = [
     ...(posts || []).map(post => ({
@@ -84,6 +89,10 @@ async function prerender() {
     ...(tags || []).map(tag => ({
       path: `/tag/${tag.slug}`,
       title: `Tag: ${tag.name}`,
+    })),
+    ...(categories || []).map(cat => ({
+      path: `/category/${cat.slug}`,
+      title: `${cat.name} — Intelligence`,
     })),
   ];
 

@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      categories: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+          slug: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+          slug: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+          slug?: string
+        }
+        Relationships: []
+      }
       post_tags: {
         Row: {
           post_id: string
@@ -50,8 +74,11 @@ export type Database = {
           author_name: string | null
           author_role: string | null
           body_html: string | null
+          category_id: string | null
           cover_image_url: string | null
           created_at: string | null
+          cta_text: string | null
+          cta_url: string | null
           dek: string | null
           hero_image_url: string | null
           id: string
@@ -73,8 +100,11 @@ export type Database = {
           author_name?: string | null
           author_role?: string | null
           body_html?: string | null
+          category_id?: string | null
           cover_image_url?: string | null
           created_at?: string | null
+          cta_text?: string | null
+          cta_url?: string | null
           dek?: string | null
           hero_image_url?: string | null
           id?: string
@@ -96,8 +126,11 @@ export type Database = {
           author_name?: string | null
           author_role?: string | null
           body_html?: string | null
+          category_id?: string | null
           cover_image_url?: string | null
           created_at?: string | null
+          cta_text?: string | null
+          cta_url?: string | null
           dek?: string | null
           hero_image_url?: string | null
           id?: string
@@ -120,6 +153,13 @@ export type Database = {
             columns: ["author_id"]
             isOneToOne: false
             referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "posts_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "categories"
             referencedColumns: ["id"]
           },
         ]

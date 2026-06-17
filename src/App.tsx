@@ -14,6 +14,7 @@ import Terms from "./pages/Terms";
 
 const Story = lazy(() => import("./pages/Story"));
 const Tag = lazy(() => import("./pages/Tag"));
+const Category = lazy(() => import("./pages/Category"));
 const Scorecard = lazy(() => import("./pages/Scorecard"));
 const Reports = lazy(() => import("./pages/Reports"));
 const AgentProduction = lazy(() => import("./pages/reports/AgentProduction"));
@@ -45,6 +46,7 @@ const App = () => (
         <Route path="/blog" element={<Navigate to="/intelligence" replace />} />
         <Route path="/story/:slug" element={<Story />} />
         <Route path="/tag/:tag" element={<Tag />} />
+        <Route path="/category/:slug" element={<Category />} />
         <Route path="/scorecard" element={<Scorecard />} />
         <Route path="/reports" element={<Reports />} />
         <Route path="/reports/agent-production" element={<AgentProduction />} />

@@ -81,7 +81,7 @@ const Intelligence = () => {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("posts")
-        .select(`*, post_tags(tags(name, slug))`)
+        .select(`*, post_tags(tags(name, slug)), categories(name, slug)`)
         .eq("is_published", true)
         .order("publish_date", { ascending: false });
       if (error) throw error;
@@ -209,7 +209,15 @@ const Intelligence = () => {
               className="group block border border-white/[0.06] p-10 md:p-16 hover:border-accent/20 transition-colors relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              {featuredPost.post_tags?.[0]?.tags && (
+              {featuredPost.categories ? (
+                <Link
+                  to={`/category/${featuredPost.categories.slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase hover:text-gold-light transition-colors relative z-10"
+                >
+                  {featuredPost.categories.name}
+                </Link>
+              ) : featuredPost.post_tags?.[0]?.tags && (
                 <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
                   {featuredPost.post_tags[0].tags.name}
                 </span>
@@ -525,13 +533,22 @@ InlineCTA.displayName = "InlineCTA";
 
 /* ── Article Card ── */
 const ArticleCard = ({ post }: { post: any }) => {
+  const category = post.categories;
   const tag = post.post_tags?.[0]?.tags;
   const pdfUrl = INFOGRAPHIC_PDF_MAP[post.slug];
 
   return (
     <article className="group">
+      {category && (
+        <Link
+          to={`/category/${category.slug}`}
+          className="inline-block font-mono text-[9px] tracking-[0.18em] text-accent uppercase mb-2 hover:text-gold-light transition-colors"
+        >
+          {category.name}
+        </Link>
+      )}
       <Link to={`/story/${post.slug}`} className="block">
-        {tag && (
+        {!category && tag && (
           <span className="font-mono text-[9px] tracking-[0.18em] text-accent uppercase">
             {tag.name}
           </span>
