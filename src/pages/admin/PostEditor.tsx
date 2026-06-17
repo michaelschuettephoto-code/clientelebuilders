@@ -143,6 +143,47 @@ const AdminPostEditor = () => {
           </p>
         </div>
         
+        <div className="space-y-2">
+          <Label>Category</Label>
+          <Select
+            value={post.category_id ?? "__none__"}
+            onValueChange={(v) => setPost({ ...post, category_id: v === "__none__" ? null : v })}
+          >
+            <SelectTrigger className="bg-card">
+              <SelectValue placeholder="Select a category" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="__none__">No category</SelectItem>
+              {categories.map((c) => (
+                <SelectItem key={c.id} value={c.id}>{c.name}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
+          <Label>CTA Text</Label>
+          <Input
+            placeholder="e.g. Take the Distribution Scorecard"
+            value={post.cta_text}
+            onChange={(e) => setPost({ ...post, cta_text: e.target.value })}
+            className="bg-card"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label>CTA URL</Label>
+          <Input
+            placeholder="https://..."
+            value={post.cta_url}
+            onChange={(e) => setPost({ ...post, cta_url: e.target.value })}
+            className="bg-card"
+          />
+          <p className="text-xs text-muted-foreground">
+            Both CTA Text and CTA URL must be set for the call-to-action block to appear on the article page.
+          </p>
+        </div>
+
         <Textarea placeholder="Body HTML" value={post.body_html} onChange={(e) => setPost({ ...post, body_html: e.target.value })} className="bg-card min-h-[400px]" />
         
         <div className="flex gap-4">
