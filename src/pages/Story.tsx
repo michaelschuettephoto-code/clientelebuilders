@@ -161,9 +161,6 @@ const Story = () => {
 
         {post.cta_text && post.cta_url && (
           <aside className="mt-16 border border-border rounded-lg p-8 md:p-12 bg-card text-center">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-6 leading-tight">
-              {post.cta_text}
-            </h3>
             <a
               href={post.cta_url}
               target="_blank"
