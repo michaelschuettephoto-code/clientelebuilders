@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
 
 const AdminPostEditor = () => {
   const { id } = useParams();
@@ -12,6 +14,7 @@ const AdminPostEditor = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const [isAuthorized, setIsAuthorized] = useState<boolean | null>(null);
+  const [categories, setCategories] = useState<Array<{ id: string; name: string }>>([]);
   const [post, setPost] = useState({
     title: "",
     slug: "",
@@ -19,6 +22,9 @@ const AdminPostEditor = () => {
     body_html: "",
     cover_image_url: "",
     is_published: false,
+    category_id: null as string | null,
+    cta_text: "",
+    cta_url: "",
   });
 
   useEffect(() => {
@@ -56,9 +62,24 @@ const AdminPostEditor = () => {
   }, [navigate, toast]);
 
   useEffect(() => {
+    if (isAuthorized) {
+      supabase.from("categories").select("id, name").order("name").then(({ data }) => {
+        if (data) setCategories(data);
+      });
+    }
     if (id && isAuthorized) {
       supabase.from("posts").select("*").eq("id", id).single()
-        .then(({ data }) => data && setPost(data));
+        .then(({ data }) => data && setPost({
+          title: data.title ?? "",
+          slug: data.slug ?? "",
+          dek: data.dek ?? "",
+          body_html: data.body_html ?? "",
+          cover_image_url: data.cover_image_url ?? "",
+          is_published: data.is_published ?? false,
+          category_id: data.category_id ?? null,
+          cta_text: data.cta_text ?? "",
+          cta_url: data.cta_url ?? "",
+        }));
     }
   }, [id, isAuthorized]);
 
