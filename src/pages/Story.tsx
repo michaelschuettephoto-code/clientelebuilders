@@ -5,7 +5,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 
 const Story = () => {
@@ -18,7 +19,8 @@ const Story = () => {
         .from("posts")
         .select(`
           *,
-          post_tags(tags(name, slug))
+          post_tags(tags(name, slug)),
+          categories(name, slug)
         `)
         .eq("slug", slug)
         .eq("is_published", true)
@@ -103,6 +105,14 @@ const Story = () => {
         </Link>
 
         <header className="mb-12">
+          {post.categories && (
+            <Link
+              to={`/category/${post.categories.slug}`}
+              className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary hover:underline mb-4"
+            >
+              {post.categories.name}
+            </Link>
+          )}
           {post.publish_date && (
             <div className="text-sm text-muted-foreground mb-4">
               {new Date(post.publish_date).toLocaleDateString("en-US", {
@@ -148,6 +158,25 @@ const Story = () => {
             prose-ul:my-6 prose-ol:my-6"
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.body_html || "", { ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'b', 'i', 'u', 'a', 'ul', 'ol', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'img', 'figure', 'figcaption', 'div', 'span', 'pre', 'code', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'hr', 'sup', 'sub'], ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class', 'id', 'target', 'rel', 'width', 'height', 'loading'] }) }}
         />
+
+        {post.cta_text && post.cta_url && (
+          <aside className="mt-16 border border-border rounded-lg p-8 md:p-12 bg-card text-center">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-6 leading-tight">
+              {post.cta_text}
+            </h3>
+            <a
+              href={post.cta_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button size="lg">
+                {post.cta_text}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+          </aside>
+        )}
 
         {post.post_tags && post.post_tags.length > 0 && (
           <div className="mt-12 pt-12 border-t border-border">
