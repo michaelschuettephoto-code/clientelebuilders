@@ -2,3 +2,6 @@ project_id = "legwhbvpveisgklqcrbq"
 
 [functions.sitemap]
 verify_jwt = false
+
+[functions.ttt-publish]
+verify_jwt = false
