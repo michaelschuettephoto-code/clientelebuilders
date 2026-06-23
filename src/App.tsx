@@ -40,7 +40,8 @@ const App = () => (
     <Sonner />
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<HomeLeak />} />
+        <Route path="/home-legacy" element={<Index />} />
         <Route path="/home-v2" element={<HomeV2 />} />
         <Route path="/lifeinsurance" element={<LifeInsurance />} />
         <Route path="/intelligence" element={<Intelligence />} />
