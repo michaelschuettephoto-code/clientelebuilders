@@ -5,6 +5,7 @@ import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import HomeV2 from "./pages/HomeV2";
+import HomeLeak from "./pages/HomeLeak";
 import Intelligence from "./pages/Intelligence";
 import About from "./pages/About";
 import Newsletter from "./pages/Newsletter";
@@ -39,7 +40,8 @@ const App = () => (
     <Sonner />
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<HomeLeak />} />
+        <Route path="/home-legacy" element={<Index />} />
         <Route path="/home-v2" element={<HomeV2 />} />
         <Route path="/lifeinsurance" element={<LifeInsurance />} />
         <Route path="/intelligence" element={<Intelligence />} />
