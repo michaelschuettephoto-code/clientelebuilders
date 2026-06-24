@@ -38,6 +38,30 @@ export type Database = {
         }
         Relationships: []
       }
+      home_content: {
+        Row: {
+          content: Json
+          id: string
+          is_published: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          content: Json
+          id?: string
+          is_published?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          content?: Json
+          id?: string
+          is_published?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       post_tags: {
         Row: {
           post_id: string
