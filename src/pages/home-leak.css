@@ -162,4 +162,11 @@
 @media (max-width: 600px) {
   .hp-leak .diag-grid { grid-template-columns: 1fr; }
   .hp-leak .section { padding-top: 64px; padding-bottom: 64px; }
+  .hp-leak .btn-gold {
+    padding: 14px 22px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+  .hp-leak .nav-cta { padding: 10px 16px; font-size: 10px; }
 }
