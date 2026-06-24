@@ -73,13 +73,15 @@ const AdminHomepage = () => {
       updated_by: session?.user.id ?? null,
       updated_at: new Date().toISOString(),
     };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const tbl = (supabase as any).from("home_content");
     let error;
     if (rowId) {
-      ({ error } = await supabase.from("home_content" as never).update(payload).eq("id", rowId));
+      ({ error } = await tbl.update(payload).eq("id", rowId));
     } else {
-      const ins = await supabase.from("home_content" as never).insert(payload).select("id").single();
+      const ins = await tbl.insert(payload).select("id").single();
       error = ins.error;
-      if (ins.data) setRowId((ins.data as { id: string }).id);
+      if (ins.data) setRowId(ins.data.id as string);
     }
     setSaving(false);
     if (error) {
