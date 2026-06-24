@@ -39,10 +39,7 @@ const HomeLeak = () => {
         <header className="hp-nav">
           <div className="container hp-nav-inner">
             <Link to="/" className="hp-wordmark">Clientele Builders</Link>
-            <nav className="nav-links">
-              <a href="#how">How it works</a>
-              <Link to="/intelligence">Free library</Link>
-            </nav>
+            <nav className="nav-links" />
             <Link to="/scorecard" className="btn-gold nav-cta">Take the Assessment</Link>
           </div>
         </header>
