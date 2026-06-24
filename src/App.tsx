@@ -27,6 +27,7 @@ const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
 const AdminPosts = lazy(() => import("./pages/admin/Posts"));
 const AdminPostEditor = lazy(() => import("./pages/admin/PostEditor"));
 const AdminReadme = lazy(() => import("./pages/admin/Readme"));
+const AdminHomepage = lazy(() => import("./pages/admin/Homepage"));
 const RSS = lazy(() => import("./pages/RSS"));
 const InsightArticle = lazy(() => import("./pages/InsightArticle"));
 const EditorialBrief = lazy(() => import("./pages/EditorialBrief"));
@@ -69,6 +70,7 @@ const App = () => (
         <Route path="/admin/posts/new" element={<AdminPostEditor />} />
         <Route path="/admin/posts/:id" element={<AdminPostEditor />} />
         <Route path="/admin/readme" element={<AdminReadme />} />
+        <Route path="/admin/homepage" element={<AdminHomepage />} />
         <Route path="/feed.xml" element={<RSS />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

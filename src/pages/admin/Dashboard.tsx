@@ -75,10 +75,10 @@ const AdminDashboard = () => {
             <p className="text-muted-foreground">Create, edit, and publish stories</p>
           </Link>
           
-          <div className="p-8 bg-card border border-border rounded-lg opacity-50">
-            <h2 className="text-2xl font-semibold mb-2">Analytics</h2>
-            <p className="text-muted-foreground">Coming soon</p>
-          </div>
+          <Link to="/admin/homepage" className="p-8 bg-card border border-border rounded-lg hover:border-primary transition-colors">
+            <h2 className="text-2xl font-semibold mb-2">Manage Homepage</h2>
+            <p className="text-muted-foreground">Edit every section of the homepage</p>
+          </Link>
         </div>
       </main>
     </div>
